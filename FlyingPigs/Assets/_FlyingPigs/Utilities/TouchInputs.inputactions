@@ -1,0 +1,34 @@
+{
+    "name": "TouchInputs",
+    "maps": [
+        {
+            "name": "CatapultMinigame",
+            "id": "461331a0-a8e7-4f18-aa4a-40511b147a6b",
+            "actions": [
+                {
+                    "name": "TouchInput",
+                    "type": "PassThrough",
+                    "id": "c068e0db-a9b3-41e6-b4e4-02fa01844256",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "01de5f08-710f-4a5e-ac35-52bdbf9e63b6",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -13,19 +13,44 @@ public class BarBehaviour : MonoBehaviour
     private float count = 0.1f;
     private int rising = 1;
 
-    void Update()
+    private bool shouldMove = true;
+
+    public void ResetForNextLevel() {
+        count = 0.1f;
+        SetValue(count, 100);
+        shouldMove = true;
+    }
+    
+    private void Update()
     {
         SetValue(count, 100);
         if (count >= 100 || count <= 0) {
             rising = -rising;
         }
 
-        count += 0.1f * rising * level / 2;
+        if (shouldMove) {
+            count += 0.1f * rising * level / 2;
+        }
     }
 
     public void SetValue(float value, float maxValue) {
         slider.value = value;
         slider.maxValue = maxValue;
         slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, value/maxValue);
+    }
+
+    public void OnPress() {
+        if (shouldMove) {
+            shouldMove = false;
+            if (count > 85) {
+                Debug.Log("SUCCESS");
+                level ++;
+            }
+            else {
+                Debug.Log("FAILURE");
+                level = 1;
+            }
+            Invoke("ResetForNextLevel", 3);
+        }
     }
 }
