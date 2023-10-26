@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class BarBehaviour : MonoBehaviour
 {
-    public Slider slider;
-    public Color low;
-    public Color high;
-    public ImageShow imageShow;
-    public ImageShow failure;
-    public int level = 1;
+    [SerializeField] private Slider slider;
+    [SerializeField] private Color low;
+    [SerializeField] private Color high;
+    [SerializeField] private Timer timer;
+    [SerializeField] private ImageShow imageShow;
+    [SerializeField] private ImageShow failure;
+    private int level = 1;
 
     private float count = 0.1f;
     private int rising = 1;
@@ -23,10 +24,13 @@ public class BarBehaviour : MonoBehaviour
     }
 
     public void ResetForNextLevel() {
+        //if lastResult == true
         count = 0.1f;
         SetValue(count, 100);
         shouldMove = true;
         imageShow.SwitchShow(lastResult);
+        timer.RestartTimer();
+        //else go to other game scene, minigame ended
     }
     
     private void Update()
@@ -60,7 +64,12 @@ public class BarBehaviour : MonoBehaviour
                 imageShow.SwitchShow(lastResult);
                 level = 1;
             }
-            Invoke("ResetForNextLevel", 3);
+            if (level < 5) {
+                Invoke("ResetForNextLevel", 0.5f);
+            }
+            else {
+                //end minigame
+            }
         }
     }
 }
