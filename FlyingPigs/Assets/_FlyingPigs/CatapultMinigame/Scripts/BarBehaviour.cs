@@ -8,17 +8,25 @@ public class BarBehaviour : MonoBehaviour
     public Slider slider;
     public Color low;
     public Color high;
+    public ImageShow imageShow;
+    public ImageShow failure;
     public int level = 1;
 
     private float count = 0.1f;
     private int rising = 1;
 
     private bool shouldMove = true;
+    private bool lastResult = false;
+
+    void Start() {
+        imageShow = GetComponentInChildren<ImageShow>();
+    }
 
     public void ResetForNextLevel() {
         count = 0.1f;
         SetValue(count, 100);
         shouldMove = true;
+        imageShow.SwitchShow(lastResult);
     }
     
     private void Update()
@@ -43,11 +51,13 @@ public class BarBehaviour : MonoBehaviour
         if (shouldMove) {
             shouldMove = false;
             if (count > 85) {
-                Debug.Log("SUCCESS");
+                lastResult = true;
+                imageShow.SwitchShow(lastResult);
                 level ++;
             }
             else {
-                Debug.Log("FAILURE");
+                lastResult = false;
+                imageShow.SwitchShow(lastResult);
                 level = 1;
             }
             Invoke("ResetForNextLevel", 3);
