@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
             if (countdown <= 0.0f) {
                 // Countdown has reached 0, perform your desired action
                 Debug.Log("Countdown reached 0. Timer stopped.");
+                score.text = "0";
                 isCounting = false; // Stop the timer
             }
         }

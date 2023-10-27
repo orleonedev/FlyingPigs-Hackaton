@@ -54,7 +54,7 @@ public class BarBehaviour : MonoBehaviour
     public void OnPress() {
         if (shouldMove) {
             shouldMove = false;
-            if (count > 85) {
+            if (count > 80) {
                 lastResult = true;
                 imageShow.SwitchShow(lastResult);
                 level ++;
