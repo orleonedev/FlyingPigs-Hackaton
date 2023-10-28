@@ -20,7 +20,11 @@ public class PigScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && rigidBody.position.y < yBound){
+        Touch touch = Input.GetTouch(0);
+
+        //Vector3 value = cam.ScreenToWorldPoint(new Vector3(touch.position.x, 0f, 0f));
+        
+        if(Input.touchCount > 0  && rigidBody.position.y < yBound){
             Flap();
         }
     }
@@ -33,7 +37,7 @@ public class PigScript : MonoBehaviour
 
     private void OnTriggerEnter2D(){
         if(!timer.GetCounting()){
-            StartCoroutine(EndLevelAfterTime(1.5f));
+            StartCoroutine(EndLevelAfterTime(2.0f));
         }
     }
 
