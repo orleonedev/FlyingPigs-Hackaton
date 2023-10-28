@@ -4,7 +4,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text score;
-    private float countdown = 5.0f; // Set the initial countdown time in seconds
+    private float countdown = 10.0f; // Set the initial countdown time in seconds
     private bool isCounting = true;
 
     private void Update()
@@ -31,5 +31,9 @@ public class Timer : MonoBehaviour
     {
         isCounting = true; // Call this function to restart the timer
         countdown = time;
+    }
+
+    public bool GetCounting(){
+        return isCounting;
     }
 }

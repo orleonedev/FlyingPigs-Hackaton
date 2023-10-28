@@ -1,13 +1,18 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PigScript : MonoBehaviour
 {
+    public Timer timer;
+    public UIManager uiManager;
     public static event Action OnDeath;
-    public static event Action OnScore;
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private float force;
     [SerializeField] private float yBound;
+    public static int level = 1;
+    //public Spawner pipeSpawner;
 
     private void Start(){
         Time.timeScale = 1f;
@@ -28,11 +33,37 @@ public class PigScript : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(){
-        OnScore?.Invoke();
+        if(!timer.GetCounting()){
+            StartCoroutine(EndLevelAfterTime(1.5f));
+        }
     }
 
     private void Flap(){
         rigidBody.velocity = Vector2.zero;
         rigidBody.AddForce(Vector2.up * force);
+    }
+
+    public static void SetLevel(int newLevel) => level = newLevel;
+
+    public static void LevelUp() => level++;
+
+    private void OnEndLevel(){
+        if(PigScript.level < 5){
+            PigScript.LevelUp();
+            Debug.Log("Level: " + PigScript.level);
+            Spawner.time -= 0.25f;
+            Debug.Log("Time: " + Spawner.time);
+        } else {
+            // termina minigioco
+        }
+        
+        //uiManager.SetLevel(PigScript.level);
+        uiManager.RestartGame();
+    }
+
+    private IEnumerator EndLevelAfterTime(float time){
+        yield return new WaitForSeconds(time);
+
+        OnEndLevel();
     }
 }

@@ -164,3 +164,4 @@ MonoBehaviour:
   rigidBody: {fileID: 7027741696412749440}
   force: 250
   yBound: 6
+  level: 1
