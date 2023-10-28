@@ -56,6 +56,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "FlappyPigMinigame",
+            "id": "781bd5a0-f923-4e56-a88b-314d0144380f",
+            "actions": [
+                {
+                    "name": "TouchInput",
+                    "type": "Button",
+                    "id": "ca207385-98ee-426a-b9a7-75eced9998c8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2c98c22a-115c-48ac-9996-9a7337a5d6f0",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
