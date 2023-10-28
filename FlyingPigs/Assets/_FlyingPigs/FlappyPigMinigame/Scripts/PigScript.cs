@@ -12,7 +12,6 @@ public class PigScript : MonoBehaviour
     [SerializeField] private float force;
     [SerializeField] private float yBound;
     public static int level = 1;
-    //public Spawner pipeSpawner;
 
     private void Start(){
         Time.timeScale = 1f;
@@ -50,14 +49,11 @@ public class PigScript : MonoBehaviour
     private void OnEndLevel(){
         if(PigScript.level < 5){
             PigScript.LevelUp();
-            Debug.Log("Level: " + PigScript.level);
-            Spawner.time -= 0.25f;
-            Debug.Log("Time: " + Spawner.time);
         } else {
+            PigScript.SetLevel(1);
             // termina minigioco
         }
         
-        //uiManager.SetLevel(PigScript.level);
         uiManager.RestartGame();
     }
 

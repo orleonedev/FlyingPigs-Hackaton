@@ -6,7 +6,6 @@ public class UIManager : MonoBehaviour
 {
     public Timer timer;
     [SerializeField] GameObject playButton;
-    private TMP_Text level;
 
     private void Awake(){
         PigScript.OnDeath += OnGameOver;
@@ -23,5 +22,4 @@ public class UIManager : MonoBehaviour
 
     private void OnGameOver() => playButton.SetActive(true);
 
-    public void SetLevel(int newLevel) => level.text = newLevel.ToString();
 }

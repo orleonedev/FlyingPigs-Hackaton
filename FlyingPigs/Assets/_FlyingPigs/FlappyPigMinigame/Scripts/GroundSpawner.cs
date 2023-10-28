@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GroundSpawner : Spawner
 {
+    private void Start(){
+        
+    }
+
     protected override void SpawnObject(){
         Vector2 pos = new Vector2(this.transform.position.x, this.transform.position.y);
 

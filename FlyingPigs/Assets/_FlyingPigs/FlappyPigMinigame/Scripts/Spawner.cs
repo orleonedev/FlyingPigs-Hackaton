@@ -6,9 +6,14 @@ public class Spawner : MonoBehaviour
 {
     public Timer timer;
     [SerializeField] protected GameObject prefab;
-    public static float time = 2.0f;
+    [SerializeField] protected float time;
     [SerializeField] protected float yClamp;
     protected float elapsedTime;
+
+    private void Start(){
+        time = 2.0f - (0.1f * (PigScript.level - 1));
+        Debug.Log("Time: " + time);
+    }
 
     // Update is called once per frame
     private void Update()
