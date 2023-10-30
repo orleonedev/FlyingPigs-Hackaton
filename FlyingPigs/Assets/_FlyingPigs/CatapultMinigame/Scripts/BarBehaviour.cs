@@ -9,8 +9,7 @@ public class BarBehaviour : MonoBehaviour
     [SerializeField] private Color low;
     [SerializeField] private Color high;
     [SerializeField] private Timer timer;
-    [SerializeField] private ImageShow imageShow;
-    [SerializeField] private ImageShow failure;
+    private ImageShow imageShow;
     private int level = 1;
 
     private float count = 0.1f;

@@ -2,21 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ArrowBehaviour : MonoBehaviour
 {
-    public Transform arrows;
+    [SerializeField] private Transform arrows;
+    [SerializeField] private Timer timer;
+    [SerializeField] private ImageShow imageShow;
     private bool descending = false;
     private float speed;
+    private bool levelEnded = false;
+    static private int level = 1;
 
     void Start()
     {
         Transform[] children = arrows.GetComponentsInChildren<Transform>();
         Destroy(children[UnityEngine.Random.Range(1, children.Count())].gameObject);
-        speed = 3;
+        speed = 2;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!descending) {
@@ -28,9 +32,34 @@ public class ArrowBehaviour : MonoBehaviour
         }
         else {
             if(arrows.position.y < -6) {
-                //level up
+                if (!levelEnded) {
+                    if (level < 5) {
+                    level += 1;
+                    imageShow.SwitchShow(true);
+                    Invoke("RestartGame", 0.5f);
+                    }
+                    else {
+                        level = 0;
+                        imageShow.SwitchShow(true);
+                        Invoke("EndGame", 0.5f);
+                    }
+                }
+                levelEnded = true;
             }
         }
-        arrows.transform.position += transform.up * speed * Time.deltaTime;
+        arrows.transform.position += transform.up * speed * level * Time.deltaTime;
+    }
+
+    public void RestartGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        timer.RestartTimer();
+    }
+
+    public void EndGame() {
+        if (level != 0) {
+            imageShow.SwitchShow(false);
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //CHANGE WITH MAIN SCREEN
+        //timer.RestartTimer();
     }
 }
