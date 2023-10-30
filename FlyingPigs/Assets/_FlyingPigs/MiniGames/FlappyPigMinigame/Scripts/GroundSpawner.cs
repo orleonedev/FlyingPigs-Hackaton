@@ -10,7 +10,7 @@ public class GroundSpawner : Spawner
 
     private void Update()
     {
-
+        
     }
 
     protected override void SpawnObject(){
