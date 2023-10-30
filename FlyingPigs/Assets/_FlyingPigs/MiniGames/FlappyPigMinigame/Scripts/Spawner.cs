@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     protected float elapsedTime;
 
     private void Start(){
-        time = 2.0f - (0.1f * (PigScript.level - 1));
+        time = 2.5f - (0.2f * (PigScript.level - 1));
         Debug.Log("Time: " + time);
     }
 

@@ -20,6 +20,9 @@ public class UIManager : MonoBehaviour
         timer.RestartTimer();
     }
 
-    private void OnGameOver() => playButton.SetActive(true);
+    private void OnGameOver(){
+        PigScript.SetLevel(1);
+        playButton.SetActive(true);
+    }
 
 }

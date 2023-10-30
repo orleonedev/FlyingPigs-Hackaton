@@ -20,12 +20,14 @@ public class PigScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Touch touch = Input.GetTouch(0);
+        if(Input.touchCount > 0){
+            Touch touch = Input.GetTouch(0);
 
-        //Vector3 value = cam.ScreenToWorldPoint(new Vector3(touch.position.x, 0f, 0f));
-        
-        if(Input.touchCount > 0  && rigidBody.position.y < yBound){
-            Flap();
+            //Vector3 value = cam.ScreenToWorldPoint(new Vector3(touch.position.x, 0f, 0f));
+            
+            if(touch.phase == TouchPhase.Began && rigidBody.position.y < yBound){
+                Flap();
+            }
         }
     }
 
