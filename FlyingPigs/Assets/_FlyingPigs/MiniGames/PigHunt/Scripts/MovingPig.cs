@@ -4,30 +4,25 @@ using UnityEngine;
 
 public class MovingPig : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    public float speed;
     [SerializeField] private float xLeftBound;
     [SerializeField] private float xRightBound;
     [SerializeField] private float yTopBound;
     [SerializeField] private float yDownBound;
     [SerializeField] private SpriteRenderer sprite;
-    private bool killed;
+    private bool isAlive;
     private float angle;
     private Vector3 dir;
 
     private void Start()
     {
-        killed = false;
+        isAlive = true;
         angle = GetSpawnAngle();
         dir = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0);
     }
 
     private void Update()
     {
-        if(killed){
-            var posX = this.transform.position.x;
-            dir = new Vector3(posX, -1.5f);
-        }
-
         this.transform.position += dir * speed * Time.deltaTime;
 
         if (this.transform.position.x < xLeftBound || this.transform.position.x > xRightBound
@@ -76,15 +71,23 @@ public class MovingPig : MonoBehaviour
             sprite.flipX = true;
         }
 
-        Debug.Log("Angolo: " + angle + "°");
         return angle;
     }
 
-    public bool GetKilled(){
-        return killed;
+    public bool GetIsAlive(){
+        return isAlive;
     }
 
-    public void SetKilled(bool killedValue){
-        killed = killedValue;
+    public void SetIsAlive(bool isAliveValue){
+        isAlive = isAliveValue;
+    }
+
+    public void ShootPig(){
+        SetIsAlive(false);
+        dir = Vector3.zero;
+    }
+
+    public void StartPigFalling(){
+        dir = Vector3.down;
     }
 }
