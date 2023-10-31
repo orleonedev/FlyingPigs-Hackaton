@@ -10,18 +10,24 @@ public class MovingPig : MonoBehaviour
     [SerializeField] private float yTopBound;
     [SerializeField] private float yDownBound;
     [SerializeField] private SpriteRenderer sprite;
+    private bool killed;
     private float angle;
     private Vector3 dir;
 
     private void Start()
     {
+        killed = false;
         angle = GetSpawnAngle();
-
         dir = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0);
     }
 
     private void Update()
     {
+        if(killed){
+            var posX = this.transform.position.x;
+            dir = new Vector3(posX, -1.5f);
+        }
+
         this.transform.position += dir * speed * Time.deltaTime;
 
         if (this.transform.position.x < xLeftBound || this.transform.position.x > xRightBound
@@ -41,14 +47,15 @@ public class MovingPig : MonoBehaviour
             {
                 angle = UnityEngine.Random.Range(75.0f, 90.0f);
             }
-            else if (this.transform.position.x >= -1.5 && this.transform.position.x <= -0.5f)
+            else if (/*this.transform.position.x >= -1.5 &&*/ this.transform.position.x <= -0.5f)
             {
-                angle = UnityEngine.Random.Range(60.0f, 65.0f);
+                angle = UnityEngine.Random.Range(55.0f, 65.0f);
             }
-            else
+            /*else
             {
                 angle = 45.0f;
-            }
+            }*/
+
             sprite.flipX = false;
         }
         else
@@ -57,17 +64,27 @@ public class MovingPig : MonoBehaviour
             {
                 angle = UnityEngine.Random.Range(90.0f, 105.0f);
             }
-            else if (this.transform.position.x <= 1.5 && this.transform.position.x > 0.5f)
+            else if (/*this.transform.position.x <= 1.5 &&*/ this.transform.position.x > 0.5f)
             {
-                angle = UnityEngine.Random.Range(125.0f, 130.0f);
+                angle = UnityEngine.Random.Range(115.0f, 125.0f);
             }
-            else
+            /*else
             {
                 angle = 135.0f;
-            }
+            }*/
+
             sprite.flipX = true;
         }
 
+        Debug.Log("Angolo: " + angle + "°");
         return angle;
+    }
+
+    public bool GetKilled(){
+        return killed;
+    }
+
+    public void SetKilled(bool killedValue){
+        killed = killedValue;
     }
 }
