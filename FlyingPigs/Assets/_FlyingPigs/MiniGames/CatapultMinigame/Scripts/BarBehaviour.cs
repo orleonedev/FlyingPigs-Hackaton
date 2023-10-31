@@ -9,6 +9,7 @@ public class BarBehaviour : MonoBehaviour
     [SerializeField] private Color low;
     [SerializeField] private Color high;
     [SerializeField] private Timer timer;
+    [SerializeField] private Animator animator;
     private ImageShow imageShow;
     private int level = 1;
 
@@ -24,6 +25,7 @@ public class BarBehaviour : MonoBehaviour
 
     public void ResetForNextLevel() {
         //if lastResult == true
+        animator.SetTrigger("return");
         count = 0.1f;
         SetValue(count, 100);
         shouldMove = true;
@@ -57,14 +59,16 @@ public class BarBehaviour : MonoBehaviour
                 lastResult = true;
                 imageShow.SwitchShow(lastResult);
                 level ++;
+                animator.SetTrigger("succ");
             }
             else {
                 lastResult = false;
                 imageShow.SwitchShow(lastResult);
                 level = 1;
+                animator.SetTrigger("fail");
             }
             if (level < 5) {
-                Invoke("ResetForNextLevel", 0.5f);
+                Invoke("ResetForNextLevel", 1.5f);
             }
             else {
                 //end minigame
