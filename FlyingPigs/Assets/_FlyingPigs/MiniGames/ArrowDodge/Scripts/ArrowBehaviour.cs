@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,8 +10,10 @@ public class ArrowBehaviour : MonoBehaviour
     [SerializeField] private Transform arrows;
     [SerializeField] private Timer timer;
     [SerializeField] private ImageShow imageShow;
+    public Sprite spriteBigArrow;
+    public Sprite spriteEndArrow;
     private bool descending = false;
-    private float speed;
+    public float speed;
     private bool levelEnded = false;
     static private int level = 1;
 
@@ -27,17 +30,31 @@ public class ArrowBehaviour : MonoBehaviour
             if(arrows.position.y > 6) {
                 descending = true;
                 speed = -speed;
-                arrows.transform.localScale = new Vector3(arrows.transform.localScale.x, -arrows.transform.localScale.y, arrows.transform.localScale.z);
+                int count = arrows.transform.childCount;
+                for(int i = 0; i < count; i++) {
+                    Transform child = arrows.transform.GetChild(i);
+                    child.gameObject.GetComponent<SpriteRenderer>().sprite = spriteBigArrow;
+                }
+                //arrows.transform.localScale = new Vector3(arrows.transform.localScale.x, -arrows.transform.localScale.y, arrows.transform.localScale.z);
             }
         }
         else {
-            if(arrows.position.y < -6) {
+            if(arrows.position.y < -4) {
                 if (!levelEnded) {
+
+                    int count = arrows.transform.childCount;
+                    for(int i = 0; i < count; i++) {
+                        Transform child = arrows.transform.GetChild(i);
+                        child.gameObject.GetComponent<SpriteRenderer>().sprite = spriteEndArrow;
+                    }
+                    speed = 0;
+
                     if (level < 5) {
                     level += 1;
                     imageShow.SwitchShow(true);
                     Invoke("RestartGame", 0.5f);
                     }
+                    
                     else {
                         level = 0;
                         imageShow.SwitchShow(true);
