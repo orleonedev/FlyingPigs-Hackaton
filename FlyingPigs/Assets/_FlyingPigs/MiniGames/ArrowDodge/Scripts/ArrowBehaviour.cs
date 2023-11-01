@@ -15,7 +15,7 @@ public class ArrowBehaviour : MonoBehaviour
     private bool descending = false;
     public float speed;
     private bool levelEnded = false;
-    static private int level = 1;
+    static public int level = 1;
 
     void Start()
     {
@@ -76,6 +76,7 @@ public class ArrowBehaviour : MonoBehaviour
         if (level != 0) {
             imageShow.SwitchShow(false);
         }
+        level = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //CHANGE WITH MAIN SCREEN
         //timer.RestartTimer();
     }
