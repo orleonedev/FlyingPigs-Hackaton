@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FillRealHealthValue : DisplayScriptableObjectValues<GameStats>
+public class FillGameHealthValue : DisplayScriptableObjectValues<GameStats>
 {
     [SerializeField]
-    public Image realHealthImage;
+    public Image gameHealthImage;
     
     void Start()
     {
@@ -14,7 +14,7 @@ public class FillRealHealthValue : DisplayScriptableObjectValues<GameStats>
         this.UpdateUI();
     }
     override protected void UpdateUI() {
-        this.realHealthImage.fillAmount = myScriptableObject.RealHealth;
+        this.gameHealthImage.fillAmount = myScriptableObject.GameHealth;
     }
     // Update is called once per frame
     void Update()

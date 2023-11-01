@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71fb9547670643cfab666ea1f9467de, type: 3}
   m_Name: GameStats
   m_EditorClassIdentifier: 
-  RealHealth: 0.5
-  GameHealth: 0.5
-  RealMoney: 120
-  MoneyMultiplier: 2
-  GameCurrency: 300
-  CurrencyMultiplier: 1
-  Hours: 18
-  Minutes: 30
-  Day: 1
+  _realHealth: 0.5
+  _gameHealth: 0.69
+  _realMoney: 120
+  _moneyMultiplier: 2
+  _gameCurrency: 300
+  _currencyMultiplier: 1
+  _hours: 18
+  _minutes: 30
+  _day: 1

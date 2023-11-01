@@ -527,7 +527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 409549570}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: VerticalIndicatorsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 547066063}
   - component: {fileID: 547066062}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: GameHealthContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,8 +641,9 @@ GameObject:
   - component: {fileID: 587546394}
   - component: {fileID: 587546396}
   - component: {fileID: 587546395}
+  - component: {fileID: 587546397}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: RealHealthFillIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,7 +693,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.456
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -705,6 +706,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587546393}
   m_CullTransparentMesh: 1
+--- !u!114 &587546397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587546393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6d7f5f540ca4ba2a318167cdf4090c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScriptableObject: {fileID: 11400000, guid: 78beb230cda2d4e589527ab95d41b2f1, type: 2}
+  realHealthImage: {fileID: 587546395}
 --- !u!1 &825475303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,8 +1063,9 @@ GameObject:
   - component: {fileID: 1389529319}
   - component: {fileID: 1389529321}
   - component: {fileID: 1389529320}
+  - component: {fileID: 1389529322}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: GameHealthFillIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,6 +1128,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389529318}
   m_CullTransparentMesh: 1
+--- !u!114 &1389529322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389529318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a510ed202e8814c059f448ce374a6e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScriptableObject: {fileID: 11400000, guid: 78beb230cda2d4e589527ab95d41b2f1, type: 2}
+  gameHealthImage: {fileID: 1389529320}
 --- !u!1 &1552432179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1384,7 @@ GameObject:
   - component: {fileID: 1589255563}
   - component: {fileID: 1589255562}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RealHealthContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1430,7 +1460,7 @@ GameObject:
   - component: {fileID: 1686689075}
   - component: {fileID: 1686689074}
   m_Layer: 5
-  m_Name: Vertical Indicators
+  m_Name: Box1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
