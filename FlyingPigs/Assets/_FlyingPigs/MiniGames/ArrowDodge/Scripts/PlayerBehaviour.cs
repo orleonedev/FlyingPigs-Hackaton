@@ -7,9 +7,11 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private ArrowBehaviour arrows;
     [SerializeField] private ImageShow imageShow;
 
+    [SerializeField] private Timer timer;
+
     private void OnCollisionEnter2D(){
-        Time.timeScale = 0f;
         imageShow.SwitchShow(false);
+        arrows.speed = 0;
         Invoke("EndGame", 0.5f);
     }
 
