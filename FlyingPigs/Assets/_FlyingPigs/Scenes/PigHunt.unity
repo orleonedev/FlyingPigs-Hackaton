@@ -123,6 +123,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &275611724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4763466420304096408, guid: a196a4aba71685448904fc9fb04478d8, type: 3}
+  m_PrefabInstance: {fileID: 7299946738939491892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &275611729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275611724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 871a843a010308943aae9f2bce314df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 1969788292}
+  livesScore: {fileID: 2118456727}
 --- !u!1 &470517625
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,9 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec5d04b1c9bd434181940729708836d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 275611729}
   timer: {fileID: 1969788292}
-  score: {fileID: 2118456727}
-  prefab: {fileID: 7339828914740819581, guid: d4a4d77a325d68848ba867155670a38b, type: 3}
+  prefab: {fileID: 1771470723814899420, guid: d4a4d77a325d68848ba867155670a38b, type: 3}
   time: 2
   yClamp: -1
 --- !u!1 &982993181
@@ -446,10 +465,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 489653375362519803, guid: a196a4aba71685448904fc9fb04478d8, type: 3}
+      propertyPath: m_text
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2739809826399056945, guid: a196a4aba71685448904fc9fb04478d8, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1634627918}
+    - target: {fileID: 2739809826399056945, guid: a196a4aba71685448904fc9fb04478d8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741759369152548343, guid: a196a4aba71685448904fc9fb04478d8, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6725464122312954437, guid: a196a4aba71685448904fc9fb04478d8, type: 3}
       propertyPath: m_Name
       value: Hedge
@@ -497,7 +528,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4763466420304096408, guid: a196a4aba71685448904fc9fb04478d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 275611729}
   m_SourcePrefab: {fileID: 100100000, guid: a196a4aba71685448904fc9fb04478d8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
