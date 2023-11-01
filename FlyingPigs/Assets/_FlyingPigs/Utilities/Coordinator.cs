@@ -22,15 +22,23 @@ public class Coordinator : MonoBehaviour
         
     }
 
-    public void loadScene(string sceneName){
-        SceneManager.LoadScene(sceneName);
+    public void LoadScene(string sceneName){
+        SceneManager.LoadSceneAsync(sceneName);
+        
     }
 
-    public void loadScene(int index) {
-        SceneManager.LoadScene(index);
+    public void LoadScene(int index) {
+        SceneManager.LoadSceneAsync(index);
     }
 
     public void GoToMainMenu(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadSceneAsync(0);
+    }
+
+    public void LoadAdditively(string sceneName) {
+        SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+    }
+    public void UnloadScene(string sceneName) {
+        SceneManager.UnloadSceneAsync(sceneName);
     }
 }
