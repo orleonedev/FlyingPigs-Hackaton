@@ -37,8 +37,10 @@ public class Coordinator : MonoBehaviour
 
     public void LoadAdditively(string sceneName) {
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        Debug.Log("Adding "+sceneName);
     }
     public void UnloadScene(string sceneName) {
         SceneManager.UnloadSceneAsync(sceneName);
+        Debug.Log("Removing "+sceneName);
     }
 }

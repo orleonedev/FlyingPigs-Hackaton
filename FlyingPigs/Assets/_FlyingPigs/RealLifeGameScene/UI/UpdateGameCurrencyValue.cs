@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UpdateClockValue : DisplayScriptableObjectValues<GameStats>
+public class UpdateGameCurrencyValue : DisplayScriptableObjectValues<GameStats>
 {
     [SerializeField]
-    public TMP_Text clockText;
+    public TMP_Text currencyText;
     
     void Start()
     {
@@ -15,10 +15,8 @@ public class UpdateClockValue : DisplayScriptableObjectValues<GameStats>
         this.UpdateUI();
     }
     override protected void UpdateUI() {
-        string hours = myScriptableObject.CurrentHours.ToString("00");
-        string minutes = myScriptableObject.CurrentMinutes.ToString("00");
-        this.clockText.text = hours+":"+minutes;
-        
+        float money = myScriptableObject.GameCurrency;
+        this.currencyText.text = money.ToString(); //Moltiplicatore
     }
     // Update is called once per frame
     void Update()

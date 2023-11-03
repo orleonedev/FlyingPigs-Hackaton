@@ -86,25 +86,25 @@ public class GameStats : ScriptableObject //, IOnValuesChanged
     }
 
     [Range(0,23)]
-    public uint _hours = 18;
-    public uint Hours {
+    public uint _currentHours = 18;
+    public uint CurrentHours {
         get {
-            return _hours;
+            return _currentHours;
         }
         set {
-            _hours = Math.Clamp(value,0,23);
+            _currentHours = Math.Clamp(value,0,23);
             OnValuesChanged?.Invoke();
         }
     }
 
     [Range(0,59)]
-    public uint _minutes = 30;
-    public uint Minutes {
+    public uint _currentMinutes = 0;
+    public uint CurrentMinutes {
         get {
-            return _minutes;
+            return _currentMinutes;
         }
         set {
-            _minutes = Math.Clamp(value,0,59);
+            _currentMinutes = Math.Clamp(value,0,59);
             OnValuesChanged?.Invoke();
         }
     }
@@ -121,16 +121,28 @@ public class GameStats : ScriptableObject //, IOnValuesChanged
         }
     }
 
+    [Range(0,300)]
+    public uint _nextPlayTime = 240;
+    public uint NextPlayTime {
+        get {
+            return _nextPlayTime;
+        }
+        set {
+            _nextPlayTime = Math.Clamp(value, 0, 300 );
+        }
+    }
+
     public void OnEnable() {
-        this.RealHealth = 0.5f;
-        this.GameHealth = 0.5f;
+        this.RealHealth = 0.6f;
+        this.GameHealth = 0.3f;
         this.RealMoney = 120f;
         this.MoneyMultiplier = 2;
         this.GameCurrency = 300f;
         this.CurrencyMultiplier = 1;
-        this.Hours = 18;
-        this.Minutes = 30;
+        this.CurrentHours = 0;
+        this.CurrentMinutes = 0;
         this.Day = 1;
+        this.NextPlayTime = 30;
     }
 
 }

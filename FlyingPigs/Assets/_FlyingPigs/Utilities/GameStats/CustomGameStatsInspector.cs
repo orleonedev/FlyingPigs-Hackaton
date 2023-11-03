@@ -21,10 +21,10 @@ public class CustomGameStatsInspector : Editor {
                 gameStats.MoneyMultiplier = gameStats._moneyMultiplier;
                 gameStats.GameCurrency = gameStats._gameCurrency;
                 gameStats.CurrencyMultiplier = gameStats._currencyMultiplier;
-                gameStats.Hours = gameStats._hours;
-                gameStats.Minutes = gameStats._minutes;
+                gameStats.CurrentHours = gameStats._currentHours;
+                gameStats.CurrentMinutes = gameStats._currentMinutes;
                 gameStats.Day = gameStats._day;
-                
+                gameStats.NextPlayTime = gameStats._nextPlayTime;
             }
         
     }
