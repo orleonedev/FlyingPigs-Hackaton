@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -3
   m_Sprite: {fileID: 1000067137, guid: 3157587f30317aa45a417e7d209e1c06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -156,12 +156,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2f842fbeec4504a8924839e9505649, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   xLeftBound: -6
   xRightBound: 6
   yTopBound: 7
   yDownBound: -7
   sprite: {fileID: 6355240941504248595}
+  audioManagerObject: {fileID: 0}
+  audioManager: {fileID: 0}
+  pigClip: {fileID: 8300000, guid: 3651784c6765f6140bdfe150c03f5294, type: 3}
+  shootClip: {fileID: 8300000, guid: 17b2ecb5ee9b3c449b53b40364f522b2, type: 3}
 --- !u!114 &1662871835182854171
 MonoBehaviour:
   m_ObjectHideFlags: 0
