@@ -10,6 +10,7 @@ public class BarBehaviour : MonoBehaviour
     [SerializeField] private Color high;
     [SerializeField] private Timer timer;
     [SerializeField] private Animator animator;
+    [SerializeField] private AudioManager audioManager;
     private ImageShow imageShow;
     private int level = 1;
 
@@ -21,6 +22,7 @@ public class BarBehaviour : MonoBehaviour
 
     void Start() {
         imageShow = GetComponentInChildren<ImageShow>();
+        audioManager.PlaySoundLoop(audioManager.catapultLoop);
     }
 
     public void ResetForNextLevel() {
@@ -53,6 +55,8 @@ public class BarBehaviour : MonoBehaviour
     }
 
     public void OnPress() {
+        audioManager.StopSoundLoop();
+        audioManager.PlaySound(audioManager.catapultThrow);
         if (shouldMove) {
             shouldMove = false;
             if (count > 80) {
@@ -60,19 +64,29 @@ public class BarBehaviour : MonoBehaviour
                 imageShow.SwitchShow(lastResult);
                 level ++;
                 animator.SetTrigger("succ");
+                Invoke("CastleSound", 0.5f);
             }
             else {
                 lastResult = false;
                 imageShow.SwitchShow(lastResult);
                 level = 1;
                 animator.SetTrigger("fail");
+                Invoke("SplatSound", 0.3f);
             }
             if (level < 5) {
-                Invoke("ResetForNextLevel", 1.5f);
+                Invoke("ResetForNextLevel", 2f);
             }
             else {
                 //end minigame
             }
         }
+    }
+
+    public void SplatSound() {
+        audioManager.PlaySound(audioManager.playerWallImpact);
+    }
+
+    public void CastleSound() {
+        audioManager.PlaySound(audioManager.castleDestruction);
     }
 }
