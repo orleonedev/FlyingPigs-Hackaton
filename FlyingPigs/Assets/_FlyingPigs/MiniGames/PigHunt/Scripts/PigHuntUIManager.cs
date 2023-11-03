@@ -13,7 +13,7 @@ public class PigHuntUImanager : MonoBehaviour
     void Start()
     {
         PigSpawner.OnGameOver += OnGameOver;
-        ClickableObject.OnMissShot += OnMissShot;    
+        MovingPig.OnMissPig += OnMissPig;
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class PigHuntUImanager : MonoBehaviour
 
     private void OnDestroy(){
         PigSpawner.OnGameOver -= OnGameOver;
-        ClickableObject.OnMissShot -= OnMissShot; 
+        MovingPig.OnMissPig -= OnMissPig;
     }
 
     public void RestartGame() {
@@ -38,7 +38,7 @@ public class PigHuntUImanager : MonoBehaviour
         RestartGame();
     }
 
-    private void OnMissShot(){
+    private void OnMissPig(){
         livesScore.text = (int.Parse(livesScore.text) - 1).ToString();
     }
 }

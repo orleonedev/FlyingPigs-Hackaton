@@ -6,7 +6,7 @@ public class SpawnFruit : MonoBehaviour
 {
     [SerializeField] private GameObject fruitToSpawn;
     [SerializeField] private float spawnInterval, objectMinX, objectMaxX, objectY;
-    //[SerializeField] private Sprite[] objectSprites;
+    [SerializeField] private Sprite[] objectSprites;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +18,8 @@ public class SpawnFruit : MonoBehaviour
     {
         GameObject newObject = Instantiate(this.fruitToSpawn);
         newObject.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
-        //Sprite objectSprite = objectSprites[Random.Range(0, this.objectSprites.Length)];
-        //newObject.GetComponent<SpriteRenderer>().sprite = objectSprite;
+        Sprite objectSprite = objectSprites[Random.Range(0, this.objectSprites.Length)];
+        newObject.GetComponent<SpriteRenderer>().sprite = objectSprite;
     }
 
     // Update is called once per frame

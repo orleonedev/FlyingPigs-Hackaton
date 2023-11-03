@@ -12,6 +12,7 @@ public class PigSpawner : MonoBehaviour
     public PigHuntUImanager uiManager;
     [SerializeField] protected Timer timer;
     [SerializeField] protected MovingPig prefab;
+    private float speedModifier = 0.0f;
     [SerializeField] protected float time;
     [SerializeField] protected float yClamp;
     protected float elapsedTime;
@@ -48,8 +49,8 @@ public class PigSpawner : MonoBehaviour
     private void SetDifficultyLevel(){
         time -= 0.1f * (level - 1);
         Debug.Log("Time: " + time);
-        prefab.speed += 0.2f * (level - 1);
-        Debug.Log("Speed: " + prefab.speed);
+        speedModifier += 0.2f * (level - 1);
+        Debug.Log("Speed: " + speedModifier);
     }
 
     protected virtual void SpawnObject(){
@@ -57,7 +58,8 @@ public class PigSpawner : MonoBehaviour
         
         Vector2 pos = new Vector2(GetSpawnPosX(), this.transform.position.y + offsetY);
 
-        Instantiate(prefab, pos, Quaternion.identity, this.transform);
+        MovingPig newPig = Instantiate(prefab, pos, Quaternion.identity, this.transform);
+        newPig.speed += speedModifier;
     }
 
     protected float GetSpawnPosX(){

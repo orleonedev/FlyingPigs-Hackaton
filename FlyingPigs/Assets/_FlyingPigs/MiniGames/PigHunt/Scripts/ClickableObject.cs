@@ -7,7 +7,13 @@ public class ClickableObject : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private MovingPig pig;
-    public static Action OnMissShot;
+    [SerializeField] private GameObject audioManagerObject;
+    [SerializeField] private AudioManager audioManager;
+
+    private void Start(){
+        audioManagerObject = GameObject.Find("AudioManager");
+        audioManager = audioManagerObject.GetComponent<AudioManager>();
+    }
 
     private void Update()
     {
@@ -29,10 +35,8 @@ public class ClickableObject : MonoBehaviour
         {
             animator.SetBool("isDead", true); 
             // after this, in the animator moving pig functions for changing directions are called
-        } else {
-            //loses 1 life
-            PigSpawner.lives -= 1;
-            OnMissShot?.Invoke();
-        }
+        } 
+
+        audioManager.PlaySound(audioManager.shootClip);
     }
 }

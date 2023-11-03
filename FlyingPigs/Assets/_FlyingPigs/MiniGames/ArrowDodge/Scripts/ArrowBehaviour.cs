@@ -9,6 +9,7 @@ public class ArrowBehaviour : MonoBehaviour
 {
     [SerializeField] private Transform arrows;
     [SerializeField] private Timer timer;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private ImageShow imageShow;
     public Sprite spriteBigArrow;
     public Sprite spriteEndArrow;
@@ -22,6 +23,7 @@ public class ArrowBehaviour : MonoBehaviour
         Transform[] children = arrows.GetComponentsInChildren<Transform>();
         Destroy(children[UnityEngine.Random.Range(1, children.Count())].gameObject);
         speed = 2;
+        audioManager.PlaySound(audioManager.arrowFire);
     }
 
     void Update()
@@ -48,6 +50,7 @@ public class ArrowBehaviour : MonoBehaviour
                         child.gameObject.GetComponent<SpriteRenderer>().sprite = spriteEndArrow;
                     }
                     speed = 0;
+                    audioManager.PlaySound(audioManager.arrowGroundImpact);
 
                     if (level < 5) {
                     level += 1;

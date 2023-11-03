@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MovingPig : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class MovingPig : MonoBehaviour
     [SerializeField] private float yTopBound;
     [SerializeField] private float yDownBound;
     [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private GameObject audioManagerObject;
+    [SerializeField] private AudioManager audioManager;
+    public static Action OnMissPig;
     private bool isAlive;
     private float angle;
     private Vector3 dir;
@@ -19,6 +23,9 @@ public class MovingPig : MonoBehaviour
         isAlive = true;
         angle = GetSpawnAngle();
         dir = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0);
+        audioManagerObject = GameObject.Find("AudioManager");
+        audioManager = audioManagerObject.GetComponent<AudioManager>();
+        audioManager.PlaySound(audioManager.pigClip);
     }
 
     private void Update()
@@ -29,6 +36,10 @@ public class MovingPig : MonoBehaviour
             || this.transform.position.y < yDownBound || this.transform.position.y > yTopBound)
         {
             Destroy(this.gameObject);
+            if(isAlive){
+                PigSpawner.lives -= 1;
+                OnMissPig?.Invoke();
+            }
         }
     }
 
@@ -42,14 +53,10 @@ public class MovingPig : MonoBehaviour
             {
                 angle = UnityEngine.Random.Range(75.0f, 90.0f);
             }
-            else if (/*this.transform.position.x >= -1.5 &&*/ this.transform.position.x <= -0.5f)
+            else if (this.transform.position.x <= -0.5f)
             {
                 angle = UnityEngine.Random.Range(55.0f, 65.0f);
             }
-            /*else
-            {
-                angle = 45.0f;
-            }*/
 
             sprite.flipX = false;
         }
@@ -59,14 +66,10 @@ public class MovingPig : MonoBehaviour
             {
                 angle = UnityEngine.Random.Range(90.0f, 105.0f);
             }
-            else if (/*this.transform.position.x <= 1.5 &&*/ this.transform.position.x > 0.5f)
+            else if (this.transform.position.x > 0.5f)
             {
                 angle = UnityEngine.Random.Range(115.0f, 125.0f);
             }
-            /*else
-            {
-                angle = 135.0f;
-            }*/
 
             sprite.flipX = true;
         }
