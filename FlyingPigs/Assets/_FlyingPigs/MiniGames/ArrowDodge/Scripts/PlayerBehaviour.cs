@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] private ArrowBehaviour arrows;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private ImageShow imageShow;
     [SerializeField] private Timer timer;
     private int collisionLevel = 0;
@@ -14,6 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
             imageShow.SwitchShow(false);
             arrows.speed = 0;
             collisionLevel = ArrowBehaviour.level;
+            audioManager.PlaySound(audioManager.playerHit);
             Invoke("EndGame", 0.5f);
         }
     }
