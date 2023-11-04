@@ -11,6 +11,7 @@ public class PigScript : MonoBehaviour
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private float force;
     [SerializeField] private float yBound;
+    [SerializeField] private AudioManager audioManager;
     public static int level = 1;
 
     private void Start(){
@@ -24,12 +25,15 @@ public class PigScript : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             
             if(touch.phase == TouchPhase.Began && rigidBody.position.y < yBound){
+                audioManager.PlaySound(audioManager.jumpgClip);
                 Flap();
             }
         }
     }
 
     private void OnCollisionEnter2D(){
+        audioManager.PlaySound(audioManager.woodLogClip);
+
         OnDeath?.Invoke();
 
         Time.timeScale = 0f;

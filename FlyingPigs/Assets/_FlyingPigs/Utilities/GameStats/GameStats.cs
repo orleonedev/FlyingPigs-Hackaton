@@ -142,7 +142,7 @@ public class GameStats : ScriptableObject //, IOnValuesChanged
         this.CurrentHours = 0;
         this.CurrentMinutes = 0;
         this.Day = 1;
-        this.NextPlayTime = 30;
+        this.NextPlayTime = 120;
     }
 
 }

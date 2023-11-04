@@ -17,6 +17,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip pigClip;
     public AudioClip shootClip;
 
+    [Header("Flappy Pig")]
+    public AudioClip jumpgClip;
+    public AudioClip woodLogClip;
+
     [Header("Arrow")]
     public AudioClip arrowFire;
     public AudioClip arrowGroundImpact;
