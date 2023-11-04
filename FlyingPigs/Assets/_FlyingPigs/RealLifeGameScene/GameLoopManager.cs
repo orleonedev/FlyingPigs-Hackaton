@@ -105,7 +105,8 @@ public class GameLoopManager : MonoBehaviour
             {GameStatsEnum.RealMoney, 40},
             {GameStatsEnum.RealHealth, -0.1f}
         };
-        statsManager.updateStatsWith(updates);    
+        statsManager.updateStatsWith(updates);
+        MinigamesList.Instance.PlayedGamesOfTheDay = new List<string>();
         }
 
     public void SetLoopTo(bool state) {
