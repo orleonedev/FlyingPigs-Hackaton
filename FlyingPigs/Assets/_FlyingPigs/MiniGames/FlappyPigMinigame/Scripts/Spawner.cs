@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     protected float elapsedTime;
 
     private void Start(){
-        time = time - (0.2f * (PigScript.level - 1));
+        time = time - (0.1f * (PigScript.level - 1));
     }
 
     // Update is called once per frame
@@ -35,6 +35,6 @@ public class Spawner : MonoBehaviour
     }
 
     private float LevelOffsetYVariation(){
-        return UnityEngine.Random.Range(0, PigScript.level/2);
+        return UnityEngine.Random.Range(1.0f, PigScript.level/2);
     }
 }
