@@ -11,6 +11,7 @@ public class ArrowBehaviour : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private ImageShow imageShow;
+    [SerializeField] private InputManagerArrow inputManagerArrow;
     public Sprite spriteBigArrow;
     public Sprite spriteEndArrow;
     private bool descending = false;
@@ -55,19 +56,24 @@ public class ArrowBehaviour : MonoBehaviour
                     if (level < 5) {
                     level += 1;
                     imageShow.SwitchShow(true);
-                    Invoke("RestartGame", 0.5f);
+                    Invoke("RestartGame", 2f);
                     }
                     
                     else {
                         level = 0;
                         imageShow.SwitchShow(true);
-                        Invoke("EndGame", 0.5f);
+                        Invoke("EndGame", 2f);
                     }
                 }
                 levelEnded = true;
+                inputManagerArrow.canMove = false;
             }
         }
         arrows.transform.position += transform.up * speed * level * Time.deltaTime;
+        
+        if (!timer.GetCounting()) {
+            Invoke("EndGame", 2f);
+        }
     }
 
     public void RestartGame() {

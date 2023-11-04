@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BarBehaviour : MonoBehaviour
@@ -48,6 +49,11 @@ public class BarBehaviour : MonoBehaviour
         if (shouldMove) {
             count += 0.1f * rising * level / 2;
         }
+
+        if (!timer.GetCounting()) {
+            Invoke("EndMinigame", 2f);
+            shouldMove = false;
+        }
     }
 
     public void SetValue(float value, float maxValue) {
@@ -79,9 +85,16 @@ public class BarBehaviour : MonoBehaviour
                 Invoke("ResetForNextLevel", 2f);
             }
             else {
-                //end minigame
+                Invoke("EndMinigame", 2f);
             }
         }
+    }
+
+    public void EndMinigame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        timer.RestartTimer();
+        level = 1;
+        //CHANGE SCENE HERE
     }
 
     public void SplatSound() {
