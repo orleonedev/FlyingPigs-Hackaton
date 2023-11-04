@@ -13,6 +13,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip tickingClip;
     public AudioClip timeUpClip;
 
+    [Header("Loot Ninja")]
+    public AudioClip LootCut;
+
     [Header("Pig Hunt")]
     public AudioClip pigClip;
     public AudioClip shootClip;
