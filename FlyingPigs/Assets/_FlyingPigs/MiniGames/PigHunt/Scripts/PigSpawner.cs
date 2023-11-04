@@ -39,11 +39,11 @@ public class PigSpawner : MonoBehaviour
         if(!isGameOver()){
             if(elapsedTime > time && timer.GetCounting()){
                 SpawnObject();
-                elapsedTime = 0f;
+                elapsedTime = 0.0f;
             } else if(!timer.GetCounting()){
                 StartCoroutine(EndLevelAfterTime(2.0f));
             }
-        } else if (!gameOver) {
+        } else if (!gameOver){
             gameOver = true;
             timer.PauseTimer();
             imageShow.SwitchShow(false);
