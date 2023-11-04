@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Blade : MonoBehaviour
 {
+
+    [SerializeField] private AudioManager audioManager;
+
     private Camera mainCamera;
     private Collider2D bladeCollider;
     private TrailRenderer bladeTrail; 
@@ -55,6 +58,7 @@ public class Blade : MonoBehaviour
         slicing = true;
         bladeCollider.enabled = true;
         bladeTrail.enabled = true;
+        bladeTrail.Clear();
     }
 
     private void StopSlicing() {
@@ -75,5 +79,13 @@ public class Blade : MonoBehaviour
         bladeCollider.enabled = velocity > minSliceVelocity;
 
         transform.position = newPosition;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Fruit"))
+        {
+            audioManager.PlaySound(audioManager.LootCut);
+        }
     }
 }

@@ -11,6 +11,7 @@ public class InputManagerArrow : MonoBehaviour
     public Transform playerTransform;
     public Camera cam;
     [SerializeField] private AudioManager audioManager;
+    public bool canMove = true;
     private float animationTimer = 0f;
     private float animationTime = 2f;
     private bool stepSound = false;
@@ -18,7 +19,7 @@ public class InputManagerArrow : MonoBehaviour
     
     void Update()
     {
-        if (Input.touchCount > 0) {
+        if (Input.touchCount > 0 && canMove) {
             
             Touch touch = Input.GetTouch(0);
 

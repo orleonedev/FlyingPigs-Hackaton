@@ -1636,6 +1636,7 @@ MonoBehaviour:
   playerTransform: {fileID: 4789023595103136689}
   cam: {fileID: 294027719}
   audioManager: {fileID: 1191761964}
+  canMove: 1
 --- !u!114 &1713247343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,6 +1702,7 @@ MonoBehaviour:
   timer: {fileID: 1960440185}
   audioManager: {fileID: 1191761964}
   imageShow: {fileID: 847228862}
+  inputManagerArrow: {fileID: 1713247342}
   spriteBigArrow: {fileID: 21300000, guid: 9968ce87df923434794a510193b95aa7, type: 3}
   spriteEndArrow: {fileID: 21300000, guid: 710f924324bce4d3fb299afa497e9996, type: 3}
   speed: 0
@@ -2179,6 +2181,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1864882561}
     m_Modifications:
+    - target: {fileID: -1727939045106793050, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1191761964}
     - target: {fileID: 513382098853690615, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6911447
@@ -2243,6 +2249,18 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3390852517196308882, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390852517196308882, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390852517196308882, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3615471885008827896, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
       propertyPath: m_Name
       value: Timer
@@ -2250,6 +2268,14 @@ PrefabInstance:
     - target: {fileID: 3615471885008827896, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016806024928107808, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016806024928107808, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
