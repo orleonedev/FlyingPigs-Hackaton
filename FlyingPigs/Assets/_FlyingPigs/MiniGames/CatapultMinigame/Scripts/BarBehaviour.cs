@@ -21,7 +21,7 @@ public class BarBehaviour : MonoBehaviour
     private bool shouldMove = true;
     private bool lastResult = false;
 
-    private int loopNum;
+    private int loopNum = -1;
 
     void Start() {
         imageShow = GetComponentInChildren<ImageShow>();
@@ -36,11 +36,11 @@ public class BarBehaviour : MonoBehaviour
         shouldMove = true;
         imageShow.SwitchShow(lastResult);
         timer.RestartTimer();
+        loopNum = audioManager.PlaySoundLoop(audioManager.catapultLoop);
         //else go to other game scene, minigame ended
     }
     
-    private void Update()
-    {
+    private void Update() {
         SetValue(count, 100);
         if (count >= 100 || count <= 0) {
             rising = -rising;
@@ -51,8 +51,12 @@ public class BarBehaviour : MonoBehaviour
         }
 
         if (!timer.GetCounting()) {
-            Invoke("EndMinigame", 2f);
+            Invoke("EndMinigame", 1f);
             shouldMove = false;
+            if (loopNum != -1) {
+                audioManager.StopSoundLoop(loopNum);
+                loopNum = -1;
+            }
         }
     }
 
@@ -63,7 +67,10 @@ public class BarBehaviour : MonoBehaviour
     }
 
     public void OnPress() {
-        audioManager.StopSoundLoop(loopNum);
+        if (loopNum != -1) {
+            audioManager.StopSoundLoop(loopNum);
+            loopNum = -1;
+        }
         audioManager.PlaySound(audioManager.catapultThrow);
         if (shouldMove) {
             shouldMove = false;
@@ -85,14 +92,14 @@ public class BarBehaviour : MonoBehaviour
                 Invoke("ResetForNextLevel", 2f);
             }
             else {
-                Invoke("EndMinigame", 2f);
+                Invoke("EndMinigame", 1f);
             }
         }
     }
 
     public void EndMinigame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        timer.RestartTimer();
+        //timer.RestartTimer();
         level = 1;
         //CHANGE SCENE HERE
     }

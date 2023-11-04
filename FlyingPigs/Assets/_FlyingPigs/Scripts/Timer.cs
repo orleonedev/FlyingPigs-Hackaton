@@ -8,18 +8,21 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameObject boom;
     [SerializeField] private Slider slider;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private TMP_Text timesupText;
     private float countdown = 10.0f; // Set the initial countdown time in seconds
     private bool isCounting = true;
+    private int audioSourceNumber = -1;
 
     private void Start() {
-        audioManager.PlaySound(audioManager.tickingClip);
+        audioSourceNumber = audioManager.PlaySoundLoop(audioManager.tickingClip);
+        timesupText.enabled = false;
     }
 
     private void Update()
     {
         if (isCounting) {
             countdown -= Time.deltaTime; // Decrease countdown by time passed since the last frame
-            slider.value = countdown/10f;
+            slider.value = countdown / 10f;
 
             if (countdown <= 0.0f) {
                 // Countdown has reached 0, perform your desired action
@@ -27,7 +30,12 @@ public class Timer : MonoBehaviour
                 isCounting = false; // Stop the timer
                 bomb.SetActive(false);
                 boom.SetActive(true);
+                timesupText.enabled = true;
                 audioManager.PlaySound(audioManager.timeUpClip);
+                if (audioSourceNumber != -1) {
+                    audioManager.StopSoundLoop(audioSourceNumber);
+                }
+                audioSourceNumber = -1;
             }
         }
     }
@@ -35,6 +43,10 @@ public class Timer : MonoBehaviour
     public void StopTimer()
     {
         isCounting = false; // Call this function to stop the timer
+        if (audioSourceNumber != -1) {
+            audioManager.StopSoundLoop(audioSourceNumber);
+        }
+        audioSourceNumber = -1;
     }
 
     public void RestartTimer(float time = 10.0f)
@@ -43,6 +55,11 @@ public class Timer : MonoBehaviour
         countdown = time;
         bomb.SetActive(true);
         boom.SetActive(false);
+        timesupText.enabled = false;
+        if (audioSourceNumber != -1) {
+            audioManager.StopSoundLoop(audioSourceNumber);
+        }
+        audioSourceNumber = audioManager.PlaySoundLoop(audioManager.tickingClip);
     }
 
     public bool GetCounting() {

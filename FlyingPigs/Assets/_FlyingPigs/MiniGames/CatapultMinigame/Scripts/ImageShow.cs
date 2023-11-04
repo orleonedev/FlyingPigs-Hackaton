@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class ImageShow : MonoBehaviour {
 
-	public Image success;
-    public Image failure;
+	public TMP_Text success;
+    public TMP_Text failure;
 
 	void Start () {
 		success.enabled = false;
