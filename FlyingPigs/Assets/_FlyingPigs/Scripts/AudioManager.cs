@@ -5,13 +5,21 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private AudioSource[] audioSources;
+    public AudioSource[] audioSources;
 
-    private AudioSource audioSourceLoop;
+    public AudioSource[] audioSourcesLoop;
+
+    [Header("Timer")]
+    public AudioClip tickingClip;
+    public AudioClip timeUpClip;
 
     [Header("Pig Hunt")]
     public AudioClip pigClip;
     public AudioClip shootClip;
+
+    [Header("Flappy Pig")]
+    public AudioClip jumpgClip;
+    public AudioClip woodLogClip;
 
     [Header("Arrow")]
     public AudioClip arrowFire;
@@ -26,10 +34,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip castleDestruction;
 
     void Start() {
+        /*
         audioSources = this.GetComponentsInChildren<AudioSource>();
         audioSourceLoop = this.GetComponentsInChildren<AudioSource>()[audioSources.Length - 1];
         audioSourceLoop.loop = true;
         Array.Resize(ref audioSources, audioSources.Length - 1);
+        */
     }
 
     public void PlaySound(AudioClip clip){
@@ -42,16 +52,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySoundLoop(AudioClip clip){
-        if(!audioSourceLoop.isPlaying){
-            audioSourceLoop.clip = clip;
-            audioSourceLoop.Play();
+    public int PlaySoundLoop(AudioClip clip){
+        for (int i = 0; i < audioSourcesLoop.Length; i++) {
+            if(!audioSourcesLoop[i].isPlaying){
+                audioSourcesLoop[i].clip = clip;
+                audioSourcesLoop[i].Play();
+                return i;
+            }
         }
+        return -1;
     }
 
-    public void StopSoundLoop(){
-        if(audioSourceLoop.isPlaying){
-            audioSourceLoop.Stop();
+    public void StopSoundLoop(int i){
+        if(audioSourcesLoop[i].isPlaying) {
+            audioSourcesLoop[i].Stop();
         }
     }
 }

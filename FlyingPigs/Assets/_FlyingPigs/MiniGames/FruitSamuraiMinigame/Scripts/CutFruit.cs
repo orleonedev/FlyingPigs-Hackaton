@@ -27,13 +27,5 @@ public class CutFruit : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    /*
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Cut")
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    */
+
 }

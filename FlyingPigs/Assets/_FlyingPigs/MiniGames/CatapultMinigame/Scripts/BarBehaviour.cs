@@ -20,9 +20,11 @@ public class BarBehaviour : MonoBehaviour
     private bool shouldMove = true;
     private bool lastResult = false;
 
+    private int loopNum;
+
     void Start() {
         imageShow = GetComponentInChildren<ImageShow>();
-        audioManager.PlaySoundLoop(audioManager.catapultLoop);
+        loopNum = audioManager.PlaySoundLoop(audioManager.catapultLoop);
     }
 
     public void ResetForNextLevel() {
@@ -55,7 +57,7 @@ public class BarBehaviour : MonoBehaviour
     }
 
     public void OnPress() {
-        audioManager.StopSoundLoop();
+        audioManager.StopSoundLoop(loopNum);
         audioManager.PlaySound(audioManager.catapultThrow);
         if (shouldMove) {
             shouldMove = false;

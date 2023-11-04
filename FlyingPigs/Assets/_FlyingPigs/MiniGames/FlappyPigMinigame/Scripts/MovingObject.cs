@@ -10,10 +10,14 @@ public class MovingObject : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        this.transform.position -= Vector3.right * speed * Time.deltaTime;
+        this.transform.position -= Vector3.right * GetDifficultySpeed() * Time.deltaTime;
 
         if(this.transform.position.x < xBound){
             Destroy(this.gameObject);
         }
+    }
+
+    private float GetDifficultySpeed(){
+        return (speed + (PigScript.level - 1) * 0.25f);
     }
 }
