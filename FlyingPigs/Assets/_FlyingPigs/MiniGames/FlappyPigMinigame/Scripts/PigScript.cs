@@ -12,11 +12,8 @@ public class PigScript : MonoBehaviour
     [SerializeField] private float force;
     [SerializeField] private float yBound;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private ImageShow imageShow;
     public static int level = 1;
-
-    private void Start(){
-        Time.timeScale = 1f;
-    }
 
     // Update is called once per frame
     private void Update()
@@ -25,23 +22,25 @@ public class PigScript : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             
             if(touch.phase == TouchPhase.Began && rigidBody.position.y < yBound){
-                audioManager.PlaySound(audioManager.jumpgClip);
-                Flap();
+                if (Time.timeScale != 0f) {
+                    audioManager.PlaySound(audioManager.jumpgClip);
+                    Flap();
+                }
             }
         }
     }
 
-    private void OnCollisionEnter2D(){
+    private void OnCollisionEnter2D() {
         audioManager.PlaySound(audioManager.woodLogClip);
-
-        OnDeath?.Invoke();
-
+        imageShow.SwitchShow(false);
+        StartCoroutine(PlayerDeath(2f));
         Time.timeScale = 0f;
     }
 
     private void OnTriggerEnter2D(){
         if(!timer.GetCounting()){
             StartCoroutine(EndLevelAfterTime(2.0f));
+            Time.timeScale = 0f;
         }
     }
 
@@ -54,7 +53,7 @@ public class PigScript : MonoBehaviour
 
     public static void LevelUp() => level++;
 
-    private void OnEndLevel(){
+    private void OnEndLevel() {
         if(PigScript.level < 5){
             PigScript.LevelUp();
         } else {
@@ -65,8 +64,14 @@ public class PigScript : MonoBehaviour
         uiManager.RestartGame();
     }
 
+    private IEnumerator PlayerDeath(float time){
+        yield return new WaitForSecondsRealtime(time);
+
+        OnDeath?.Invoke();
+    }
+
     private IEnumerator EndLevelAfterTime(float time){
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSecondsRealtime(time);
 
         OnEndLevel();
     }

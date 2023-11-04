@@ -94,6 +94,7 @@ public class BarBehaviour : MonoBehaviour
             else {
                 Invoke("EndMinigame", 1f);
             }
+            timer.PauseTimer();
         }
     }
 
