@@ -85,6 +85,8 @@ public class Blade : MonoBehaviour
     {
         if (collision.CompareTag("Fruit"))
         {
+            MoveFruit m = collision.GetComponent<MoveFruit>();
+            m.hasBeenCut = true;
             audioManager.PlaySound(audioManager.LootCut);
         }
     }

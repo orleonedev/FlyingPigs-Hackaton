@@ -7,23 +7,22 @@ public class MoveFruit : MonoBehaviour
 
     [SerializeField] private float minXSpeed, maxXSpeed, minYSpeed, maxYSpeed;
     [SerializeField] private float destroyTime;
+    private SpawnFruit spawnFruit;
+    public bool hasBeenCut = false;
 
-    // Start is called before the first frame update
     void Start()
     {
+        spawnFruit = FindFirstObjectByType<SpawnFruit>();
         this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(minXSpeed, maxXSpeed), Random.Range(minYSpeed, maxYSpeed));
         Destroy(this.gameObject, this.destroyTime);
     }
 
     void OnBecameInvisible()
     {
-        Debug.Log("HAI PERSO");
+        if(!hasBeenCut) {
+            spawnFruit.GameOver();
+        }
         Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
 }
