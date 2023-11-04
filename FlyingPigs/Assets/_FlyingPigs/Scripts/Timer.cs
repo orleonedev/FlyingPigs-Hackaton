@@ -9,6 +9,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private TMP_Text timesupText;
+    [SerializeField] private ImageShow imageShow;
+    [SerializeField] private bool isTimeBasedMinigame = false;
     private float countdown = 10.0f; // Set the initial countdown time in seconds
     private bool isCounting = true;
     private int audioSourceNumber = -1;
@@ -30,7 +32,12 @@ public class Timer : MonoBehaviour
                 isCounting = false; // Stop the timer
                 bomb.SetActive(false);
                 boom.SetActive(true);
-                timesupText.enabled = true;
+                if(isTimeBasedMinigame) {
+                    imageShow.SwitchShow(true);
+                }
+                else {
+                    timesupText.enabled = true;
+                }
                 audioManager.PlaySound(audioManager.timeUpClip);
                 if (audioSourceNumber != -1) {
                     audioManager.StopSoundLoop(audioSourceNumber);
@@ -49,13 +56,22 @@ public class Timer : MonoBehaviour
         audioSourceNumber = -1;
     }
 
+    public void PauseTimer() {
+        isCounting = !isCounting;
+    }
+
     public void RestartTimer(float time = 10.0f)
     {
         isCounting = true; // Call this function to restart the timer
         countdown = time;
         bomb.SetActive(true);
         boom.SetActive(false);
-        timesupText.enabled = false;
+        if(isTimeBasedMinigame) {
+                    imageShow.SwitchShow(true);
+                }
+                else {
+                    timesupText.enabled = true;
+                }
         if (audioSourceNumber != -1) {
             audioManager.StopSoundLoop(audioSourceNumber);
         }

@@ -15,13 +15,15 @@ public class UIManager : MonoBehaviour
     }
 
     public void RestartGame() {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        timer.RestartTimer();
+        //timer.RestartTimer();
     }
 
     private void OnGameOver(){
         PigScript.SetLevel(1);
-        playButton.SetActive(true);
+        Time.timeScale = 1f;
+        RestartGame(); //CHANGE WITH MAIN SCREEN
     }
 
 }

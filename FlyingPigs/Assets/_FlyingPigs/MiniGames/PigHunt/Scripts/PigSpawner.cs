@@ -7,18 +7,20 @@ using System;
 public class PigSpawner : MonoBehaviour
 {
     public static int level = 1;
-    public static int lives = 2;
+    public static int lives = 1;
     public static Action OnGameOver;
     public PigHuntUImanager uiManager;
     [SerializeField] protected Timer timer;
     [SerializeField] protected MovingPig prefab;
+    [SerializeField] protected ImageShow imageShow;
     private float speedModifier = 0.0f;
     [SerializeField] protected float time;
     [SerializeField] protected float yClamp;
     protected float elapsedTime;
     protected bool spawnDirection; // when true spawn from left, when false from right
+    private bool gameOver = false;
 
-    private void Start(){
+    private void Start() {
         SetDifficultyLevel();
 
         var dir = UnityEngine.Random.Range(0.0f, 1.0f);
@@ -39,10 +41,13 @@ public class PigSpawner : MonoBehaviour
                 SpawnObject();
                 elapsedTime = 0f;
             } else if(!timer.GetCounting()){
-                StartCoroutine(EndLevelAfterTime(1.0f));
+                StartCoroutine(EndLevelAfterTime(2.0f));
             }
-        } else {
-            OnGameOver?.Invoke();
+        } else if (!gameOver) {
+            gameOver = true;
+            timer.PauseTimer();
+            imageShow.SwitchShow(false);
+            Invoke("GameOver", 2f);
         }
     }
 
@@ -76,7 +81,7 @@ public class PigSpawner : MonoBehaviour
 
     private void OnEndLevel(){
         level += 1;
-        lives = 2;
+        lives = 1;
         uiManager.RestartGame();
     }
 
@@ -92,5 +97,9 @@ public class PigSpawner : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         OnEndLevel();
+    }
+
+    private void GameOver() {
+        OnGameOver?.Invoke();
     }
 }
