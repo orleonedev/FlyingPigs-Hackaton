@@ -64,8 +64,11 @@ MonoBehaviour:
   - {fileID: 412474822273152035}
   tickingClip: {fileID: 8300000, guid: 78c1a3b442979e442bdc086f72ed5bdb, type: 3}
   timeUpClip: {fileID: 8300000, guid: cd4f94ba313a4fc4dbd538d92352edfb, type: 3}
+  LootCut: {fileID: 0}
   pigClip: {fileID: 8300000, guid: 3651784c6765f6140bdfe150c03f5294, type: 3}
   shootClip: {fileID: 8300000, guid: 17b2ecb5ee9b3c449b53b40364f522b2, type: 3}
+  jumpgClip: {fileID: 0}
+  woodLogClip: {fileID: 0}
   arrowFire: {fileID: 8300000, guid: 2b2c14b97d1a1f84d9263f663c81c24a, type: 3}
   arrowGroundImpact: {fileID: 8300000, guid: 6f701ea4c667dc24b98739e8b2178e20, type: 3}
   playerHit: {fileID: 8300000, guid: 1b0c7778582d8614f8e355d62fe08573, type: 3}
@@ -74,6 +77,7 @@ MonoBehaviour:
   catapultLoop: {fileID: 8300000, guid: 7bae8ad8764948d4cb7d61ab98d9bab6, type: 3}
   playerWallImpact: {fileID: 8300000, guid: cbd19ce996d55e346a0e0f7f0aacf517, type: 3}
   castleDestruction: {fileID: 8300000, guid: f1fb39e116bb6ca4e9abb207cfbf7232, type: 3}
+  mainTheme: {fileID: 8300000, guid: dc77856c122b14f51bf77383f10ba42a, type: 3}
 --- !u!1 &592493680073624149
 GameObject:
   m_ObjectHideFlags: 0
