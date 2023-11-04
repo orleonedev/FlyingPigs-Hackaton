@@ -15,9 +15,15 @@ public class MoveFruit : MonoBehaviour
         Destroy(this.gameObject, this.destroyTime);
     }
 
+    void OnBecameInvisible()
+    {
+        Debug.Log("HAI PERSO");
+        Destroy(gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
