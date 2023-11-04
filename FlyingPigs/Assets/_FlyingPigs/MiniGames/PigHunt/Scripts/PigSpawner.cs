@@ -39,7 +39,7 @@ public class PigSpawner : MonoBehaviour
                 SpawnObject();
                 elapsedTime = 0f;
             } else if(!timer.GetCounting()){
-                StartCoroutine(EndLevelAfterTime(1.0f));
+                StartCoroutine(EndLevelAfterTime(2.0f));
             }
         } else {
             OnGameOver?.Invoke();
