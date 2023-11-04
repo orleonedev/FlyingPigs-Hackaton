@@ -36,6 +36,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip playerWallImpact;
     public AudioClip castleDestruction;
 
+    [Header("MainGame")]
+    public AudioClip mainTheme;
+
     void Start() {
         /*
         audioSources = this.GetComponentsInChildren<AudioSource>();
