@@ -6,11 +6,14 @@ public class MovingObject : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float xBound;
+    [SerializeField] public bool shouldMove = true;
 
     // Update is called once per frame
     private void Update()
     {
-        this.transform.position -= Vector3.right * GetDifficultySpeed() * Time.deltaTime;
+        if(shouldMove) {
+            this.transform.position -= Vector3.right * GetDifficultySpeed() * Time.deltaTime;    
+        }
 
         if(this.transform.position.x < xBound){
             Destroy(this.gameObject);
