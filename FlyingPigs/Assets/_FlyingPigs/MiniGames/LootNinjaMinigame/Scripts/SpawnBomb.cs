@@ -22,9 +22,4 @@ public class SpawnBomb : MonoBehaviour
         //newObject.GetComponent<SpriteRenderer>().sprite = objectSprite;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
