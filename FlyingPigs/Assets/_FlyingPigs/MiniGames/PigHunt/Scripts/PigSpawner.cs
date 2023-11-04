@@ -39,7 +39,7 @@ public class PigSpawner : MonoBehaviour
                 SpawnObject();
                 elapsedTime = 0f;
             } else if(!timer.GetCounting()){
-                OnEndLevel();
+                StartCoroutine(EndLevelAfterTime(1.0f));
             }
         } else {
             OnGameOver?.Invoke();
@@ -48,9 +48,7 @@ public class PigSpawner : MonoBehaviour
 
     private void SetDifficultyLevel(){
         time -= 0.1f * (level - 1);
-        Debug.Log("Time: " + time);
         speedModifier += 0.2f * (level - 1);
-        Debug.Log("Speed: " + speedModifier);
     }
 
     protected virtual void SpawnObject(){
@@ -88,5 +86,11 @@ public class PigSpawner : MonoBehaviour
         } else {
             return false;
         }
+    }
+
+    private IEnumerator EndLevelAfterTime(float time){
+        yield return new WaitForSeconds(time);
+
+        OnEndLevel();
     }
 }
