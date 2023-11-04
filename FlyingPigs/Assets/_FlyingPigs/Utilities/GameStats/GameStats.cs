@@ -6,9 +6,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="GameStats", menuName ="GameStatsScriptable")]
-public class GameStats : ScriptableObject //, IOnValuesChanged
+public class GameStats : SingletonScriptableObject<GameStats>
 {
-    //public event System.Action OnValuesChanged;
     public delegate void OnValuesChangedDelegate();
     public OnValuesChangedDelegate OnValuesChanged;
 
@@ -37,20 +36,20 @@ public class GameStats : ScriptableObject //, IOnValuesChanged
         }
     }
 
-    [Range(0f, 999f)]
-    public float _realMoney = 120f;
+    [Range(0f, 9999f)]
+    public float _realMoney = 1200f;
     public float RealMoney{
         get {
             return _realMoney;
         }
         set {
-            _realMoney = Math.Clamp(value,0f,999f);
+            _realMoney = Math.Clamp(value,0f,9999f);
             OnValuesChanged?.Invoke();
         }
     }
 
     [Range(1,10)]
-    public uint _moneyMultiplier = 2;
+    public uint _moneyMultiplier = 1;
     public uint MoneyMultiplier {
         get {
             return _moneyMultiplier;
@@ -134,15 +133,15 @@ public class GameStats : ScriptableObject //, IOnValuesChanged
 
     public void OnEnable() {
         this.RealHealth = 0.6f;
-        this.GameHealth = 0.3f;
-        this.RealMoney = 120f;
-        this.MoneyMultiplier = 2;
+        this.GameHealth = 0.6f;
+        this.RealMoney = 1200f;
+        this.MoneyMultiplier = 1;
         this.GameCurrency = 300f;
         this.CurrencyMultiplier = 1;
         this.CurrentHours = 0;
         this.CurrentMinutes = 0;
         this.Day = 1;
-        this.NextPlayTime = 120;
+        this.NextPlayTime = 240;
     }
 
 }

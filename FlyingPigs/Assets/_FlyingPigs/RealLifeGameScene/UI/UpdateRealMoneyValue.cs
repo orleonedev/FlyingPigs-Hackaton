@@ -15,8 +15,8 @@ public class UpdateRealMoneyValue : DisplayScriptableObjectValues<GameStats>
         this.UpdateUI();
     }
     override protected void UpdateUI() {
-        float money = myScriptableObject.RealMoney/100f;
-        this.realMoneyText.text = money.ToString()+"K"; //Moltiplicatore
+        float money = myScriptableObject.RealMoney;
+        this.realMoneyText.text = money.ToString();
     }
     // Update is called once per frame
     void Update()
