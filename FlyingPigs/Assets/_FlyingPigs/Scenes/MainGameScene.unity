@@ -335,7 +335,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 116.35
+  m_fontSize: 116.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1564,6 +1564,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4a64811c8034994945557ca1ad65ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &703850422
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 575495412810780741, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758358973348696186, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: LootCut
+      value: 
+      objectReference: {fileID: 8300000, guid: 845e7ca66a3d7334092c8c0f575bc7af, type: 3}
+    - target: {fileID: 4758358973348696186, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: jumpgClip
+      value: 
+      objectReference: {fileID: 8300000, guid: af0ed163b76d8ed4f96be359d943b0b0, type: 3}
+    - target: {fileID: 4758358973348696186, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: woodLogClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d1d1e8d82f8b624ba6eb758b7353e1e, type: 3}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+--- !u!114 &703850423 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4758358973348696186, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+  m_PrefabInstance: {fileID: 703850422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f408f607369674ea9646838f40c575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &793694728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2316,6 +2396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3ac29016125ff428470719127570d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 703850423}
   gameView: {fileID: 1411234541}
   enemy: {fileID: 1396624240}
   knightAnimator: {fileID: 889037956}
@@ -3485,7 +3566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1442730512
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3746,7 +3827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1465730378
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5455,19 +5536,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1794262382741092636, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1794262382741092636, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1794262382741092636, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.8619166
       objectReference: {fileID: 0}
     - target: {fileID: 3825985478564503791, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 31.21
       objectReference: {fileID: 0}
     - target: {fileID: 4201625240805699567, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_Pivot.x
@@ -5551,15 +5632,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5899267116759773262, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5899267116759773262, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5899267116759773262, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5856,6 +5937,7 @@ SceneRoots:
   - {fileID: 971297726}
   - {fileID: 1889186500}
   - {fileID: 349301247}
+  - {fileID: 703850422}
   - {fileID: 113055092}
   - {fileID: 1194523967}
   - {fileID: 1535827387}
