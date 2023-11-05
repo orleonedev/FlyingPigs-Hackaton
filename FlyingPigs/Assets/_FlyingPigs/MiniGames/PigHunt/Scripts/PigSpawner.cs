@@ -45,7 +45,7 @@ public class PigSpawner : MonoBehaviour
                     elapsedTime = 0.0f;
                 } else if(!timer.GetCounting()){
                     gameOver = true;
-                    timerElapsedTime += timer.GetTime();
+                    timerElapsedTime += 10 - timer.GetTime();
                     if(level >= 5) {
                         audioManager.PlaySound(audioManager.endMinigameSucc);
                     }
@@ -56,7 +56,7 @@ public class PigSpawner : MonoBehaviour
             gameOver = true;
             timer.PauseTimer();
             imageShow.SwitchShow(false);
-            timerElapsedTime += timer.GetTime();
+            timerElapsedTime += 10 - timer.GetTime();
             audioManager.PlaySound(audioManager.endMinigameFail);
             Invoke("GameOver", 2f);
         }

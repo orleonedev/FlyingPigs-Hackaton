@@ -25,12 +25,12 @@ public class SpawnFruit : MonoBehaviour
         if(!timer.GetCounting() && !levelEnd){
             level ++;
             if (level <= 5) {
-                timeElapsed += timer.GetTime();
+                timeElapsed += 10 - timer.GetTime();
                 StartCoroutine(RestartLevelAfterTime(2.0f));
             }
             else {
                 audioManager.PlaySound(audioManager.endMinigameSucc);
-                timeElapsed += timer.GetTime();
+                timeElapsed += 10 - timer.GetTime();
                 StartCoroutine(EndLevelAfterTime(2.0f));
             }
             levelEnd = true;
@@ -48,7 +48,7 @@ public class SpawnFruit : MonoBehaviour
 
     public void GameOver() {
         audioManager.PlaySound(audioManager.endMinigameFail);
-        timeElapsed += timer.GetTime();
+        timeElapsed += 10 - timer.GetTime();
         CancelInvoke();
         imageShow.SwitchShow(false);
         Time.timeScale = 0f;

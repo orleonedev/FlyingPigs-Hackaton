@@ -56,13 +56,13 @@ public class ArrowBehaviour : MonoBehaviour
                     level += 1;
                     if (level <= 5) {
                     imageShow.SwitchShow(true);
-                    timeElapsed += timer.GetTime();
+                    timeElapsed += 10 - timer.GetTime();
                     timer.PauseTimer();
                     Invoke("RestartGame", 2f);
                     }
                     else {
                         imageShow.SwitchShow(true);
-                        timeElapsed += timer.GetTime();
+                        timeElapsed += 10 - timer.GetTime();
                         timer.PauseTimer();
                         Invoke("EndGame", 2f);
                         audioManager.PlaySound(audioManager.endMinigameSucc);
@@ -75,7 +75,7 @@ public class ArrowBehaviour : MonoBehaviour
         arrows.transform.position += transform.up * speed * level * Time.deltaTime;
         
         if (!timer.GetCounting()) {
-            timeElapsed += timer.GetTime();
+            timeElapsed += 10 - timer.GetTime();
             Invoke("EndGame", 2f);
         }
     }
@@ -88,10 +88,6 @@ public class ArrowBehaviour : MonoBehaviour
         if (level - 1 != 5) {
             imageShow.SwitchShow(false);
         }
-        
-        //elapsed time con tempo (+)
-        //game health +0.02 per livello superato
-        //gemme +3 per livello superato
 
         SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
             {GameStatsEnum.TimeElapsed, timeElapsed},
