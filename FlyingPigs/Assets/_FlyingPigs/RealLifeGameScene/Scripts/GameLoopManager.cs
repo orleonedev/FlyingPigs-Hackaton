@@ -34,6 +34,8 @@ public class GameLoopManager : MonoBehaviour
         statsManager.OnDepleatedStat += OnDepleatedStat;
         if (statsManager.gameStats.TimeElapsed == 0) {
             PrepareForNextDay();
+        } else {
+            statsManager.gameStats.OnValuesChanged?.Invoke();
         }
         SetLoopTo(true);
         Debug.Log("LOOP START");

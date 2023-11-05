@@ -108,14 +108,14 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
-    [Range(1,30)]
-    public uint _day = 1;
+    [Range(0,30)]
+    public uint _day = 0;
     public uint Day {
         get {
             return _day;
         }
         set {
-            _day = Math.Clamp(value,1,30);
+            _day = Math.Clamp(value,0,30);
             OnValuesChanged?.Invoke();
         }
     }
