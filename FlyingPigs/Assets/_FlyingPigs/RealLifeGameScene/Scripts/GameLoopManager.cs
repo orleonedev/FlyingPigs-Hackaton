@@ -111,6 +111,7 @@ public class GameLoopManager : MonoBehaviour
         };
         statsManager.updateStatsWith(updates);
         MinigamesList.Instance.PlayedGamesOfTheDay = new List<string>();
+        statsManager.gameStats.ModifierPlayTime = 0;
         }
 
     public void SetLoopTo(bool state) {

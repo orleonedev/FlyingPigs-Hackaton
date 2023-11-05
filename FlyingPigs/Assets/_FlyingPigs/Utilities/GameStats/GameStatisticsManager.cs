@@ -60,10 +60,15 @@ public class GameStatisticsManager
 
                     }
                 break;
+
                 case GameStatsEnum.NextPlayTime:
                     gameStats.NextPlayTime += (uint)stat.Value;
                 break;
 
+                case GameStatsEnum.ModifierPlayTime:
+                    gameStats.ModifierPlayTime += (int)stat.Value;
+                break;
+                
                 case GameStatsEnum.TimeElapsed:
                     gameStats.TimeElapsed += stat.Value;
                 break;
