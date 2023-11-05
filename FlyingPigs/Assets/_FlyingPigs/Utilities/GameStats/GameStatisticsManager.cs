@@ -68,9 +68,23 @@ public class GameStatisticsManager
                 case GameStatsEnum.ModifierPlayTime:
                     gameStats.ModifierPlayTime += (int)stat.Value;
                 break;
-                
+
                 case GameStatsEnum.TimeElapsed:
                     gameStats.TimeElapsed += stat.Value;
+                break;
+
+                case GameStatsEnum.ActualEmployer:
+                    switch ((int)stat.Value) {
+                        case 0:
+                            gameStats.Employer = EmployerKind.John;
+                        break;
+                        case 1:
+                            gameStats.Employer = EmployerKind.Mark;
+                        break;
+                        case 2:
+                            gameStats.Employer = EmployerKind.Bill;
+                        break;
+                    }
                 break;
             }
         }
