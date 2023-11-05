@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: GameStats
   m_EditorClassIdentifier: 
   _realHealth: 0.5
-  _gameHealth: 0.10000001
-  _realMoney: 0
-  _moneyMultiplier: 2
-  _gameCurrency: 0
+  _gameHealth: 0.6
+  _realMoney: 1240
+  _moneyMultiplier: 1
+  _gameCurrency: 315
   _currencyMultiplier: 1
   _currentHours: 22
   _currentMinutes: 46
-  _day: 24
-  _nextPlayTime: 120
+  _day: 1
+  _nextPlayTime: 210
+  _modifierPlayTime: 0
+  _timeElapsed: 156.71243
+  _currentDayLenght: 210
+  _employer: 0

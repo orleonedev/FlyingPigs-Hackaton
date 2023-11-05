@@ -14,7 +14,10 @@ public class FillRealHealthValue : DisplayScriptableObjectValues<GameStats>
         this.UpdateUI();
     }
     override protected void UpdateUI() {
-        this.realHealthImage.fillAmount = myScriptableObject.RealHealth;
+        if(realHealthImage != null) {
+            this.realHealthImage.fillAmount = myScriptableObject.RealHealth;
+        }
+        
     }
     // Update is called once per frame
     void Update()

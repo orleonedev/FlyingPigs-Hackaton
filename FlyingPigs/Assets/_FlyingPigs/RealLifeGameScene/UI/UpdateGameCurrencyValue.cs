@@ -15,8 +15,11 @@ public class UpdateGameCurrencyValue : DisplayScriptableObjectValues<GameStats>
         this.UpdateUI();
     }
     override protected void UpdateUI() {
-        float money = myScriptableObject.GameCurrency;
-        this.currencyText.text = money.ToString(); //Moltiplicatore
+        if(currencyText != null) {
+            float money = myScriptableObject.GameCurrency;
+            this.currencyText.text = money.ToString(); //Moltiplicatore
+        }
+        
     }
     // Update is called once per frame
     void Update()

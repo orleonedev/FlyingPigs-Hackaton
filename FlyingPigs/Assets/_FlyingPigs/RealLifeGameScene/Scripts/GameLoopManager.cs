@@ -20,8 +20,7 @@ public class GameLoopManager : MonoBehaviour
     private bool alive = true;
     private bool eventTriggered = true;
 
-    private bool tickClock = true;
-    private float dayLength; 
+    private bool tickClock = true; 
 
     private GameEventTypes eventToFire;
 
@@ -32,8 +31,13 @@ public class GameLoopManager : MonoBehaviour
     void Start()
     {
         statsManager.OnDepleatedStat += OnDepleatedStat;
+        Debug.Log("Time Elapsed: "+statsManager.gameStats.TimeElapsed);
         if (statsManager.gameStats.TimeElapsed == 0) {
+            Debug.Log("PREPARE FOR NEXT DAY");
             PrepareForNextDay();
+        } else {
+            Debug.Log("UPDATE UI");
+            statsManager.gameStats.OnValuesChanged?.Invoke();
         }
         SetLoopTo(true);
         Debug.Log("LOOP START");
@@ -55,7 +59,7 @@ public class GameLoopManager : MonoBehaviour
                 if((int)statsManager.gameStats.TimeElapsed % 2 == 1 && tickClock) {
                     tickClock = false;
                 }
-                if (statsManager.gameStats.TimeElapsed >= dayLength && loopEnabled) {
+                if (statsManager.gameStats.TimeElapsed >= statsManager.gameStats.CurrentDayLenght && loopEnabled) {
                     Debug.Log("STOP DAY");
                     CloseAndRestart();
                     return;
@@ -67,7 +71,7 @@ public class GameLoopManager : MonoBehaviour
                 if (((int)statsManager.gameStats.TimeElapsed) % 30 == 0 && !eventTriggered) {
                     eventTriggered = true;
                     Debug.Log("SEND EVENT");
-                    if ((int)statsManager.gameStats.TimeElapsed == (int)dayLength -30) {
+                    if ((int)statsManager.gameStats.TimeElapsed == (int)statsManager.gameStats.CurrentDayLenght -30) {
                         //fire both events
                         OnMinigameEvent?.Invoke();
                         OnChatEvent?.Invoke();
@@ -96,10 +100,10 @@ public class GameLoopManager : MonoBehaviour
 
     public void PrepareForNextDay() {
         
-        dayLength = statsManager.gameStats.NextPlayTime + statsManager.gameStats.ModifierPlayTime;
-        float hoursDifference = dayLength/60f;
+        statsManager.gameStats.CurrentDayLenght = statsManager.gameStats.NextPlayTime + statsManager.gameStats.ModifierPlayTime;
+        float hoursDifference = statsManager.gameStats.CurrentDayLenght/60f;
         uint newCurrentHours = (uint)(23.5f-hoursDifference);
-        uint newCurrentMinutes = (uint)Math.Floor(dayLength%60);
+        uint newCurrentMinutes = (uint)Math.Floor(statsManager.gameStats.CurrentDayLenght%60);
         statsManager.SetClockTo(newCurrentHours,newCurrentMinutes);
         statsManager.SetNextDay();
         statsManager.gameStats.TimeElapsed = 0f;
