@@ -131,6 +131,17 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
+    [Range(-300,300)]
+    public int _modifierPlayTime = 0;
+    public int ModifierPlayTime {
+        get {
+            return _modifierPlayTime;
+        }
+        set {
+            _modifierPlayTime = Math.Clamp(value, -300, 300 );
+        }
+    }
+
     [Range(0,300)]
     public float _timeElapsed = 0f;
     public float TimeElapsed {
@@ -139,6 +150,16 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
         set {
             _timeElapsed = Math.Clamp(value, 0f, 300f );
+        }
+    }
+
+    public EmployerKind _employer = EmployerKind.John;
+    public EmployerKind Employer {
+        get {
+            return _employer;
+        }
+        set {
+            _employer = value;
         }
     }
 
@@ -153,7 +174,9 @@ public class GameStats : SingletonScriptableObject<GameStats>
         this.CurrentMinutes = 0;
         this.Day = 1;
         this.NextPlayTime = 240;
+        this.ModifierPlayTime = 0;
         this.TimeElapsed = 0f;
+        this.Employer = EmployerKind.John;
     }
 
 }
