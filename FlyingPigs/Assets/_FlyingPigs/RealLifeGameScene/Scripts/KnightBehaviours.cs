@@ -12,17 +12,14 @@ public class KnightBehaviour : MonoBehaviour
     [SerializeField] private Animator knightAnimator;
     [SerializeField] private TMP_Text expLabel;
     [SerializeField] private Image expBarFill;
-    [SerializeField] private float expToLevelUp; //experience to level up
-    [SerializeField] private float expLimitProgress; // experience max progress
     [SerializeField] protected float time;
     protected float elapsedTime;
-    protected int knightLevel;
     protected int enemyLives;
     protected Animator enemyAnimator;
 
     private void Start(){
-        knightLevel = 1;
-        expLabel.text = "Lvl " + knightLevel.ToString();
+        expBarFill.fillAmount = FakeGameManager.Instance.expBarFill;
+        expLabel.text = "Lvl " + FakeGameManager.Instance.knightLevel.ToString();
         enemyAnimator = enemy.GetComponent<Animator>();
         SpawnEnemy();
     }
@@ -85,17 +82,19 @@ public class KnightBehaviour : MonoBehaviour
 
         if(expBarFill.fillAmount + fillAmount >= 1){
             expBarFill.fillAmount = (expBarFill.fillAmount + fillAmount)%1;
-            knightLevel++;
-            expLabel.text = "Lvl " + knightLevel.ToString();
-            expToLevelUp *= expLimitProgress;
+            FakeGameManager.Instance.knightLevel++;
+            expLabel.text = "Lvl " + FakeGameManager.Instance.knightLevel.ToString();
+            FakeGameManager.Instance.expToLevelUp *= FakeGameManager.Instance.expLimitProgress;
             audioManager.PlaySound(audioManager.levelUp);
         } else {
             expBarFill.fillAmount += fillAmount;
         }
+
+        FakeGameManager.Instance.expBarFill = expBarFill.fillAmount;
     }
 
     private float GetFillAmount(float expFromEnemy){
-        return ((1*expFromEnemy)/expToLevelUp);
+        return ((1*expFromEnemy)/FakeGameManager.Instance.expToLevelUp);
     }
 
     public void PlayAttackSound(){
