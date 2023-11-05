@@ -49,7 +49,8 @@ public class BarBehaviour : MonoBehaviour
 
         if (!timer.GetCounting() && !gameOver) {
             gameOver = true;
-            timeElapsed += timer.GetTime();
+            timeElapsed += 10 - timer.GetTime();
+            Debug.Log(timeElapsed);
             timer.PauseTimer();
             Invoke("EndMinigame", 2f);
             shouldMove = false;
@@ -93,7 +94,8 @@ public class BarBehaviour : MonoBehaviour
             else {
                 Invoke("EndMinigame", 2f);
             }
-            timeElapsed += timer.GetTime();
+            timeElapsed += 10 - timer.GetTime();
+            Debug.Log(timeElapsed);
             timer.PauseTimer();
         }
     }

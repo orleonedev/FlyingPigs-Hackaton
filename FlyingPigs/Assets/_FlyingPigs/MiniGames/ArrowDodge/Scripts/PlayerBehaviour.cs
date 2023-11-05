@@ -19,7 +19,7 @@ public class PlayerBehaviour : MonoBehaviour
             audioManager.PlaySound(audioManager.playerHit);
             audioManager.PlaySound(audioManager.endMinigameFail);
             inputManagerArrow.canMove = false;
-            ArrowBehaviour.timeElapsed += timer.GetTime();
+            ArrowBehaviour.timeElapsed += 10 - timer.GetTime();
             timer.PauseTimer();
             Invoke("EndGame", 2f);
         }

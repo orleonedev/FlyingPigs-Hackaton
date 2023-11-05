@@ -31,11 +31,11 @@ public class PigScript : MonoBehaviour
         }
 
         if(!timer.GetCounting()){
-            timeElapsed += timer.GetTime();
+            timeElapsed += 10 - timer.GetTime();
             if (level >= 5) {
                 audioManager.PlaySound(audioManager.endMinigameSucc);
             }
-            timeElapsed += timer.GetTime();
+            timeElapsed += 10 - timer.GetTime();
             StartCoroutine(EndLevelAfterTime(2.0f));
             Time.timeScale = 0f;
         }
@@ -47,7 +47,7 @@ public class PigScript : MonoBehaviour
             audioManager.PlaySound(audioManager.woodLogClip);
             audioManager.PlaySound(audioManager.endMinigameFail);
             imageShow.SwitchShow(false);
-            timeElapsed += timer.GetTime();
+            timeElapsed += 10 - timer.GetTime();
             StartCoroutine(PlayerDeath(2f));
             Time.timeScale = 0f;
         }
