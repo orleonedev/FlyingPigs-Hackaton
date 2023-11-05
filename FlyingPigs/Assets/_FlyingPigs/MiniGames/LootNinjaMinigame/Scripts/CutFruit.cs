@@ -13,13 +13,10 @@ public class CutFruit : MonoBehaviour
     private GameObject newObjectRight;
     private GameObject newObjectLeft;
 
-    private bool cutted = false;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Cut"))
         {
-            cutted = true;
             spawnSlicedObjects();
             Destroy(this.gameObject);
         }
@@ -30,14 +27,14 @@ public class CutFruit : MonoBehaviour
         newObjectRight = Instantiate(this.fruitRight);
 
         newObjectRight.transform.position = this.transform.position;
-        Sprite objectSpriteRight = slicedRightObjectSprites[Random.Range(0, this.slicedRightObjectSprites.Length)];
+        Sprite objectSpriteRight = slicedRightObjectSprites[SpawnFruit.spriteIndex];
         newObjectRight.GetComponent<SpriteRenderer>().sprite = objectSpriteRight;
         newObjectRight.GetComponent<Rigidbody2D>().velocity = this.GetComponent<Rigidbody2D>().velocity;
 
         newObjectLeft = Instantiate(this.fruitLeft);
 
         newObjectLeft.transform.position = this.transform.position;
-        Sprite objectSpriteLeft = slicedLeftObjectSprites[Random.Range(0, this.slicedLeftObjectSprites.Length)];
+        Sprite objectSpriteLeft = slicedLeftObjectSprites[SpawnFruit.spriteIndex];
         newObjectLeft.GetComponent<SpriteRenderer>().sprite = objectSpriteLeft;
         newObjectLeft.GetComponent<Rigidbody2D>().velocity = this.GetComponent<Rigidbody2D>().velocity;
 

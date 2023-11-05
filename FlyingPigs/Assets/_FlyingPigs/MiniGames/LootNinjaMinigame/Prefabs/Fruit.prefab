@@ -194,5 +194,9 @@ MonoBehaviour:
   fruitLeft: {fileID: 8328832293057301384, guid: 053ac3c432ace47079cafbb112f8f2ad, type: 3}
   slicedRightObjectSprites:
   - {fileID: 21300000, guid: 7fd758ca02f604ac383486c74e17ce87, type: 3}
+  - {fileID: 21300000, guid: 311fc01a618c44a37b32104821f82d8d, type: 3}
+  - {fileID: 21300000, guid: d0d2e8089656b409c93d588a5c3e8ee5, type: 3}
   slicedLeftObjectSprites:
   - {fileID: 21300000, guid: 65575731c810844ee93200fbb1848a4e, type: 3}
+  - {fileID: 21300000, guid: 770c801c23ea148f7b354d6493583ef6, type: 3}
+  - {fileID: 21300000, guid: 14d01328966794d648e633687280e0d0, type: 3}

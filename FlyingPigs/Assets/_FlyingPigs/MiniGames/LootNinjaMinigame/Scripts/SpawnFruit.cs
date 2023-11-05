@@ -14,6 +14,7 @@ public class SpawnFruit : MonoBehaviour
     [SerializeField] AudioManager audioManager;
     public static float timeElapsed = 0f;
     public static int level = 1;
+    public static int spriteIndex;
     private bool levelEnd = false;
 
     void Start() {
@@ -42,7 +43,8 @@ public class SpawnFruit : MonoBehaviour
     private void spawnObject() {
         GameObject newObject = Instantiate(this.fruitToSpawn);
         newObject.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
-        Sprite objectSprite = objectSprites[Random.Range(0, this.objectSprites.Length)];
+        spriteIndex = Random.Range(0, this.objectSprites.Length);
+        Sprite objectSprite = objectSprites[spriteIndex];
         newObject.GetComponent<SpriteRenderer>().sprite = objectSprite;
     }
 
