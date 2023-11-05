@@ -62,6 +62,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("MainGame")]
     public AudioClip mainTheme;
+    public AudioClip mainGameTheme;
+    public AudioClip minigameTheme;
 
     void Start() {
         /*
