@@ -190,3 +190,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e3b9d25008c04402a7164336fdf2083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fruitRight: {fileID: 8328832293057301384, guid: 6b681ffb311ec4f379aa45fdce1300cd, type: 3}
+  fruitLeft: {fileID: 8328832293057301384, guid: 053ac3c432ace47079cafbb112f8f2ad, type: 3}
+  slicedRightObjectSprites:
+  - {fileID: 21300000, guid: 7fd758ca02f604ac383486c74e17ce87, type: 3}
+  slicedLeftObjectSprites:
+  - {fileID: 21300000, guid: 65575731c810844ee93200fbb1848a4e, type: 3}

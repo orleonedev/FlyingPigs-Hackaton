@@ -8,6 +8,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private ImageShow imageShow;
     [SerializeField] private Timer timer;
+    [SerializeField] private InputManagerArrow inputManagerArrow;
     private int collisionLevel = 0;
 
     private void OnCollisionEnter2D(){
@@ -16,7 +17,11 @@ public class PlayerBehaviour : MonoBehaviour
             arrows.speed = 0;
             collisionLevel = ArrowBehaviour.level;
             audioManager.PlaySound(audioManager.playerHit);
-            Invoke("EndGame", 0.5f);
+            audioManager.PlaySound(audioManager.endMinigameFail);
+            inputManagerArrow.canMove = false;
+            ArrowBehaviour.timeElapsed += timer.GetTime();
+            timer.PauseTimer();
+            Invoke("EndGame", 2f);
         }
     }
 

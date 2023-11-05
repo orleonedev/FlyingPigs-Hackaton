@@ -12,16 +12,16 @@ public class BarBehaviour : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private Animator animator;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private Coordinator coordinator;
     private ImageShow imageShow;
-    private int level = 1;
-
+    static private int level = 1;
+    static public float timeElapsed = 0f;
     private float count = 0.1f;
     private int rising = 1;
-
     private bool shouldMove = true;
     private bool lastResult = false;
-
     private int loopNum = -1;
+    private bool gameOver = false;
 
     void Start() {
         imageShow = GetComponentInChildren<ImageShow>();
@@ -29,15 +29,12 @@ public class BarBehaviour : MonoBehaviour
     }
 
     public void ResetForNextLevel() {
-        //if lastResult == true
-        animator.SetTrigger("return");
-        count = 0.1f;
-        SetValue(count, 100);
-        shouldMove = true;
-        imageShow.SwitchShow(lastResult);
-        timer.RestartTimer();
-        loopNum = audioManager.PlaySoundLoop(audioManager.catapultLoop);
-        //else go to other game scene, minigame ended
+        if (lastResult) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else {
+            EndMinigame();
+        }
     }
     
     private void Update() {
@@ -50,8 +47,11 @@ public class BarBehaviour : MonoBehaviour
             count += 0.1f * rising * level / 2;
         }
 
-        if (!timer.GetCounting()) {
-            Invoke("EndMinigame", 1f);
+        if (!timer.GetCounting() && !gameOver) {
+            gameOver = true;
+            timeElapsed += timer.GetTime();
+            timer.PauseTimer();
+            Invoke("EndMinigame", 2f);
             shouldMove = false;
             if (loopNum != -1) {
                 audioManager.StopSoundLoop(loopNum);
@@ -77,32 +77,43 @@ public class BarBehaviour : MonoBehaviour
             if (count > 80) {
                 lastResult = true;
                 imageShow.SwitchShow(lastResult);
-                level ++;
+                level++;
                 animator.SetTrigger("succ");
                 Invoke("CastleSound", 0.5f);
             }
             else {
                 lastResult = false;
                 imageShow.SwitchShow(lastResult);
-                level = 1;
                 animator.SetTrigger("fail");
                 Invoke("SplatSound", 0.3f);
             }
-            if (level < 5) {
+            if (level <= 5 && lastResult) {
                 Invoke("ResetForNextLevel", 2f);
             }
             else {
-                Invoke("EndMinigame", 1f);
+                Invoke("EndMinigame", 2f);
             }
+            timeElapsed += timer.GetTime();
             timer.PauseTimer();
         }
     }
 
     public void EndMinigame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //timer.RestartTimer();
+        if (level - 1 != 5 && timer.GetCounting()) {
+            imageShow.SwitchShow(false);
+        }
+
+        SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
+            {GameStatsEnum.TimeElapsed, timeElapsed},
+            {GameStatsEnum.GameHealth, (level - 1) * 0.02f},
+            {GameStatsEnum.GameCurrency, (level - 1) * 3}
+        };
+        GameStatisticsManager.Instance.updateStatsWith(value);
+
         level = 1;
-        //CHANGE SCENE HERE
+        timeElapsed = 0f;
+
+        coordinator.LoadScene("MainGameScene");
     }
 
     public void SplatSound() {
