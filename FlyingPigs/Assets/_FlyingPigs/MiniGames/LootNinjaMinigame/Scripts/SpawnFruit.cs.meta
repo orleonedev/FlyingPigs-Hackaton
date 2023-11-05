@@ -3,7 +3,10 @@ guid: 145add00951d146df935ec5e829a0994
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fruitToSpawn: {fileID: 8328832293057301384, guid: d618571ba976c4c4ab9a66d6ce61cbb5, type: 3}
+  - imageShow: {instanceID: 0}
+  - timer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
