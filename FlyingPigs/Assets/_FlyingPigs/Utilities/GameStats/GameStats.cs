@@ -163,20 +163,20 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
-    public void OnEnable() {
-        this.RealHealth = 0.6f;
-        this.GameHealth = 0.6f;
-        this.RealMoney = 1200f;
-        this.MoneyMultiplier = 1;
-        this.GameCurrency = 300f;
-        this.CurrencyMultiplier = 1;
-        this.CurrentHours = 0;
-        this.CurrentMinutes = 0;
-        this.Day = 0;
-        this.NextPlayTime = 210;
-        this.ModifierPlayTime = 0;
-        this.TimeElapsed = 0f;
-        this.Employer = EmployerKind.John;
-    }
+    // public void OnEnable() {
+    //     this.RealHealth = 0.6f;
+    //     this.GameHealth = 0.6f;
+    //     this.RealMoney = 1200f;
+    //     this.MoneyMultiplier = 1;
+    //     this.GameCurrency = 300f;
+    //     this.CurrencyMultiplier = 1;
+    //     this.CurrentHours = 0;
+    //     this.CurrentMinutes = 0;
+    //     this.Day = 0;
+    //     this.NextPlayTime = 210;
+    //     this.ModifierPlayTime = 0;
+    //     this.TimeElapsed = 0f;
+    //     this.Employer = EmployerKind.John;
+    // }
 
 }
