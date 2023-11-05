@@ -14,8 +14,8 @@ public class PigScript : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private ImageShow imageShow;
     public static int level = 1;
+    public static float timeElapsed = 0f;
 
-    // Update is called once per frame
     private void Update()
     {
         if(Input.touchCount > 0){
@@ -28,23 +28,28 @@ public class PigScript : MonoBehaviour
                 }
             }
         }
-    }
 
-    private void OnCollisionEnter2D() {
-        audioManager.PlaySound(audioManager.woodLogClip);
-        imageShow.SwitchShow(false);
-        StartCoroutine(PlayerDeath(2f));
-        Time.timeScale = 0f;
-    }
-
-    private void OnTriggerEnter2D(){
         if(!timer.GetCounting()){
+            timeElapsed += timer.GetTime();
+            if (level >= 5) {
+                audioManager.PlaySound(audioManager.endMinigameSucc);
+            }
+            timeElapsed += timer.GetTime();
             StartCoroutine(EndLevelAfterTime(2.0f));
             Time.timeScale = 0f;
         }
     }
 
-    private void Flap(){
+    private void OnCollisionEnter2D() {
+        audioManager.PlaySound(audioManager.woodLogClip);
+        audioManager.PlaySound(audioManager.endMinigameFail);
+        imageShow.SwitchShow(false);
+        timeElapsed += timer.GetTime();
+        StartCoroutine(PlayerDeath(2f));
+        Time.timeScale = 0f;
+    }
+
+    private void Flap() {
         rigidBody.velocity = Vector2.zero;
         rigidBody.AddForce(Vector2.up * force);
     }
@@ -54,14 +59,13 @@ public class PigScript : MonoBehaviour
     public static void LevelUp() => level++;
 
     private void OnEndLevel() {
-        if(PigScript.level < 5){
+        if(PigScript.level < 5) {
             PigScript.LevelUp();
-        } else {
-            PigScript.SetLevel(1);
-            // termina minigioco
+            uiManager.RestartGame();
         }
-        
-        uiManager.RestartGame();
+        else {
+            OnDeath?.Invoke();
+        }
     }
 
     private IEnumerator PlayerDeath(float time){
