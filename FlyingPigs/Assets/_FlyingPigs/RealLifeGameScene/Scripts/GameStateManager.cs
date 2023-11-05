@@ -9,17 +9,14 @@ public class GameStateManager : MonoBehaviour
 
     [SerializeField]
     public GameObject ChatSceneObject;
-    
-    // Start is called before the first frame update
+
+    [SerializeField]
+    public AudioManager audioManager;
+    private int numOfAudioSource = -1;
+
     void Start()
     {
         SwitchToInGame();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SwitchToInGame() {
@@ -27,6 +24,7 @@ public class GameStateManager : MonoBehaviour
             ChatSceneObject.SetActive(false);
         }
         InGameSceneObject.SetActive(true);
+        numOfAudioSource = audioManager.PlaySoundLoop(audioManager.mainGameTheme);
     }
 
     public void SwitchToChat() {
@@ -34,5 +32,9 @@ public class GameStateManager : MonoBehaviour
             InGameSceneObject.SetActive(false);
         }
         ChatSceneObject.SetActive(true);
+        if (numOfAudioSource != -1) {
+            audioManager.StopSoundLoop(numOfAudioSource);
+            numOfAudioSource = -1;
+        }
     }
 }
