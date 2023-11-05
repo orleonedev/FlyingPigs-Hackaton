@@ -36,6 +36,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip playerWallImpact;
     public AudioClip castleDestruction;
 
+    [Header("End Minigame")]
+    public AudioClip endMinigameFail;
+    public AudioClip endMinigameSucc;
+
     [Header("MainGame")]
     public AudioClip mainTheme;
 

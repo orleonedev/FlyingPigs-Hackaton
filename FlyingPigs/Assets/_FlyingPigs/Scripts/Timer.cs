@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private bool isTimeBasedMinigame = false;
     private float countdown = 10.0f; // Set the initial countdown time in seconds
     private bool isCounting = true;
+    private bool paused = false;
     private int audioSourceNumber = -1;
 
     private void Start() {
@@ -22,7 +23,7 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        if (isCounting) {
+        if (isCounting && !paused) {
             countdown -= Time.deltaTime; // Decrease countdown by time passed since the last frame
             slider.value = countdown / 10f;
 
@@ -57,7 +58,11 @@ public class Timer : MonoBehaviour
     }
 
     public void PauseTimer() {
-        isCounting = !isCounting;
+        paused = !paused;
+    }
+
+    public bool isPaused() {
+        return paused;
     }
 
     public void RestartTimer(float time = 10.0f)
@@ -80,5 +85,9 @@ public class Timer : MonoBehaviour
 
     public bool GetCounting() {
         return isCounting;
+    }
+
+    public float GetTime() {
+        return countdown;
     }
 }

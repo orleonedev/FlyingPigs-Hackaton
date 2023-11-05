@@ -12,12 +12,14 @@ public class ArrowBehaviour : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private ImageShow imageShow;
     [SerializeField] private InputManagerArrow inputManagerArrow;
+    [SerializeField] private Coordinator coordinator;
     public Sprite spriteBigArrow;
     public Sprite spriteEndArrow;
     private bool descending = false;
     public float speed;
     private bool levelEnded = false;
     static public int level = 1;
+    static public float timeElapsed = 0f;
 
     void Start()
     {
@@ -38,7 +40,6 @@ public class ArrowBehaviour : MonoBehaviour
                     Transform child = arrows.transform.GetChild(i);
                     child.gameObject.GetComponent<SpriteRenderer>().sprite = spriteBigArrow;
                 }
-                //arrows.transform.localScale = new Vector3(arrows.transform.localScale.x, -arrows.transform.localScale.y, arrows.transform.localScale.z);
             }
         }
         else {
@@ -52,17 +53,19 @@ public class ArrowBehaviour : MonoBehaviour
                     }
                     speed = 0;
                     audioManager.PlaySound(audioManager.arrowGroundImpact);
-
-                    if (level < 5) {
                     level += 1;
+                    if (level <= 5) {
                     imageShow.SwitchShow(true);
+                    timeElapsed += timer.GetTime();
+                    timer.PauseTimer();
                     Invoke("RestartGame", 2f);
                     }
-                    
                     else {
-                        level = 0;
                         imageShow.SwitchShow(true);
+                        timeElapsed += timer.GetTime();
+                        timer.PauseTimer();
                         Invoke("EndGame", 2f);
+                        audioManager.PlaySound(audioManager.endMinigameSucc);
                     }
                 }
                 levelEnded = true;
@@ -72,21 +75,34 @@ public class ArrowBehaviour : MonoBehaviour
         arrows.transform.position += transform.up * speed * level * Time.deltaTime;
         
         if (!timer.GetCounting()) {
+            timeElapsed += timer.GetTime();
             Invoke("EndGame", 2f);
         }
     }
 
     public void RestartGame() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        timer.RestartTimer();
     }
 
     public void EndGame() {
-        if (level != 0) {
+        if (level - 1 != 5) {
             imageShow.SwitchShow(false);
         }
+        
+        //elapsed time con tempo (+)
+        //game health +0.02 per livello superato
+        //gemme +3 per livello superato
+
+        SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
+            {GameStatsEnum.TimeElapsed, timeElapsed},
+            {GameStatsEnum.GameHealth, (level - 1) * 0.02f},
+            {GameStatsEnum.GameCurrency, (level - 1) * 3}
+        };
+        GameStatisticsManager.Instance.updateStatsWith(value);
+
         level = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //CHANGE WITH MAIN SCREEN
-        //timer.RestartTimer();
+        timeElapsed = 0f;
+
+        coordinator.LoadScene("MainGameScene");
     }
 }
