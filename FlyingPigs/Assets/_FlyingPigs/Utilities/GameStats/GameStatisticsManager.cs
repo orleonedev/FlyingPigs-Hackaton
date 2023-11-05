@@ -21,7 +21,7 @@ public class GameStatisticsManager
     public OnDepleatedStatDelegate OnDepleatedStat;
 
     public SerializableDictionary<GameStatsEnum,float> fixedUpdates = new SerializableDictionary<GameStatsEnum, float>(){
-            {GameStatsEnum.GameHealth, -0.2f},
+            {GameStatsEnum.GameHealth, -0.1f},
             {GameStatsEnum.RealMoney, 40},
             {GameStatsEnum.RealHealth, -0.1f}
         };
@@ -219,5 +219,6 @@ public class GameStatisticsManager
         gameStats.ModifierPlayTime = 0;
         gameStats.TimeElapsed = 0f;
         gameStats.Employer = EmployerKind.John;
+        gameStats.CurrentDayLenght = 210;
     }
 }
