@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveFruit : MonoBehaviour
 {
 
-    [SerializeField] private float minXSpeed, maxXSpeed, minYSpeed, maxYSpeed;
+    [SerializeField] public float minXSpeed, maxXSpeed, minYSpeed, maxYSpeed;
     [SerializeField] private float destroyTime;
     private SpawnFruit spawnFruit;
     public bool hasBeenCut = false;
@@ -22,7 +22,7 @@ public class MoveFruit : MonoBehaviour
         if(!hasBeenCut) {
             spawnFruit.GameOver();
         }
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 }
