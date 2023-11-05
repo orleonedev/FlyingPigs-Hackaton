@@ -20,6 +20,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip startOfDayClip;
     public AudioClip endOfDayClip;
 
+    [Header("MainScene")]
+    public AudioClip attack;
+    public AudioClip levelUp;
+    public AudioClip slimeDeath;
+
     [Header("Endings")]
     public AudioClip GoodEndingClip;
     public AudioClip BadEndingClip;

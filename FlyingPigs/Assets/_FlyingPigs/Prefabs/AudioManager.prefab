@@ -72,6 +72,9 @@ MonoBehaviour:
   buyGemsClip: {fileID: 8300000, guid: a12a8d98aa0ea0648a325f18670a066d, type: 3}
   startOfDayClip: {fileID: 8300000, guid: 2d3dfb4d3edfca64fa1e6a6a582d6481, type: 3}
   endOfDayClip: {fileID: 8300000, guid: 859481ff91f38ad419f88f15b2e1639c, type: 3}
+  attack: {fileID: 8300000, guid: 3c98a89cc2fd61e4a86bff6715eb8f5f, type: 3}
+  levelUp: {fileID: 8300000, guid: 6b2fcb7f832ae1c44b3e25a67439d9cc, type: 3}
+  slimeDeath: {fileID: 8300000, guid: 3b03229e297d78743a2ca6e5a5e217ff, type: 3}
   GoodEndingClip: {fileID: 8300000, guid: 7bd5e1c76413cea4390cabd18624d430, type: 3}
   BadEndingClip: {fileID: 8300000, guid: 6e53a5b407b7b7146926c63aa1e06a95, type: 3}
   tickingClip: {fileID: 8300000, guid: 78c1a3b442979e442bdc086f72ed5bdb, type: 3}
