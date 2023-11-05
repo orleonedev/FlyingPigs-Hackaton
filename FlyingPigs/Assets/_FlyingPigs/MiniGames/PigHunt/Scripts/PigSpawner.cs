@@ -14,6 +14,7 @@ public class PigSpawner : MonoBehaviour
     [SerializeField] protected Timer timer;
     [SerializeField] protected MovingPig prefab;
     [SerializeField] protected ImageShow imageShow;
+    [SerializeField] protected AudioManager audioManager;
     private float speedModifier = 0.0f;
     [SerializeField] protected float time;
     [SerializeField] protected float yClamp;
@@ -45,6 +46,9 @@ public class PigSpawner : MonoBehaviour
                 } else if(!timer.GetCounting()){
                     gameOver = true;
                     timerElapsedTime += timer.GetTime();
+                    if(level >= 5) {
+                        audioManager.PlaySound(audioManager.endMinigameSucc);
+                    }
                     StartCoroutine(EndLevelAfterTime(2.0f));
                 }
             }
@@ -53,6 +57,7 @@ public class PigSpawner : MonoBehaviour
             timer.PauseTimer();
             imageShow.SwitchShow(false);
             timerElapsedTime += timer.GetTime();
+            audioManager.PlaySound(audioManager.endMinigameFail);
             Invoke("GameOver", 2f);
         }
     }
