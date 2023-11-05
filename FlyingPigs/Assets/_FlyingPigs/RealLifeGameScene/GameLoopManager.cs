@@ -10,10 +10,7 @@ public class GameLoopManager : MonoBehaviour
 
     [SerializeField]
     public GameStateManager gameState;
-
-    [SerializeField]
     public GameStatisticsManager statsManager;
-    
     public delegate void OnMinigameEventDelegate();
     public OnMinigameEventDelegate OnMinigameEvent;
     public delegate void OnChatEventDelegate();
@@ -21,18 +18,23 @@ public class GameLoopManager : MonoBehaviour
 
     private bool loopEnabled = false;
     private bool alive = true;
-    private bool eventTriggered = false;
+    private bool eventTriggered = true;
 
-    private bool tickClock = false;
-    private float timelapse = 1f;
+    private bool tickClock = true;
     private float dayLength; 
 
     private GameEventTypes eventToFire;
+
+    void Awake() {
+        statsManager = GameStatisticsManager.Instance;
+    }
     // Start is called before the first frame update
     void Start()
     {
         statsManager.OnDepleatedStat += OnDepleatedStat;
-        PrepareForNextDay();
+        if (statsManager.gameStats.TimeElapsed == 0) {
+            PrepareForNextDay();
+        }
         SetLoopTo(true);
         Debug.Log("LOOP START");
     }
@@ -41,19 +43,19 @@ public class GameLoopManager : MonoBehaviour
     void Update() {
         if(alive){ 
             if (loopEnabled) {
-                timelapse += Time.deltaTime;
+                statsManager.gameStats.TimeElapsed += Time.deltaTime;
 
-                if (((int)timelapse) % 2 == 0 && !tickClock) {
+                if (((int)statsManager.gameStats.TimeElapsed) % 2 == 0 && !tickClock) {
                     tickClock = true;
                     // Update the UI
                     Debug.Log("UPDATE THE CLOCK");
                     statsManager.TickClock((uint)2);
                     
                 }
-                if((int)timelapse % 2 == 1 && tickClock) {
+                if((int)statsManager.gameStats.TimeElapsed % 2 == 1 && tickClock) {
                     tickClock = false;
                 }
-                if (timelapse >= dayLength && loopEnabled) {
+                if (statsManager.gameStats.TimeElapsed >= dayLength && loopEnabled) {
                     Debug.Log("STOP DAY");
                     CloseAndRestart();
                     return;
@@ -62,10 +64,10 @@ public class GameLoopManager : MonoBehaviour
                 
 
 
-                if (((int)timelapse) % 30 == 0 && !eventTriggered) {
+                if (((int)statsManager.gameStats.TimeElapsed) % 30 == 0 && !eventTriggered) {
                     eventTriggered = true;
                     Debug.Log("SEND EVENT");
-                    if ((int)timelapse == (int)dayLength -30) {
+                    if ((int)statsManager.gameStats.TimeElapsed == (int)dayLength -30) {
                         //fire both events
                         OnMinigameEvent?.Invoke();
                         OnChatEvent?.Invoke();
@@ -74,16 +76,18 @@ public class GameLoopManager : MonoBehaviour
                         switch (eventToFire) {
                             case GameEventTypes.MinigameEvent:
                             OnMinigameEvent?.Invoke();
+                            eventToFire = GameEventTypes.ChatEvent;
                             break;
                             case GameEventTypes.ChatEvent:
                             OnChatEvent.Invoke();
+                            eventToFire = GameEventTypes.MinigameEvent;
                             break;
                         }
                         Debug.Log("FIRE");
 
                     }
                 }
-                if((int)timelapse % 30 == 1 && eventTriggered) {
+                if((int)statsManager.gameStats.TimeElapsed % 30 == 1 && eventTriggered) {
                     eventTriggered = false;
                 }
         }
@@ -91,16 +95,16 @@ public class GameLoopManager : MonoBehaviour
     }
 
     public void PrepareForNextDay() {
-        timelapse = 1f;
+        
         dayLength = statsManager.gameStats.NextPlayTime;
         float hoursDifference = dayLength/60f;
-        
         uint newCurrentHours = (uint)(24f-hoursDifference);
         uint newCurrentMinutes = (uint)Math.Floor(dayLength%60);
         statsManager.SetClockTo(newCurrentHours,newCurrentMinutes);
         statsManager.NextDay();
+        statsManager.gameStats.TimeElapsed = 0f;
         eventToFire = GetRandomEventType();
-        Dictionary<GameStatsEnum,float> updates = new Dictionary<GameStatsEnum, float>(){
+        SerializableDictionary<GameStatsEnum,float> updates = new SerializableDictionary<GameStatsEnum, float>(){
             {GameStatsEnum.GameHealth, -0.2f},
             {GameStatsEnum.RealMoney, 40},
             {GameStatsEnum.RealHealth, -0.1f}
