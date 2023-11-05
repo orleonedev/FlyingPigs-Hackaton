@@ -19,6 +19,7 @@ public class MoveFruit : MonoBehaviour
 
     void OnBecameInvisible()
     {
+        Debug.Log("aaaaaa");
         if(!hasBeenCut) {
             spawnFruit.GameOver();
         }
