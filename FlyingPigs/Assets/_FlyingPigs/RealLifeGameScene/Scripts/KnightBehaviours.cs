@@ -54,8 +54,7 @@ public class KnightBehaviour : MonoBehaviour
      
         if(tapped && tapped == gameView.GetComponent<Collider2D>())
         {
-            knightAnimator.SetBool("isAttacking", true); 
-            //audioManager.PlaySound(audioManager.);
+            knightAnimator.SetBool("isAttacking", true);
             
             if(enemy.activeInHierarchy){
                 if(enemyLives > 0) {
@@ -63,6 +62,7 @@ public class KnightBehaviour : MonoBehaviour
                     enemyLives--;
                 } else {
                     DestroyEnemy();
+                    audioManager.PlaySound(audioManager.slimeDeath);
                 }
             }
         }
@@ -88,6 +88,7 @@ public class KnightBehaviour : MonoBehaviour
             knightLevel++;
             expLabel.text = "Lvl " + knightLevel.ToString();
             expToLevelUp *= expLimitProgress;
+            audioManager.PlaySound(audioManager.levelUp);
         } else {
             expBarFill.fillAmount += fillAmount;
         }
@@ -95,5 +96,9 @@ public class KnightBehaviour : MonoBehaviour
 
     private float GetFillAmount(float expFromEnemy){
         return ((1*expFromEnemy)/expToLevelUp);
+    }
+
+    public void PlayAttackSound(){
+        audioManager.PlaySound(audioManager.attack);
     }
 }
