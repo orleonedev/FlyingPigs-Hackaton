@@ -121,7 +121,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
     }
 
     [Range(0,300)]
-    public uint _nextPlayTime = 240;
+    public uint _nextPlayTime = 210;
     public uint NextPlayTime {
         get {
             return _nextPlayTime;
@@ -172,8 +172,8 @@ public class GameStats : SingletonScriptableObject<GameStats>
         this.CurrencyMultiplier = 1;
         this.CurrentHours = 0;
         this.CurrentMinutes = 0;
-        this.Day = 1;
-        this.NextPlayTime = 240;
+        this.Day = 0;
+        this.NextPlayTime = 210;
         this.ModifierPlayTime = 0;
         this.TimeElapsed = 0f;
         this.Employer = EmployerKind.John;

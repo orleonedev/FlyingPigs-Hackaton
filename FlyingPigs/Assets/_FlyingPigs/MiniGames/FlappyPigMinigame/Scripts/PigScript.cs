@@ -15,6 +15,7 @@ public class PigScript : MonoBehaviour
     [SerializeField] private ImageShow imageShow;
     public static int level = 1;
     public static float timeElapsed = 0f;
+    public bool checkCollision = false; 
 
     private void Update()
     {
@@ -30,23 +31,26 @@ public class PigScript : MonoBehaviour
         }
 
         if(!timer.GetCounting()){
-            timeElapsed += timer.GetTime();
+            timeElapsed += 10 - timer.GetTime();
             if (level >= 5) {
                 audioManager.PlaySound(audioManager.endMinigameSucc);
             }
-            timeElapsed += timer.GetTime();
+            timeElapsed += 10 - timer.GetTime();
             StartCoroutine(EndLevelAfterTime(2.0f));
             Time.timeScale = 0f;
         }
     }
 
     private void OnCollisionEnter2D() {
-        audioManager.PlaySound(audioManager.woodLogClip);
-        audioManager.PlaySound(audioManager.endMinigameFail);
-        imageShow.SwitchShow(false);
-        timeElapsed += timer.GetTime();
-        StartCoroutine(PlayerDeath(2f));
-        Time.timeScale = 0f;
+        if(!checkCollision) {
+            checkCollision = true;
+            audioManager.PlaySound(audioManager.woodLogClip);
+            audioManager.PlaySound(audioManager.endMinigameFail);
+            imageShow.SwitchShow(false);
+            timeElapsed += 10 - timer.GetTime();
+            StartCoroutine(PlayerDeath(2f));
+            Time.timeScale = 0f;
+        }
     }
 
     private void Flap() {
