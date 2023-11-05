@@ -7,6 +7,7 @@ using System;
 public class PigSpawner : MonoBehaviour
 {
     public static int level = 1;
+    public static float timerElapsedTime = 0f;
     public static int lives = 1;
     public static Action OnGameOver;
     public PigHuntUImanager uiManager;
@@ -37,23 +38,28 @@ public class PigSpawner : MonoBehaviour
         elapsedTime += Time.deltaTime;
 
         if(!isGameOver()){
-            if(elapsedTime > time && timer.GetCounting()){
-                SpawnObject();
-                elapsedTime = 0.0f;
-            } else if(!timer.GetCounting()){
-                StartCoroutine(EndLevelAfterTime(2.0f));
+            if (!gameOver) {
+                if(elapsedTime > time && timer.GetCounting()){
+                    SpawnObject();
+                    elapsedTime = 0.0f;
+                } else if(!timer.GetCounting()){
+                    gameOver = true;
+                    timerElapsedTime += timer.GetTime();
+                    StartCoroutine(EndLevelAfterTime(2.0f));
+                }
             }
-        } else if (!gameOver){
+        } else if (!gameOver) {
             gameOver = true;
             timer.PauseTimer();
             imageShow.SwitchShow(false);
+            timerElapsedTime += timer.GetTime();
             Invoke("GameOver", 2f);
         }
     }
 
     private void SetDifficultyLevel(){
-        time -= 0.1f * (level - 1);
-        speedModifier += 0.2f * (level - 1);
+        time -= 0.25f * (level - 1);
+        speedModifier += 0.4f * (level - 1);
     }
 
     protected virtual void SpawnObject(){
@@ -81,8 +87,13 @@ public class PigSpawner : MonoBehaviour
 
     private void OnEndLevel(){
         level += 1;
-        lives = 1;
-        uiManager.RestartGame();
+        if(level <= 5) {
+            lives = 1;
+            uiManager.RestartGame();
+        }
+        else {
+            OnGameOver?.Invoke();
+        }
     }
 
     private bool isGameOver(){

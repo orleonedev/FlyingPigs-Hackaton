@@ -8,11 +8,6 @@ public class GroundSpawner : Spawner
         SpawnObject();
     }
 
-    private void Update()
-    {
-        
-    }
-
     protected override void SpawnObject(){
         int i = 1;
         Vector2 size = prefab.GetComponent<BoxCollider2D>().size;
