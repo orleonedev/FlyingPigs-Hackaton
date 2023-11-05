@@ -10,7 +10,9 @@ public class SpawnFruit : MonoBehaviour
     [SerializeField] private Sprite[] objectSprites;
     [SerializeField] private ImageShow imageShow;
     [SerializeField] private Timer timer;
-
+    [SerializeField] Coordinator coordinator;
+    [SerializeField] AudioManager audioManager;
+    public static float timeElapsed = 0f;
     public static int level = 1;
     private bool levelEnd = false;
 
@@ -21,11 +23,14 @@ public class SpawnFruit : MonoBehaviour
 
     void Update() {
         if(!timer.GetCounting() && !levelEnd){
-            if (level < 5) {
-                level ++;
+            level ++;
+            if (level <= 5) {
+                timeElapsed += timer.GetTime();
                 StartCoroutine(RestartLevelAfterTime(2.0f));
             }
             else {
+                audioManager.PlaySound(audioManager.endMinigameSucc);
+                timeElapsed += timer.GetTime();
                 StartCoroutine(EndLevelAfterTime(2.0f));
             }
             levelEnd = true;
@@ -42,6 +47,8 @@ public class SpawnFruit : MonoBehaviour
     }
 
     public void GameOver() {
+        audioManager.PlaySound(audioManager.endMinigameFail);
+        timeElapsed += timer.GetTime();
         CancelInvoke();
         imageShow.SwitchShow(false);
         Time.timeScale = 0f;
@@ -66,9 +73,18 @@ public class SpawnFruit : MonoBehaviour
     }
 
     private void EndLevel() {
-        Time.timeScale = 1f;
+        SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
+            {GameStatsEnum.TimeElapsed, timeElapsed},
+            {GameStatsEnum.GameHealth, (level - 1) * 0.02f},
+            {GameStatsEnum.GameCurrency, (level - 1) * 3}
+        };
+        GameStatisticsManager.Instance.updateStatsWith(value);
+
         level = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //CHANGE WITH MAIN SCENE
+        timeElapsed = 0f;
+
+        Time.timeScale = 1f;
+        coordinator.LoadScene("MainGameScene");
     }
 
 }

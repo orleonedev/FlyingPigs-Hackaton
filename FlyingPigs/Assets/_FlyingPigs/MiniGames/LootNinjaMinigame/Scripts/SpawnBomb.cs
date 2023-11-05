@@ -8,7 +8,6 @@ public class SpawnBomb : MonoBehaviour
     [SerializeField] private float spawnInterval, objectMinX, objectMaxX, objectY;
     //[SerializeField] private Sprite[] objectSprites;
 
-    // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("spawnObject", this.spawnInterval, this.spawnInterval);
