@@ -37,7 +37,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
     }
 
     [Range(0f, 9999f)]
-    public float _realMoney = 1200f;
+    public float _realMoney;
     public float RealMoney{
         get {
             return _realMoney;
@@ -49,7 +49,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
     }
 
     [Range(1,10)]
-    public uint _moneyMultiplier = 1;
+    public uint _moneyMultiplier;
     public uint MoneyMultiplier {
         get {
             return _moneyMultiplier;
@@ -61,7 +61,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
     }
     
     [Range(0f, 999f)]
-    public float _gameCurrency = 300f;
+    public float _gameCurrency;
     public float GameCurrency {
         get {
             return _gameCurrency;
@@ -73,7 +73,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
     }
 
     [Range(1,10)]
-    public uint _currencyMultiplier = 1;
+    public uint _currencyMultiplier;
     public uint CurrencyMultiplier {
         get {
             return _currencyMultiplier;
@@ -85,7 +85,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
     }
 
     [Range(0,23)]
-    public uint _currentHours = 18;
+    public uint _currentHours;
     public uint CurrentHours {
         get {
             return _currentHours;
@@ -97,7 +97,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
     }
 
     [Range(0,59)]
-    public uint _currentMinutes = 0;
+    public uint _currentMinutes;
     public uint CurrentMinutes {
         get {
             return _currentMinutes;
@@ -108,20 +108,20 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
-    [Range(1,30)]
-    public uint _day = 1;
+    [Range(0,30)]
+    public uint _day;
     public uint Day {
         get {
             return _day;
         }
         set {
-            _day = Math.Clamp(value,1,30);
+            _day = Math.Clamp(value,0,30);
             OnValuesChanged?.Invoke();
         }
     }
 
     [Range(0,300)]
-    public uint _nextPlayTime = 210;
+    public uint _nextPlayTime;
     public uint NextPlayTime {
         get {
             return _nextPlayTime;
@@ -132,7 +132,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
     }
 
     [Range(-300,300)]
-    public int _modifierPlayTime = 0;
+    public int _modifierPlayTime;
     public int ModifierPlayTime {
         get {
             return _modifierPlayTime;
@@ -143,7 +143,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
     }
 
     [Range(0,300)]
-    public float _timeElapsed = 0f;
+    public float _timeElapsed;
     public float TimeElapsed {
         get {
             return _timeElapsed;
@@ -153,7 +153,18 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
-    public EmployerKind _employer = EmployerKind.John;
+    [Range(0,300)]
+    public float _currentDayLenght;
+    public float CurrentDayLenght {
+        get {
+            return _currentDayLenght;
+        }
+        set {
+            _currentDayLenght = Math.Clamp(value, 0f, 300f );
+        }
+    }
+
+    public EmployerKind _employer;
     public EmployerKind Employer {
         get {
             return _employer;
@@ -163,20 +174,20 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
-    public void OnEnable() {
-        this.RealHealth = 0.6f;
-        this.GameHealth = 0.6f;
-        this.RealMoney = 1200f;
-        this.MoneyMultiplier = 1;
-        this.GameCurrency = 300f;
-        this.CurrencyMultiplier = 1;
-        this.CurrentHours = 0;
-        this.CurrentMinutes = 0;
-        this.Day = 0;
-        this.NextPlayTime = 210;
-        this.ModifierPlayTime = 0;
-        this.TimeElapsed = 0f;
-        this.Employer = EmployerKind.John;
-    }
+    // public void OnEnable() {
+    //     this.RealHealth = 0.6f;
+    //     this.GameHealth = 0.6f;
+    //     this.RealMoney = 1200f;
+    //     this.MoneyMultiplier = 1;
+    //     this.GameCurrency = 300f;
+    //     this.CurrencyMultiplier = 1;
+    //     this.CurrentHours = 0;
+    //     this.CurrentMinutes = 0;
+    //     this.Day = 0;
+    //     this.NextPlayTime = 210;
+    //     this.ModifierPlayTime = 0;
+    //     this.TimeElapsed = 0f;
+    //     this.Employer = EmployerKind.John;
+    // }
 
 }

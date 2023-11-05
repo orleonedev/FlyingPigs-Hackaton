@@ -16,6 +16,7 @@ public class MainScreen : MonoBehaviour
     void Start()
     {
         loopNum = audioManager.PlaySoundLoop(audioManager.mainTheme);
+        GameStatisticsManager.Instance.ReloadGame();
     }
 
     void Update()

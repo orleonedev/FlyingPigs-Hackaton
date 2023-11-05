@@ -16,7 +16,10 @@ public class UpdateDayValue : DisplayScriptableObjectValues<GameStats>
     }
     override protected void UpdateUI() {
         
-        this.dayText.text = myScriptableObject.Day.ToString();
+        if(dayText != null) {
+            this.dayText.text = myScriptableObject.Day.ToString();
+        }
+        
         
     }
     // Update is called once per frame
