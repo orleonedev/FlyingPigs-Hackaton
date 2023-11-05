@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8559035297231376093}
   - component: {fileID: 1436358793401734792}
-  - component: {fileID: 5918424843483391824}
+  - component: {fileID: 5210555137689497488}
   - component: {fileID: 983623551821599490}
-  - component: {fileID: 7928203492961602759}
-  - component: {fileID: 9039968739199120375}
+  - component: {fileID: 1895151419349356431}
   m_Layer: 6
-  m_Name: Fruit
-  m_TagString: Fruit
+  m_Name: FruitRight
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,18 +76,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7fd758ca02f604ac383486c74e17ce87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.5, y: 2.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5918424843483391824
+--- !u!61 &5210555137689497488
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,15 +122,15 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.5, y: 2.8}
+    newSize: {x: 3.5, y: 2.8}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!50 &983623551821599490
 Rigidbody2D:
@@ -160,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &7928203492961602759
+--- !u!114 &1895151419349356431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,30 +168,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8328832293057301384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59a17eb336b5944a39dcd1e09b78fcfa, type: 3}
+  m_Script: {fileID: 11500000, guid: 098a623a07efa4d0ba301ec7b1735b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minXSpeed: -10
-  maxXSpeed: 10
-  minYSpeed: 10
-  maxYSpeed: 15
-  destroyTime: 5
-  hasBeenCut: 0
---- !u!114 &9039968739199120375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8328832293057301384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e3b9d25008c04402a7164336fdf2083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fruitRight: {fileID: 8328832293057301384, guid: 6b681ffb311ec4f379aa45fdce1300cd, type: 3}
-  fruitLeft: {fileID: 8328832293057301384, guid: 053ac3c432ace47079cafbb112f8f2ad, type: 3}
-  slicedRightObjectSprites:
-  - {fileID: 21300000, guid: 7fd758ca02f604ac383486c74e17ce87, type: 3}
-  slicedLeftObjectSprites:
-  - {fileID: 21300000, guid: 65575731c810844ee93200fbb1848a4e, type: 3}
+  rotation: -90
