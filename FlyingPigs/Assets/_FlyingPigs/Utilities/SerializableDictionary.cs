@@ -29,6 +29,18 @@ public class SerializableDictionary<TKey, TValue> : IEnumerable<KeyValuePair<TKe
         }
     }
 
+    public bool Remove(TKey key)
+    {
+        int index = keys.IndexOf(key);
+        if (index >= 0)
+        {
+            keys.RemoveAt(index);
+            values.RemoveAt(index);
+            return true;
+        }
+        return false;
+    }
+
     public bool TryGetValue(TKey key, out TValue value)
     {
         int index = keys.IndexOf(key);
