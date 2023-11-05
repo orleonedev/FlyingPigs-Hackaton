@@ -96,12 +96,12 @@ public class GameLoopManager : MonoBehaviour
 
     public void PrepareForNextDay() {
         
-        dayLength = statsManager.gameStats.NextPlayTime;
+        dayLength = statsManager.gameStats.NextPlayTime + statsManager.gameStats.ModifierPlayTime;
         float hoursDifference = dayLength/60f;
-        uint newCurrentHours = (uint)(24f-hoursDifference);
+        uint newCurrentHours = (uint)(23.5f-hoursDifference);
         uint newCurrentMinutes = (uint)Math.Floor(dayLength%60);
         statsManager.SetClockTo(newCurrentHours,newCurrentMinutes);
-        statsManager.NextDay();
+        statsManager.SetNextDay();
         statsManager.gameStats.TimeElapsed = 0f;
         eventToFire = GetRandomEventType();
         SerializableDictionary<GameStatsEnum,float> updates = new SerializableDictionary<GameStatsEnum, float>(){
@@ -111,6 +111,7 @@ public class GameLoopManager : MonoBehaviour
         };
         statsManager.updateStatsWith(updates);
         MinigamesList.Instance.PlayedGamesOfTheDay = new List<string>();
+        statsManager.gameStats.ModifierPlayTime = 0;
         }
 
     public void SetLoopTo(bool state) {

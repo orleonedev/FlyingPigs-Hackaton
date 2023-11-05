@@ -9,5 +9,7 @@ public enum GameStatsEnum {
     RealMoney,
     GameCurrency,
     NextPlayTime,
-    TimeElapsed
+    ModifierPlayTime,
+    TimeElapsed,
+    Day
 }

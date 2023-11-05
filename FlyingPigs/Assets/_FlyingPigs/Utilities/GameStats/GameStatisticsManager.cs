@@ -20,6 +20,12 @@ public class GameStatisticsManager
     public delegate void OnDepleatedStatDelegate(GameStatsEnum stat);
     public OnDepleatedStatDelegate OnDepleatedStat;
 
+    public SerializableDictionary<GameStatsEnum,float> fixedUpdates = new SerializableDictionary<GameStatsEnum, float>(){
+            {GameStatsEnum.GameHealth, -0.2f},
+            {GameStatsEnum.RealMoney, 40},
+            {GameStatsEnum.RealHealth, -0.1f}
+        };
+
     public void updateStatsWith(SerializableDictionary<GameStatsEnum,float> updates) {
         
         foreach (KeyValuePair<GameStatsEnum,float> stat in updates) {
@@ -54,10 +60,15 @@ public class GameStatisticsManager
 
                     }
                 break;
+
                 case GameStatsEnum.NextPlayTime:
                     gameStats.NextPlayTime += (uint)stat.Value;
                 break;
 
+                case GameStatsEnum.ModifierPlayTime:
+                    gameStats.ModifierPlayTime += (int)stat.Value;
+                break;
+                
                 case GameStatsEnum.TimeElapsed:
                     gameStats.TimeElapsed += stat.Value;
                 break;
@@ -82,9 +93,20 @@ public class GameStatisticsManager
         gameStats.CurrentMinutes = newMinutes;
     }
 
-    public void NextDay() {
+    public void SetNextDay() {
         gameStats.Day = (gameStats.Day+1)%30;
     }
 
+    public bool StatIsMet(GameStatsEnum gameStat, StatComparisonType comparisonType, float value) {
+        return false;
+    }
+
+    public EmployerKind ActualEmployer() {
+        return EmployerKind.John;
+    }
+
+    public void RemoveFixedGameMalus() {
+        fixedUpdates.Remove(GameStatsEnum.GameHealth);
+    }
     
 }
