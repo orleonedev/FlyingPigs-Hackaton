@@ -239,6 +239,7 @@ MonoBehaviour:
   timer: {fileID: 1390359753}
   prefab: {fileID: 1771470723814899420, guid: d4a4d77a325d68848ba867155670a38b, type: 3}
   imageShow: {fileID: 1949726453}
+  audioManager: {fileID: 1735222123}
   time: 3
   yClamp: -2
 --- !u!1 &982993181
