@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EndingManager : MonoBehaviour
 {
+    [SerializeField] Coordinator coordinator;
+
     public void EndGame(){
-        //GameStatisticsManager.Instance.ReloadGame();
+        coordinator.LoadScene("MainScene");
     }
 }

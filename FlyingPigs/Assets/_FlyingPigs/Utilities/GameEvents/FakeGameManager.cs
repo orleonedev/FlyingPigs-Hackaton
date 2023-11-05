@@ -6,8 +6,15 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName ="FakeGameManager", menuName ="FakeGameManagerScriptableObj")]
 public class FakeGameManager : SingletonScriptableObject<FakeGameManager>
 {
-    public float expBarFill = 0.0f;
-    public float expToLevelUp = 10.0f; //experience to level up
-    public float expLimitProgress = 1.5f; // experience max progress
-    public int knightLevel = 1;
+    public float expBarFill;
+    public float expToLevelUp; //experience to level up
+    public float expLimitProgress; // experience max progress
+    public int knightLevel;
+
+    public void ReloadGame(){
+        expBarFill = 0.0f;
+        expToLevelUp = 10.0f;
+        expLimitProgress = 1.5f;
+        knightLevel = 1;
+    }
 }
