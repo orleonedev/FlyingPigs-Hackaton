@@ -11,5 +11,6 @@ public enum GameStatsEnum {
     NextPlayTime,
     ModifierPlayTime,
     TimeElapsed,
-    Day
+    Day,
+    ActualEmployer
 }

@@ -104,12 +104,7 @@ public class GameLoopManager : MonoBehaviour
         statsManager.SetNextDay();
         statsManager.gameStats.TimeElapsed = 0f;
         eventToFire = GetRandomEventType();
-        SerializableDictionary<GameStatsEnum,float> updates = new SerializableDictionary<GameStatsEnum, float>(){
-            {GameStatsEnum.GameHealth, -0.2f},
-            {GameStatsEnum.RealMoney, 40},
-            {GameStatsEnum.RealHealth, -0.1f}
-        };
-        statsManager.updateStatsWith(updates);
+        statsManager.updateStatsWith(statsManager.fixedUpdates);
         MinigamesList.Instance.PlayedGamesOfTheDay = new List<string>();
         statsManager.gameStats.ModifierPlayTime = 0;
         }
