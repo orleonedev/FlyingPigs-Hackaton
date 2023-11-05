@@ -43,7 +43,7 @@ public class StatCondition : Condition {
 [Serializable]
 public enum StatComparisonType {
         LessOrEqualThan,
-        MoreOrEqualThan,
+        MoreThan,
     }
 
 [Serializable]

@@ -112,15 +112,112 @@ public class GameStatisticsManager
     }
 
     public bool StatIsMet(GameStatsEnum gameStat, StatComparisonType comparisonType, float value) {
+        switch(gameStat){
+            case GameStatsEnum.RealHealth:
+                if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.RealHealth <= value;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.RealHealth > value;
+                }
+            break;
+            case GameStatsEnum.GameHealth:
+            if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.GameHealth <= value;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.GameHealth > value;
+                }
+            break;
+            case GameStatsEnum.RealMoney:
+            if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.RealMoney <= value;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.RealMoney > value;
+                }
+            break;
+            case GameStatsEnum.GameCurrency:
+            if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.GameCurrency <= value;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.GameCurrency > value;
+                }
+            break;
+            case GameStatsEnum.Day:
+            if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.Day <= value;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.Day > value;
+                }
+            break;
+            case GameStatsEnum.ModifierPlayTime:
+            if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.ModifierPlayTime <= value;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.ModifierPlayTime > value;
+                }
+            break;
+            case GameStatsEnum.NextPlayTime:
+            if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.NextPlayTime <= value;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.NextPlayTime > value;
+                }
+            break;
+            case GameStatsEnum.TimeElapsed:
+            if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.TimeElapsed <= value;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.TimeElapsed > value;
+                }
+            break;
+        }
         return false;
     }
 
     public EmployerKind ActualEmployer() {
-        return EmployerKind.John;
+        return gameStats.Employer;
     }
 
     public void RemoveFixedGameMalus() {
         fixedUpdates.Remove(GameStatsEnum.GameHealth);
     }
     
+    public void ReloadGame() {
+        gameStats.RealHealth = 0.6f;
+        gameStats.GameHealth = 0.6f;
+        gameStats.RealMoney = 1200f;
+        gameStats.MoneyMultiplier = 1;
+        gameStats.GameCurrency = 300f;
+        gameStats.CurrencyMultiplier = 1;
+        gameStats.CurrentHours = 0;
+        gameStats.CurrentMinutes = 0;
+        gameStats.Day = 0;
+        gameStats.NextPlayTime = 210;
+        gameStats.ModifierPlayTime = 0;
+        gameStats.TimeElapsed = 0f;
+        gameStats.Employer = EmployerKind.John;
+    }
 }
