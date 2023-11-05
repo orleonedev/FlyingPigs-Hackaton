@@ -6,8 +6,23 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource[] audioSources;
-
     public AudioSource[] audioSourcesLoop;
+
+    [Header("Misc")]
+    public AudioClip buttonpressClip;
+    public AudioClip genericSuccessClip;
+    public AudioClip genericFailClip;
+    public AudioClip gameOverClip;
+    public AudioClip messageBubbleClip;
+    public AudioClip messageNotificationClip;
+    public AudioClip typingClip;
+    public AudioClip buyGemsClip;
+    public AudioClip startOfDayClip;
+    public AudioClip endOfDayClip;
+
+    [Header("Endings")]
+    public AudioClip GoodEndingClip;
+    public AudioClip BadEndingClip;
 
     [Header("Timer")]
     public AudioClip tickingClip;

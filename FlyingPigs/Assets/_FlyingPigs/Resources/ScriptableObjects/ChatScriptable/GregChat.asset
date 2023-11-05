@@ -55,44 +55,6 @@ MonoBehaviour:
         - -0.4
     statConditions: []
     employerConditions: []
-  - StartingMessage: "Ehy amico, ho conosciuto un ragazzo che vende i suoi cristalli
-      a met\xE0 prezzo rispetto allo shop, se sei interessato fammi sapere, ovviamente
-      una parte dei cristalli andrebbe a me per il disturbo di mettervi in contatto,
-      mi sembra il minimo, tranquillo l\u2019ho fatto mille volte, per il bene della
-      gilda."
-    answers:
-    - answerText: "Qualche cristallo in pi\xF9 non fa male, eccoti 20 dollari"
-      senderResponse: "Con un'occasione del genere potevi spendere di pi\xF9 ma ecco
-        a te (-20 dollari + 150 cristalli)\r\n"
-      updates:
-        keys: 0200000003000000
-        values:
-        - -20
-        - 150
-    - answerText: "Ottimo! meglio investire un bel po ' cos\xEC da massimizzare il
-        profitto! Eccoti un centone"
-      senderResponse: Ottimo affare ragazzo! (-100 dollari + 750 Cristalli + 10 gioco)
-      updates:
-        keys: 020000000300000001000000
-        values:
-        - -100
-        - 750
-        - 0.1
-    - answerText: Preferisco non shoppare grazie
-      senderResponse: "Occasione mancata, me ne ricorder\xF2 (-10 gioco)"
-      updates:
-        keys: 01000000
-        values:
-        - -0.1
-    ghosting:
-      answerText: 
-      senderResponse: "Come ti permetti di ignorare le mie offerte? NOOB (-20 gioco)\r"
-      updates:
-        keys: 01000000
-        values:
-        - -0.2
-    statConditions: []
-    employerConditions: []
   - StartingMessage: "Ultimamente la gilda ha notato che non stai performando al
       meglio, mi chiedo se tu sia della pasta giusta per continuare a far parte della
       gilda migliore del mondo\u2026\r"
@@ -204,9 +166,9 @@ MonoBehaviour:
         values:
         - -0.2
     statConditions:
-    - gameStat: 4
-      statComparisonType: 0
-      value: 150
+    - gameStat: 7
+      statComparisonType: 1
+      value: 3
     employerConditions: []
   - StartingMessage: Ho saputo che hai un nuovo lavoro presso la VanziTech, ti farei
       i complimenti ma ho notato che avrai meno tempo da dedicare al gioco, non farti
@@ -275,7 +237,7 @@ MonoBehaviour:
         spero un ora ti basti per riprenderti ragazzo (+ 1 ora il giorno dopo -20
         dollari +10 gioco)"
       updates:
-        keys: 040000000200000001000000
+        keys: 050000000200000001000000
         values:
         - 60
         - -20
@@ -292,6 +254,9 @@ MonoBehaviour:
     - gameStat: 1
       statComparisonType: 0
       value: 40
+    - gameStat: 7
+      statComparisonType: 1
+      value: 8
     employerConditions: []
   - StartingMessage: "Incredibile, tra pochi giorni c\u2019e la nuova classifica
       delle gilde migliori ed il nostro punteggio \xE8 altissimo, tutto merito mio
@@ -304,11 +269,12 @@ MonoBehaviour:
       senderResponse: "Ero sicuro che avresti fatto la scelta giusta, dovrai impegnarti
         il doppio d\u2019ora in poi ma sono sicuro che terrai alto l\u2019onore dei
         flying pigs fino alla fine. (+20 gioco, meno un ora di tempo libero fino
-        alla fine del gioco)"
+        alla fine del gioco, potresti diventare il nuovo capogilda)"
       updates:
-        keys: 01000000
+        keys: 0100000004000000
         values:
         - 0.2
+        - -60
     - answerText: "Grazie mille ma ho gi\xE0 poco tempo libero e vorrei dedicarlo
         anche un p\xF2 alla mia famiglia, oltre che ovviamente ad Obsessive Odyssey"
       senderResponse: "Devi rivedere le tue priorit\xE0 amico, ma finch\xE9 sarai
@@ -329,6 +295,47 @@ MonoBehaviour:
     - gameStat: 1
       statComparisonType: 1
       value: 80
+    - gameStat: 7
+      statComparisonType: 1
+      value: 8
+    employerConditions: []
+  - StartingMessage: "Ehy amico, ho conosciuto un ragazzo che vende i suoi cristalli
+      a met\xE0 prezzo rispetto allo shop, se sei interessato fammi sapere, ovviamente
+      una parte dei cristalli andrebbe a me per il disturbo di mettervi in contatto,
+      mi sembra il minimo, tranquillo l'ho fatto millevolte, per il bene della gilda!"
+    answers:
+    - answerText: "Qualche cristallo in pi\xF9 non fa male, eccoti 20 dollari\r\n\r"
+      senderResponse: "Con un'occasione del genere potevi spendere di pi\xF9 ma ecco
+        a te (-20 dollari + 150 cristalli)\r"
+      updates:
+        keys: 0200000003000000
+        values:
+        - -20
+        - 150
+    - answerText: "Ottimo! meglio investire un bel po ' cos\xEC da massimizzare il
+        profitto! Eccoti un centone\r"
+      senderResponse: "Ottimo affare ragazzo! (-100 dollari + 750 Cristalli + 10
+        gioco)\r"
+      updates:
+        keys: 020000000300000001000000
+        values:
+        - -100
+        - 750
+        - 0.1
+    - answerText: "Preferisco non shoppare grazie\r\r"
+      senderResponse: "Occasione mancata, me ne ricorder\xF2 (-10 gioco)\r\r"
+      updates:
+        keys: 01000000
+        values:
+        - -0.1
+    ghosting:
+      answerText: 
+      senderResponse: "Come ti permetti di ignorare le mie offerte? NOOB (-20 gioco)\r"
+      updates:
+        keys: 01000000
+        values:
+        - -0.2
+    statConditions: []
     employerConditions: []
   previousEvents: []
   tutorialChatEvents:
