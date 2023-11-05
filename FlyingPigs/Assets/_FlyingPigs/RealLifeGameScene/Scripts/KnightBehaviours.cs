@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class KnightBehaviour : MonoBehaviour
 {
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject gameView;
     [SerializeField] private GameObject enemy;
     [SerializeField] private Animator knightAnimator;
@@ -54,6 +55,7 @@ public class KnightBehaviour : MonoBehaviour
         if(tapped && tapped == gameView.GetComponent<Collider2D>())
         {
             knightAnimator.SetBool("isAttacking", true); 
+            //audioManager.PlaySound(audioManager.);
             
             if(enemy.activeInHierarchy){
                 if(enemyLives > 0) {
