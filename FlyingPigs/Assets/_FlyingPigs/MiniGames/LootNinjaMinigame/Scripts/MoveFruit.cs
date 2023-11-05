@@ -22,7 +22,7 @@ public class MoveFruit : MonoBehaviour
         if(!hasBeenCut) {
             spawnFruit.GameOver();
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
 }

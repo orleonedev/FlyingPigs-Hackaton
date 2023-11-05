@@ -131,6 +131,17 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
+    [Range(0,300)]
+    public float _timeElapsed = 0f;
+    public float TimeElapsed {
+        get {
+            return _timeElapsed;
+        }
+        set {
+            _timeElapsed = Math.Clamp(value, 0f, 300f );
+        }
+    }
+
     public void OnEnable() {
         this.RealHealth = 0.6f;
         this.GameHealth = 0.6f;
@@ -142,6 +153,7 @@ public class GameStats : SingletonScriptableObject<GameStats>
         this.CurrentMinutes = 0;
         this.Day = 1;
         this.NextPlayTime = 240;
+        this.TimeElapsed = 0f;
     }
 
 }

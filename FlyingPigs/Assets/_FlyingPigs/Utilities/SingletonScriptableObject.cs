@@ -13,7 +13,7 @@ public class SingletonScriptableObject<T>: ScriptableObject where T : SingletonS
                 if (assets == null || assets.Length < 1) {
                     throw new System. Exception ("Could not find any singleton scriptable object instances in the resources.");
                 }
-                else if (assets. Length > 1) { 
+                else if (assets.Length > 1) { 
                     Debug.LogWarning("Multiple instances of the singleton scriptable object found in the resources.");
                 }
                 instance = assets[0];

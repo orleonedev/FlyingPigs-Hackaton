@@ -177,6 +177,7 @@ MonoBehaviour:
   minYSpeed: 10
   maxYSpeed: 15
   destroyTime: 5
+  hasBeenCut: 0
 --- !u!114 &9039968739199120375
 MonoBehaviour:
   m_ObjectHideFlags: 0

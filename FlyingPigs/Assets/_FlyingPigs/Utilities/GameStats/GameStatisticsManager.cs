@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class GameStatisticsManager : MonoBehaviour
+public class GameStatisticsManager
 {
-    [SerializeField]
-    public GameStats gameStats;
+    static private GameStatisticsManager instance;
+    static public GameStatisticsManager Instance {
+        get {
+            instance ??= new GameStatisticsManager();
+            return instance;
+        }
+    }
+
+    private GameStatisticsManager() {}
+    
+    public GameStats gameStats = GameStats.Instance;
 
     public delegate void OnDepleatedStatDelegate(GameStatsEnum stat);
     public OnDepleatedStatDelegate OnDepleatedStat;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void updateStatsWith(Dictionary<GameStatsEnum,float> updates) {
+    public void updateStatsWith(SerializableDictionary<GameStatsEnum,float> updates) {
         
         foreach (KeyValuePair<GameStatsEnum,float> stat in updates) {
             
@@ -55,8 +54,12 @@ public class GameStatisticsManager : MonoBehaviour
 
                     }
                 break;
-                case GameStatsEnum.PlayTime:
+                case GameStatsEnum.NextPlayTime:
                     gameStats.NextPlayTime += (uint)stat.Value;
+                break;
+
+                case GameStatsEnum.TimeElapsed:
+                    gameStats.TimeElapsed += stat.Value;
                 break;
             }
         }
@@ -82,4 +85,6 @@ public class GameStatisticsManager : MonoBehaviour
     public void NextDay() {
         gameStats.Day = (gameStats.Day+1)%30;
     }
+
+    
 }
