@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="BillChat", menuName ="ChatEvents/BillChat")]
-public class BillChatEvents : EmployerChatEvents
+public class BillChatEvents : CharacterChatEvents<BillChatEvents>
 {
     [SerializeField]
     public List<ChatEvent> specificChatEvents;

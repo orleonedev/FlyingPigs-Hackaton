@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="GregChat", menuName ="ChatEvents/GregChat")]
-public class GregChatEvents : CharacterChatEvents //SingletonScriptableObject<GregChatEvents>
+public class GregChatEvents : CharacterChatEvents<GregChatEvents> //SingletonScriptableObject<GregChatEvents>
 {
 
     // [SerializeField]

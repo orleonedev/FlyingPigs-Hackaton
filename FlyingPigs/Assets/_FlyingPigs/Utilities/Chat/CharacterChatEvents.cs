@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CharacterChatEvents : SingletonScriptableObject<CharacterChatEvents>
+public class CharacterChatEvents<T> : SingletonScriptableObject<T> where T: ScriptableObject
 {
     [SerializeField]
     public string SenderName;

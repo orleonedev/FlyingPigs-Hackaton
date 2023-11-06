@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingletonScriptableObject<T>: ScriptableObject where T : SingletonScriptableObject<T> {
+public class SingletonScriptableObject<T>: ScriptableObject where T : ScriptableObject {
 
     private static T instance;
     public static T Instance {
@@ -15,6 +15,10 @@ public class SingletonScriptableObject<T>: ScriptableObject where T : SingletonS
                 }
                 else if (assets.Length > 1) { 
                     Debug.LogWarning("Multiple instances of the singleton scriptable object found in the resources.");
+                }
+                foreach (var asset in assets)
+                {
+                    Debug.Log(asset.name+" "+typeof(T).Name);
                 }
                 instance = assets[0];
             }

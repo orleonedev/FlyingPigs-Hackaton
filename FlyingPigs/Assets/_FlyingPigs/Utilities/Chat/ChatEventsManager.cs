@@ -81,13 +81,13 @@ public class ChatEventsManager
         return chatEventWithSender;
     }
 
-    public List<ChatEvent> Filter(CharacterChatEvents characterChatEvents ){
+    public List<ChatEvent> Filter<T>(CharacterChatEvents<T> characterChatEvents ) where T: ScriptableObject {
 
         return characterChatEvents.chatEvents.Except( characterChatEvents.previousEvents).ToList();
 
     }
 
-    public void AddToPreviousList(CharacterChatEvents characterChatEvents, ChatEvent chatEvent) {
+    public void AddToPreviousList<T>(CharacterChatEvents<T> characterChatEvents, ChatEvent chatEvent) where T: ScriptableObject {
         characterChatEvents.previousEvents.Add(chatEvent);
     }
 
