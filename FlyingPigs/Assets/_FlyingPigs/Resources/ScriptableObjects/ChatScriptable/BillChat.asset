@@ -85,7 +85,7 @@ MonoBehaviour:
       updates:
         keys: 01000000
         values:
-        - -10
+        - -0.1
     statConditions: []
     employerConditions: []
   previousEvents: []

@@ -17,6 +17,12 @@ public class MainScreen : MonoBehaviour
     {
         loopNum = audioManager.PlaySoundLoop(audioManager.mainTheme);
         GameStatisticsManager.Instance.ReloadGame();
+        GregChatEvents.Instance.ResetPreviousList();
+        EvelyneChatEvents.Instance.ResetPreviousList();
+        SarahChatEvents.Instance.ResetPreviousList();
+        EmployerChatEvents.Instance.ResetPreviousList();
+        BillChatEvents.Instance.ResetPreviousList();
+        MarkChatEvents.Instance.ResetPreviousList();
         FakeGameManager.Instance.ReloadGame();
     }
 

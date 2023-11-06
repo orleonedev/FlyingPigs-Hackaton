@@ -13,4 +13,8 @@ public class CharacterChatEvents<T> : SingletonScriptableObject<T> where T: Scri
 
     [SerializeField]
     public List<ChatEvent> previousEvents;
+
+    public virtual void ResetPreviousList() {
+        previousEvents = new List<ChatEvent>();
+    }
 }

@@ -19,4 +19,9 @@ public class GregChatEvents : CharacterChatEvents<GregChatEvents> //SingletonScr
     public List<ChatEvent> tutorialChatEvents;
     [SerializeField]
     public List<ChatEvent> previousTutorialEvents;
+
+    public override void ResetPreviousList() {
+        previousEvents = new List<ChatEvent>();
+        previousTutorialEvents = new List<ChatEvent>();
+    }
 }

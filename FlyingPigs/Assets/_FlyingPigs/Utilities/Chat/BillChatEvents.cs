@@ -9,4 +9,9 @@ public class BillChatEvents : CharacterChatEvents<BillChatEvents>
     public List<ChatEvent> specificChatEvents;
     [SerializeField]
     public List<ChatEvent> previousSpecificChatEvents;
+
+    public override void ResetPreviousList() {
+        previousEvents = new List<ChatEvent>();
+        previousSpecificChatEvents = new List<ChatEvent>();
+    }
 }
