@@ -9,6 +9,7 @@ public class CutFruit : MonoBehaviour
     [SerializeField] private GameObject fruitLeft;
     [SerializeField] private Sprite[] slicedRightObjectSprites;
     [SerializeField] private Sprite[] slicedLeftObjectSprites;
+    public int spriteIndex;
 
     private GameObject newObjectRight;
     private GameObject newObjectLeft;
@@ -26,17 +27,18 @@ public class CutFruit : MonoBehaviour
     {
         newObjectRight = Instantiate(this.fruitRight);
 
-        newObjectRight.transform.position = this.transform.position;
-        Sprite objectSpriteRight = slicedRightObjectSprites[SpawnFruit.spriteIndex];
+        newObjectRight.transform.position = new Vector3 (this.transform.position.x + 0.1f, this.transform.position.y, this.transform.position.z);
+        Sprite objectSpriteRight = slicedRightObjectSprites[spriteIndex];
         newObjectRight.GetComponent<SpriteRenderer>().sprite = objectSpriteRight;
-        newObjectRight.GetComponent<Rigidbody2D>().velocity = this.GetComponent<Rigidbody2D>().velocity;
+        newObjectRight.GetComponent<Rigidbody2D>().velocity = this.GetComponent<Rigidbody2D>().velocity * 0.5f;
 
         newObjectLeft = Instantiate(this.fruitLeft);
 
-        newObjectLeft.transform.position = this.transform.position;
-        Sprite objectSpriteLeft = slicedLeftObjectSprites[SpawnFruit.spriteIndex];
+        newObjectLeft.transform.position = new Vector3 (this.transform.position.x -0.1f, this.transform.position.y, this.transform.position.z);
+        Sprite objectSpriteLeft = slicedLeftObjectSprites[spriteIndex];
         newObjectLeft.GetComponent<SpriteRenderer>().sprite = objectSpriteLeft;
-        newObjectLeft.GetComponent<Rigidbody2D>().velocity = this.GetComponent<Rigidbody2D>().velocity;
+        newObjectLeft.GetComponent<Rigidbody2D>().velocity = 
+                                        new Vector2(-this.GetComponent<Rigidbody2D>().velocity.x, this.GetComponent<Rigidbody2D>().velocity.y) * 0.5f;
 
     }
 
