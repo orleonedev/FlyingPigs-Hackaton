@@ -111,7 +111,7 @@ public class GameLoopManager : MonoBehaviour
         statsManager.updateStatsWith(statsManager.fixedUpdates);
         MinigamesList.Instance.PlayedGamesOfTheDay = new List<string>();
         statsManager.gameStats.ModifierPlayTime = 0;
-        }
+    }
 
     public void SetLoopTo(bool state) {
         loopEnabled = state;
@@ -127,17 +127,18 @@ public class GameLoopManager : MonoBehaviour
         SetLoopTo(false);
         Debug.Log("RESTART");
         // transizione
-        SetLoopTo(true);
-        Debug.Log("LOOP START");
-        PrepareForNextDay();
-        
-
+        if(!statsManager.CheckDepleatedStats()){
+            SetLoopTo(true);
+            Debug.Log("LOOP START");
+            PrepareForNextDay();
+        } else {
+            
+        }
     }
 
     public void OnDepleatedStat(GameStatsEnum stat){
-        Debug.Log("DEAD: " + stat.ToString());
+        /*Debug.Log("DEAD: " + stat.ToString());
         SetLoopTo(false);
-        alive = false;
-        //Gestire morte
+        alive = false;*/
     }
 }
