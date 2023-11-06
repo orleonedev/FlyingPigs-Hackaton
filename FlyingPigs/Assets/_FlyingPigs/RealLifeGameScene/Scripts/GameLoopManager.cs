@@ -79,15 +79,17 @@ public class GameLoopManager : MonoBehaviour
                         //fire one
                         switch (eventToFire) {
                             case GameEventTypes.MinigameEvent:
+                            Debug.Log("FIRE GAME");
                             OnMinigameEvent?.Invoke();
                             eventToFire = GameEventTypes.ChatEvent;
                             break;
                             case GameEventTypes.ChatEvent:
-                            OnChatEvent.Invoke();
+                            Debug.Log("FIRE CHAT");
+                            OnChatEvent?.Invoke();
                             eventToFire = GameEventTypes.MinigameEvent;
                             break;
                         }
-                        Debug.Log("FIRE");
+                        
 
                     }
                 }
