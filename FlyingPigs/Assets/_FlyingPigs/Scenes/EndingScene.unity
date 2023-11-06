@@ -1861,7 +1861,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Hai mantenuto in equilibrio la sua vita, hai un buon conto in banca, un
-    ottimo personaggio ad obsessive odyssey ed una famiglia tendenzialmente felice,
+    ottimo personaggio ad Obsessive Odyssey ed una famiglia tendenzialmente felice,
     ottimo lavoro Nerd!
 
 
@@ -2486,7 +2486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "In qualche modo ci sei riuscito, sei il nuovo capogilda dei flying pigs,
+  m_text: "In qualche modo ci sei riuscito, sei il nuovo capogilda dei Flying Pigs,
     tua moglie ti ama pi\xF9 di prima ed hai un ottimo lavoro, hai vinto amico, hai
     vinto.\n\nFinale 5 di 8"
   m_isRightToLeft: 0
@@ -3126,7 +3126,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Il tuo comportamento scellerato ha portato un\u2019allontanamento da parte
+  m_text: "Il tuo comportamento scellerato ha portato un allontanamento da parte
     della tua famiglia, tuo moglie ha capito che le tue priorit\xE0 non sono pi\xF9
     lei e tua figlia e ti ha lasciato.\n\nFinale 7 di 8"
   m_isRightToLeft: 0
