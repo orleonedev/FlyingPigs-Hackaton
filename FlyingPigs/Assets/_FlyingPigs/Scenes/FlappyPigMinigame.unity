@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2062535879}
   prefab: {fileID: 7533368529234665503, guid: f1d7f7624da7f3c4183417ad512951fe, type: 3}
-  time: 2.5
+  time: 2.25
   yClamp: 1.5
 --- !u!4 &1162815300
 Transform:

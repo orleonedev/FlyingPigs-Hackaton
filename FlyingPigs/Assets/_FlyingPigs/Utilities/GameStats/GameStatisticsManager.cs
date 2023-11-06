@@ -221,4 +221,12 @@ public class GameStatisticsManager
         gameStats.Employer = EmployerKind.John;
         gameStats.CurrentDayLenght = 210;
     }
+
+    public bool CheckDepleatedStats(){
+        if(gameStats.RealHealth <= 0f || gameStats.GameHealth <= 0f || gameStats.RealMoney <= 0f){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

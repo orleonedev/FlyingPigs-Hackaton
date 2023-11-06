@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b540109330ab13a4cb921ebfcc7f486d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -738,7 +738,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Non sei riuscito a mantenere gli alti standard dei Flying Pigs, ti hanno
-    cacciato stamattina, forse \xE8 meglio cos\xEC per tutti."
+    cacciato stamattina, forse \xE8 meglio cos\xEC per tutti.\n\nFinale 8 di 8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
   m_sharedMaterial: {fileID: -3052870064737382775, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
@@ -1044,6 +1044,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469306839}
   m_CullTransparentMesh: 1
+--- !u!1001 &476776236
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 575495412810780741, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107854821023204571, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
 --- !u!1 &566830929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6cee4d9a7913fe74a896f95dabfd713a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1441,7 +1498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c82ea349756bfef40bef92dcb44590f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aab1d37a2fcb9114ba10ab0133102680, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1517,7 +1574,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Hai scelto come priorit\xE0 la famiglia e tua moglie, sei ancora una leggenda
-    ad Obsessive Odyssey ma \xE8 solo un hobby."
+    ad Obsessive Odyssey ma \xE8 solo un hobby.\n\nFinale 2 di 8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
   m_sharedMaterial: {fileID: -3052870064737382775, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
@@ -1526,7 +1583,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4286036979
   m_fontColor: {r: 0.9529412, g: 0.73333335, b: 0.46666667, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1653,7 +1710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c82ea349756bfef40bef92dcb44590f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8c4844a32208b9048bb19a58e7bdd571, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1728,7 +1785,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 92df834afeee91e4993da3abbe6fed01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1803,9 +1860,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hai mantenuto in equilibrio la sua vita, hai un buon conto in banca, un
-    ottimo personaggio ad obsessive odyssey ed una famiglia tendenzialmente felice,
+  m_text: 'Hai mantenuto in equilibrio la sua vita, hai un buon conto in banca, un
+    ottimo personaggio ad Obsessive Odyssey ed una famiglia tendenzialmente felice,
     ottimo lavoro Nerd!
+
+
+    Finale 3 di 8'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
   m_sharedMaterial: {fileID: -3052870064737382775, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
@@ -1814,7 +1874,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4286036979
   m_fontColor: {r: 0.9529412, g: 0.73333335, b: 0.46666667, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1832,7 +1892,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 58.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1941,7 +2001,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Hai usato i soldi per riuscire a mantenere in equilibrio la tua vita familiare
     e quella del gioco, le cose da qui possono solo peggiorare, che sia il conto
-    in banca, la famiglia o la tua reputazione online, qualcosa, presto, croller\xE0."
+    in banca, la famiglia o la tua reputazione online, qualcosa, presto, croller\xE0.\n\nFinale
+    4 di 8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
   m_sharedMaterial: {fileID: -3052870064737382775, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
@@ -1968,7 +2029,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
+  m_fontSize: 51.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2195,7 +2256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c82ea349756bfef40bef92dcb44590f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da94bc2d2ae67b34f933b5f164a424eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2425,9 +2486,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "In qualche modo ci sei riuscito, sei il nuovo capogilda dei flying pigs,
+  m_text: "In qualche modo ci sei riuscito, sei il nuovo capogilda dei Flying Pigs,
     tua moglie ti ama pi\xF9 di prima ed hai un ottimo lavoro, hai vinto amico, hai
-    vinto."
+    vinto.\n\nFinale 5 di 8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
   m_sharedMaterial: {fileID: -3052870064737382775, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
@@ -3065,9 +3126,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Il tuo comportamento scellerato ha portato un\u2019allontanamento da parte
+  m_text: "Il tuo comportamento scellerato ha portato un allontanamento da parte
     della tua famiglia, tuo moglie ha capito che le tue priorit\xE0 non sono pi\xF9
-    lei e tua figlia e ti ha lasciato."
+    lei e tua figlia e ti ha lasciato.\n\nFinale 7 di 8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
   m_sharedMaterial: {fileID: -3052870064737382775, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
@@ -3076,7 +3137,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4286036979
   m_fontColor: {r: 0.9529412, g: 0.73333335, b: 0.46666667, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3094,7 +3155,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 59.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3648,7 +3709,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Risolvere tutto con i soldi non \xE8 una buona soluzione, il tuo conto
-    in banca \xE8 0."
+    in banca \xE8 0.\n\nFinale 6 di 8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
   m_sharedMaterial: {fileID: -3052870064737382775, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
@@ -3657,7 +3718,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4286036979
   m_fontColor: {r: 0.9529412, g: 0.73333335, b: 0.46666667, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3842,6 +3903,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coordinator: {fileID: 77527423}
+  audioManager: {fileID: 2072995051}
+  GoodEndings:
+  - {fileID: 682610130}
+  - {fileID: 678332730}
+  - {fileID: 358521409}
+  - {fileID: 216393915}
+  - {fileID: 1224922362}
+  BadEndings:
+  - {fileID: 655128994}
+  - {fileID: 637521981}
+  - {fileID: 1475219768}
+  isBadEnding: 0
 --- !u!1001 &2037962398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3960,6 +4033,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 327870400342396374, guid: 3581e994f9782b2409e4c3de89ccd2e0, type: 3}
   m_PrefabInstance: {fileID: 2037962398}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2072995051 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4758358973348696186, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+  m_PrefabInstance: {fileID: 476776236}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f408f607369674ea9646838f40c575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2081565561
 GameObject:
   m_ObjectHideFlags: 0
@@ -4018,7 +4102,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Hai concentrato la tua vita su Obsessive Odyssey, hai ancora una famiglia
-    ed una casa, ma la cosa pi\xF9 importante per te sono i Flying Pigs ora."
+    ed una casa, ma la cosa pi\xF9 importante per te sono i Flying Pigs ora.\n\nFinale
+    1 di 8"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
   m_sharedMaterial: {fileID: -3052870064737382775, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
@@ -4179,3 +4264,4 @@ SceneRoots:
   - {fileID: 1981791436}
   - {fileID: 1474786797}
   - {fileID: 1338202986}
+  - {fileID: 476776236}

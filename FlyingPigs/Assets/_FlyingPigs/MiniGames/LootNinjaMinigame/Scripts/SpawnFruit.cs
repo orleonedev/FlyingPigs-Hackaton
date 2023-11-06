@@ -44,6 +44,7 @@ public class SpawnFruit : MonoBehaviour
         GameObject newObject = Instantiate(this.fruitToSpawn);
         newObject.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
         spriteIndex = Random.Range(0, this.objectSprites.Length);
+        newObject.GetComponent<CutFruit>().spriteIndex = spriteIndex;
         Sprite objectSprite = objectSprites[spriteIndex];
         newObject.GetComponent<SpriteRenderer>().sprite = objectSprite;
     }
