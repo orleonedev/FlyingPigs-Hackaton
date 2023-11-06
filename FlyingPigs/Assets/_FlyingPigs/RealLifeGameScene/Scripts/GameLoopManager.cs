@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -23,6 +24,9 @@ public class GameLoopManager : MonoBehaviour
     private bool tickClock = true; 
 
     private GameEventTypes eventToFire;
+
+    [SerializeField] private Animator animator;
+    [SerializeField] private TMP_Text animationLabel;
 
     void Awake() {
         statsManager = GameStatisticsManager.Instance;
@@ -101,13 +105,14 @@ public class GameLoopManager : MonoBehaviour
     }
 
     public void PrepareForNextDay() {
-        
         statsManager.gameStats.CurrentDayLenght = statsManager.gameStats.NextPlayTime + statsManager.gameStats.ModifierPlayTime;
         float hoursDifference = statsManager.gameStats.CurrentDayLenght/60f;
         uint newCurrentHours = (uint)(23.5f-hoursDifference);
         uint newCurrentMinutes = (uint)Math.Floor(statsManager.gameStats.CurrentDayLenght%60);
         statsManager.SetClockTo(newCurrentHours,newCurrentMinutes);
         statsManager.SetNextDay();
+        animationLabel.text = "Giorno " + statsManager.gameStats.Day.ToString();
+        animator.SetBool("isGameOver", false);
         statsManager.gameStats.TimeElapsed = 0f;
         eventToFire = GetRandomEventType();
         statsManager.updateStatsWith(statsManager.fixedUpdates);
@@ -127,20 +132,24 @@ public class GameLoopManager : MonoBehaviour
 
     public void CloseAndRestart() {
         SetLoopTo(false);
+        animationLabel.text = "Fine Giorno " + statsManager.gameStats.Day.ToString();
+        animator.SetBool("isGameOver", true);
         Debug.Log("RESTART");
         // transizione
-        if(!statsManager.CheckDepleatedStats()){
-            SetLoopTo(true);
-            Debug.Log("LOOP START");
-            PrepareForNextDay();
-        } else {
-            
-        }
+        Invoke("StartDay", 2.5f);
     }
 
     public void OnDepleatedStat(GameStatsEnum stat){
         /*Debug.Log("DEAD: " + stat.ToString());
         SetLoopTo(false);
         alive = false;*/
+    }
+
+    private void StartDay(){
+        if(!statsManager.CheckDepleatedStats()){
+            SetLoopTo(true);
+            Debug.Log("LOOP START");
+            PrepareForNextDay();
+        }
     }
 }

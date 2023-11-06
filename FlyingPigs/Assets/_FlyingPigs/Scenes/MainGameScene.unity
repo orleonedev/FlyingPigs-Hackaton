@@ -5590,7 +5590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Giorno 1
+  m_text: Crossfade text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
   m_sharedMaterial: {fileID: -3052870064737382775, guid: d3fa5dc16236543ffa714cea520162e9, type: 2}
@@ -5697,6 +5697,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 1535827386}
+  animator: {fileID: 534743796}
+  animationLabel: {fileID: 1939295944}
 --- !u!4 &2085208326
 Transform:
   m_ObjectHideFlags: 0
