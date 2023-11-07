@@ -89,6 +89,7 @@ public class ArrowBehaviour : MonoBehaviour
             imageShow.SwitchShow(false);
         }
 
+        Debug.Log("Arrow dodge time elapsed "+ timeElapsed);
         SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
             {GameStatsEnum.TimeElapsed, timeElapsed},
             {GameStatsEnum.GameHealth, (level - 1) * 0.02f},

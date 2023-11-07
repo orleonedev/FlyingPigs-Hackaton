@@ -71,7 +71,7 @@ MonoBehaviour:
       senderResponse: "Va bene, ti conceder\xF2 un giorno se oggi non fai cazzate
         (+10 gioco + 1 ora disponibile il giorno dopo -20 famiglia - 10 dollari)"
       updates:
-        keys: 01000000040000000000000002000000
+        keys: 01000000050000000000000002000000
         values:
         - 0.1
         - 60

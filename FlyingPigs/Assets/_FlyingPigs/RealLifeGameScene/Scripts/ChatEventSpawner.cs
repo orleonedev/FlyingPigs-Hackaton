@@ -112,9 +112,9 @@ public class ChatEventSpawner : MonoBehaviour
     }
 
     public void OnGhostedSender() {
+        RemoveElementsFromPossibleAnswerContainer();
         SelectedAnswer.SetActive(true);
         ResponseMessage.SetActive(true);
-        RemoveElementsFromPossibleAnswerContainer();
         SelectedAnswer.GetComponent<SelectedAnswer>().setText("...");
         ResponseMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.ghosting.senderResponse);
         GameStatisticsManager.Instance.updateStatsWith(newChatEvent.chatEvent.ghosting.updates);

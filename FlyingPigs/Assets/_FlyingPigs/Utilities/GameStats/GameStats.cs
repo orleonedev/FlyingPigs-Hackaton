@@ -174,6 +174,16 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
+    public GameEventTypes _eventToFire;
+    public GameEventTypes EventToFire {
+         get {
+            return _eventToFire;
+        }
+        set {
+            _eventToFire = value;
+        }
+    }
+
     // public void OnEnable() {
     //     this.RealHealth = 0.6f;
     //     this.GameHealth = 0.6f;

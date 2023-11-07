@@ -76,6 +76,7 @@ public class SpawnFruit : MonoBehaviour
     }
 
     private void EndLevel() {
+        Debug.Log("loot Ninja time elapsed "+ timeElapsed);
         SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
             {GameStatsEnum.TimeElapsed, timeElapsed},
             {GameStatsEnum.GameHealth, (level - 1) * 0.02f},
