@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4da34598031084240bd04cb6866bc0a3
+guid: 3ce6939b41a2ec14487fe71fa6772408
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,118 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ClipartKey_2621063_0
+      name: BloccoCheSiSpacca-Sheet_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 400
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a1198ddeb994e0499e967df01937ece
-      internalID: 1495745070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ClipartKey_2621063_1
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 400
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 1, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52d3da63bbb84ba47bd46a6c2f7399e0
-      internalID: 2028234259
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ClipartKey_2621063_2
-      rect:
-        serializedVersion: 2
-        x: 421
-        y: 400
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1620c1e0d38fc5479a54853dcbc0c23
-      internalID: -147519747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ClipartKey_2621063_3
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 200
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4491815e5f305747b35e4ba135e9c28
-      internalID: -1222910846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ClipartKey_2621063_4
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 200
-        width: 160
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07663eff8bbebed498e4f64adc1cdc84
-      internalID: -1594087648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ClipartKey_2621063_5
-      rect:
-        serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 160
-        height: 160
+        width: 230
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +137,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e821d252d915a304a967e31a246c4f31
-      internalID: -938232589
+      spriteID: 2ff5b7ce7c054e04c94a536c1fe9a96f
+      internalID: -1605032768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloccoCheSiSpacca-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 230
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e919790f2748f9948b53da83c5d141d4
+      internalID: 1306296304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BloccoCheSiSpacca-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 230
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8efe3d862181894eb1cbeb5328800c4
+      internalID: 795186175
       vertices: []
       indices: 
       edges: []
@@ -259,12 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ClipartKey_2621063_0: 1495745070
-      ClipartKey_2621063_1: 2028234259
-      ClipartKey_2621063_2: -147519747
-      ClipartKey_2621063_3: -1222910846
-      ClipartKey_2621063_4: -1594087648
-      ClipartKey_2621063_5: -938232589
+      BloccoCheSiSpacca-Sheet_0: -1605032768
+      BloccoCheSiSpacca-Sheet_1: 1306296304
+      BloccoCheSiSpacca-Sheet_2: 795186175
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

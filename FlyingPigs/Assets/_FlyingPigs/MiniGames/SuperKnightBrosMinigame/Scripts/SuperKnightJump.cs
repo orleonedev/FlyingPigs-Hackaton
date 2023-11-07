@@ -10,6 +10,7 @@ public class SuperKnightJump : MonoBehaviour
     [SerializeField] Transform groundCheck;
     public LayerMask groundLayer;
     [SerializeField] bool isGrounded;
+    [SerializeField] Animator animator;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class SuperKnightJump : MonoBehaviour
             if (isGrounded)
             {
                 Jump();
+                animator.SetBool("isJumping",true);
 
             }
         } 
@@ -38,6 +40,15 @@ public class SuperKnightJump : MonoBehaviour
             // Applica una forza verso il basso quando sopra o a un'altitudine specifica
             rb.AddForce(Vector2.down *downForce, ForceMode2D.Impulse);
             Debug.Log("vai giu");
+        }
+        if (animator.GetBool("isJumping")==true)
+        {
+            isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1f, 0.3f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+            if (isGrounded)
+            {
+                animator.SetBool("isJumping",false);
+
+            }
         }
     }
 
