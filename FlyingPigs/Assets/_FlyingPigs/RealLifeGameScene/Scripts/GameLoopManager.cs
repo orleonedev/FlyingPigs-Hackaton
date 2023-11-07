@@ -25,6 +25,7 @@ public class GameLoopManager : MonoBehaviour
 
     private GameEventTypes eventToFire;
 
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private Animator animator;
     [SerializeField] private TMP_Text animationLabel;
 
@@ -103,6 +104,7 @@ public class GameLoopManager : MonoBehaviour
     }
 
     public void PrepareForNextDay() {
+        audioManager.PlaySound(audioManager.startOfDayClip);
         statsManager.gameStats.CurrentDayLenght = statsManager.gameStats.NextPlayTime + statsManager.gameStats.ModifierPlayTime;
         float hoursDifference = statsManager.gameStats.CurrentDayLenght/60f;
         uint newCurrentHours = (uint)(23.5f-hoursDifference);
@@ -130,11 +132,12 @@ public class GameLoopManager : MonoBehaviour
 
     public void CloseAndRestart() {
         SetLoopTo(false);
+        audioManager.PlaySound(audioManager.endOfDayClip);
         animationLabel.text = "Fine Giorno " + statsManager.gameStats.Day.ToString();
         animator.SetBool("isGameOver", true);
         Debug.Log("RESTART");
         // transizione
-        Invoke("StartDay", 2.5f);
+        Invoke("StartDay", 4.0f);
     }
 
     public void OnDepleatedStat(GameStatsEnum stat){

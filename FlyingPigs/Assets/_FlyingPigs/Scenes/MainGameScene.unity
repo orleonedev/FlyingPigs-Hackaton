@@ -5598,6 +5598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 1535827386}
+  audioManager: {fileID: 703850423}
   animator: {fileID: 534743796}
   animationLabel: {fileID: 1939295944}
 --- !u!4 &2085208326
