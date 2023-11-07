@@ -27,6 +27,7 @@ public class PigHuntUImanager : MonoBehaviour
     }
 
     private void OnGameOver(){
+        Debug.Log("Pig hunt time elapsed "+ PigSpawner.timerElapsedTime);
         SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
             {GameStatsEnum.TimeElapsed, PigSpawner.timerElapsedTime},
             {GameStatsEnum.GameHealth, (PigSpawner.level - 1) * 0.02f},

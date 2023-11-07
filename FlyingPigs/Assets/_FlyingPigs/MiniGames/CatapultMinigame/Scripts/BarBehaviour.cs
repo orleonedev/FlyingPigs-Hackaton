@@ -104,7 +104,7 @@ public class BarBehaviour : MonoBehaviour
         if (level - 1 != 5 && timer.GetCounting()) {
             imageShow.SwitchShow(false);
         }
-
+        Debug.Log("Catapult time elapsed "+ timeElapsed);
         SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
             {GameStatsEnum.TimeElapsed, timeElapsed},
             {GameStatsEnum.GameHealth, (level - 1) * 0.02f},
