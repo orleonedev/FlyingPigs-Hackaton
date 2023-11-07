@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81b7f4d53b6a1364fb8ee9625583dae2
+guid: ce0635550aa486c4ea1b1120878fe4d8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,46 +81,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -162,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HumanSpriteSheet_0
+      name: HumanNoWeapons-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 170
-        width: 210
-        height: 170
+        y: 150
+        width: 170
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c953f70d86f312544ac07aa05f2815bc
-      internalID: -672444635
+      spriteID: 78c58c30c7a9dd14083060a03c4c1ecd
+      internalID: 1137356284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumanSpriteSheet_1
+      name: HumanNoWeapons-Sheet_1
       rect:
         serializedVersion: 2
-        x: 210
-        y: 170
-        width: 210
-        height: 170
+        x: 170
+        y: 150
+        width: 170
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5279ec9b3fdadd145b54133ef2cab2cb
-      internalID: -1492340740
+      spriteID: 1cfdc7ff700ce21409c6fb934d58c62b
+      internalID: -337025282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumanSpriteSheet_2
+      name: HumanNoWeapons-Sheet_2
       rect:
         serializedVersion: 2
-        x: 420
-        y: 170
-        width: 210
-        height: 170
+        x: 340
+        y: 150
+        width: 170
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c91e22091a9c3c94da8112220dded566
-      internalID: 1800260644
+      spriteID: 52276b8694fff574685585cb5c6cdfcd
+      internalID: -1869944333
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumanSpriteSheet_3
+      name: HumanNoWeapons-Sheet_3
       rect:
         serializedVersion: 2
-        x: 630
-        y: 170
-        width: 210
-        height: 170
+        x: 510
+        y: 150
+        width: 170
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d0dde1c08da0f041b28419c68b76852
-      internalID: 1761721268
+      spriteID: 38e939e2686ef214686627169c6895ab
+      internalID: -412190106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumanSpriteSheet_4
+      name: HumanNoWeapons-Sheet_4
       rect:
         serializedVersion: 2
-        x: 840
-        y: 170
-        width: 210
-        height: 170
+        x: 680
+        y: 150
+        width: 170
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22495faf57dbde14893d0bbe0ee6a31c
-      internalID: -1473813569
+      spriteID: 22b2c419173990545b9188c8f908f4fd
+      internalID: 1691948205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumanSpriteSheet_5
+      name: HumanNoWeapons-Sheet_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 210
-        height: 170
+        width: 170
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 432929912bd71ed4b801484b9bf8248f
-      internalID: -1385119832
+      spriteID: e42f49e68e8adb94ebcb275ebfac94c3
+      internalID: 516773923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumanSpriteSheet_6
+      name: HumanNoWeapons-Sheet_6
       rect:
         serializedVersion: 2
-        x: 210
+        x: 170
         y: 0
-        width: 210
-        height: 170
+        width: 170
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,71 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5bdc423de9d9c149a62c3b6ba3a2988
-      internalID: 214763321
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HumanSpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 0
-        width: 210
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 433eaf49705da6642a7f2484beb0b934
-      internalID: 707527242
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HumanSpriteSheet_8
-      rect:
-        serializedVersion: 2
-        x: 630
-        y: 0
-        width: 210
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9a3563c8cd143a4aab19a05552f71ea
-      internalID: 482992947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HumanSpriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 0
-        width: 210
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7c711411dedba44794b95bc8cb50fd0
-      internalID: -793538559
+      spriteID: cc0124260a826dd45951d8b583c1c8ff
+      internalID: -487780035
       vertices: []
       indices: 
       edges: []
@@ -382,16 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HumanSpriteSheet_0: -672444635
-      HumanSpriteSheet_1: -1492340740
-      HumanSpriteSheet_2: 1800260644
-      HumanSpriteSheet_3: 1761721268
-      HumanSpriteSheet_4: -1473813569
-      HumanSpriteSheet_5: -1385119832
-      HumanSpriteSheet_6: 214763321
-      HumanSpriteSheet_7: 707527242
-      HumanSpriteSheet_8: 482992947
-      HumanSpriteSheet_9: -793538559
+      HumanNoWeapons-Sheet_0: 1137356284
+      HumanNoWeapons-Sheet_1: -337025282
+      HumanNoWeapons-Sheet_2: -1869944333
+      HumanNoWeapons-Sheet_3: -412190106
+      HumanNoWeapons-Sheet_4: 1691948205
+      HumanNoWeapons-Sheet_5: 516773923
+      HumanNoWeapons-Sheet_6: -487780035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,349 @@
+fileFormatVersion: 2
+guid: 14b8789d02562ba45b0f10ce1be1deca
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Anfora blu-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 80, y: -197}
+        - {x: 82, y: -195}
+        - {x: 82, y: -187}
+        - {x: 100, y: -187}
+        - {x: 102, y: -185}
+        - {x: 102, y: -177}
+        - {x: 110, y: -177}
+        - {x: 112, y: -175}
+        - {x: 112, y: -167}
+        - {x: 120, y: -167}
+        - {x: 122, y: -165}
+        - {x: 122, y: -157}
+        - {x: 130, y: -157}
+        - {x: 132, y: -155}
+        - {x: 132, y: -147}
+        - {x: 140, y: -147}
+        - {x: 142, y: -145}
+        - {x: 142, y: -137}
+        - {x: 150, y: -137}
+        - {x: 152, y: -135}
+        - {x: 152, y: -117}
+        - {x: 160, y: -117}
+        - {x: 162, y: -115}
+        - {x: 162, y: -97}
+        - {x: 170, y: -97}
+        - {x: 172, y: -95}
+        - {x: 172, y: -87}
+        - {x: 180, y: -87}
+        - {x: 182, y: -85}
+        - {x: 182, y: 25}
+        - {x: 180, y: 27}
+        - {x: 172, y: 27}
+        - {x: 172, y: 55}
+        - {x: 170, y: 57}
+        - {x: 162, y: 57}
+        - {x: 162, y: 75}
+        - {x: 160, y: 77}
+        - {x: 152, y: 77}
+        - {x: 152, y: 85}
+        - {x: 150, y: 87}
+        - {x: 142, y: 87}
+        - {x: 142, y: 95}
+        - {x: 140, y: 97}
+        - {x: 132, y: 97}
+        - {x: 132, y: 105}
+        - {x: 130, y: 107}
+        - {x: 122, y: 107}
+        - {x: 122, y: 115}
+        - {x: 120, y: 117}
+        - {x: 112, y: 117}
+        - {x: 112, y: 123}
+        - {x: 120, y: 123}
+        - {x: 122, y: 125}
+        - {x: 122, y: 133}
+        - {x: 130, y: 133}
+        - {x: 132, y: 135}
+        - {x: 132, y: 143}
+        - {x: 140, y: 143}
+        - {x: 142, y: 145}
+        - {x: 142, y: 175}
+        - {x: 140, y: 177}
+        - {x: 132, y: 177}
+        - {x: 132, y: 185}
+        - {x: 130, y: 187}
+        - {x: 112, y: 187}
+        - {x: 112, y: 195}
+        - {x: 110, y: 197}
+        - {x: 62, y: 197}
+        - {x: 62, y: 205}
+        - {x: 60, y: 207}
+        - {x: -60, y: 207}
+        - {x: -62, y: 205}
+        - {x: -62, y: 197}
+        - {x: -110, y: 197}
+        - {x: -112, y: 195}
+        - {x: -112, y: 187}
+        - {x: -130, y: 187}
+        - {x: -132, y: 185}
+        - {x: -132, y: 177}
+        - {x: -140, y: 177}
+        - {x: -142, y: 175}
+        - {x: -142, y: 135}
+        - {x: -140, y: 133}
+        - {x: -132, y: 133}
+        - {x: -132, y: 125}
+        - {x: -130, y: 123}
+        - {x: -112, y: 123}
+        - {x: -112, y: 117}
+        - {x: -120, y: 117}
+        - {x: -122, y: 115}
+        - {x: -122, y: 107}
+        - {x: -130, y: 107}
+        - {x: -132, y: 105}
+        - {x: -132, y: 97}
+        - {x: -140, y: 97}
+        - {x: -142, y: 95}
+        - {x: -142, y: 87}
+        - {x: -150, y: 87}
+        - {x: -152, y: 85}
+        - {x: -152, y: 77}
+        - {x: -160, y: 77}
+        - {x: -162, y: 75}
+        - {x: -162, y: 57}
+        - {x: -170, y: 57}
+        - {x: -172, y: 55}
+        - {x: -172, y: 27}
+        - {x: -180, y: 27}
+        - {x: -182, y: 25}
+        - {x: -182, y: -75}
+        - {x: -180, y: -77}
+        - {x: -172, y: -77}
+        - {x: -172, y: -95}
+        - {x: -170, y: -97}
+        - {x: -162, y: -97}
+        - {x: -162, y: -115}
+        - {x: -160, y: -117}
+        - {x: -152, y: -117}
+        - {x: -152, y: -135}
+        - {x: -150, y: -137}
+        - {x: -142, y: -137}
+        - {x: -142, y: -145}
+        - {x: -140, y: -147}
+        - {x: -132, y: -147}
+        - {x: -132, y: -155}
+        - {x: -130, y: -157}
+        - {x: -122, y: -157}
+        - {x: -122, y: -165}
+        - {x: -120, y: -167}
+        - {x: -112, y: -167}
+        - {x: -112, y: -175}
+        - {x: -110, y: -177}
+        - {x: -102, y: -177}
+        - {x: -102, y: -185}
+        - {x: -100, y: -187}
+        - {x: -82, y: -187}
+        - {x: -82, y: -195}
+        - {x: -80, y: -197}
+        - {x: -62, y: -197}
+        - {x: -62, y: -205}
+        - {x: -60, y: -207}
+        - {x: 60, y: -207}
+        - {x: 62, y: -205}
+        - {x: 62, y: -197}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 82ae184d24ea3db42b57a5020bf0377b
+      internalID: -511219456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anfora blu-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1e912b8ff22954b8f701e4e1cae5a8
+      internalID: 1639486362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anfora blu-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e97a30f49a5b9b40b202c6b125ba53e
+      internalID: 1672956901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Anfora blu-Sheet_0: -511219456
+      Anfora blu-Sheet_1: 1639486362
+      Anfora blu-Sheet_2: 1672956901
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

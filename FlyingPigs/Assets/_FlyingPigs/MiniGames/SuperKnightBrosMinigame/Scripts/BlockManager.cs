@@ -8,6 +8,7 @@ public class BlockManager : MonoBehaviour
 {
     public float moveSpeed = 3.5f; // Velocità di movimento
     private bool movingRight = true; // Direzione iniziale
+    [SerializeField] Animator animator;
 
     // Variabili per rilevare i contatti
 
@@ -74,8 +75,14 @@ private void OnCollisionEnter2D(Collision2D collision)
         {
             // Codice da eseguire quando il collider entra in collisione con un oggetto contrassegnato come "Player".
             Debug.Log("Collisione con il giocatore!");
-            Destroy(this.gameObject);
+            animator.SetBool("isBroken", true);
+            
         }
     }
+    public void BlockBreaker()
+    {
+        Destroy(this.gameObject);
+    }
 }
+
 

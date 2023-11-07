@@ -28,6 +28,7 @@ public class GameLoopManager : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private Animator animator;
     [SerializeField] private TMP_Text animationLabel;
+    [SerializeField] private GameObject fadingCanva;
 
     void Awake() {
         statsManager = GameStatisticsManager.Instance;
@@ -37,9 +38,11 @@ public class GameLoopManager : MonoBehaviour
     {
         Debug.Log("Time Elapsed: "+statsManager.gameStats.TimeElapsed);
         if (statsManager.gameStats.TimeElapsed == 0) {
+            fadingCanva.SetActive(true);
             Debug.Log("PREPARE FOR NEXT DAY");
             PrepareForNextDay();
         } else {
+            fadingCanva.SetActive(false);
             Debug.Log("UPDATE UI");
             statsManager.UpdateClock();
             statsManager.gameStats.OnValuesChanged?.Invoke();
@@ -110,8 +113,8 @@ public class GameLoopManager : MonoBehaviour
         statsManager.UpdateClock();
         statsManager.SetNextDay();
         animationLabel.text = "Giorno " + statsManager.gameStats.Day.ToString();
-        animator.SetBool("isGameOver", false);
         statsManager.gameStats.EventToFire = GetRandomEventType();
+        animator.SetBool("isDayOver", false);
         statsManager.updateStatsWith(statsManager.fixedUpdates);
         MinigamesList.Instance.PlayedGamesOfTheDay = new List<string>();
         statsManager.gameStats.ModifierPlayTime = 0;
@@ -130,8 +133,9 @@ public class GameLoopManager : MonoBehaviour
     public void CloseAndRestart() {
         SetLoopTo(false);
         audioManager.PlaySound(audioManager.endOfDayClip);
+        fadingCanva.SetActive(true);
         animationLabel.text = "Fine Giorno " + statsManager.gameStats.Day.ToString();
-        animator.SetBool("isGameOver", true);
+        animator.SetBool("isDayOver", true);
         Debug.Log("RESTART");
         // transizione
         Invoke("StartDay", 4.0f);
