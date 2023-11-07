@@ -11,6 +11,8 @@ public class GameLoopManager : MonoBehaviour
 
     [SerializeField]
     public GameStateManager gameState;
+    [SerializeField]
+    public Coordinator coordinator;
     public GameStatisticsManager statsManager;
     public delegate void OnMinigameEventDelegate();
     public OnMinigameEventDelegate OnMinigameEvent;
@@ -146,10 +148,12 @@ public class GameLoopManager : MonoBehaviour
     }
 
     private void StartDay(){
-        if(!statsManager.CheckDepleatedStats()){
+        if(!statsManager.CheckDepleatedStats() && statsManager.gameStats.Day < 10){
             SetLoopTo(true);
             Debug.Log("LOOP START");
             PrepareForNextDay();
+        } else {
+            coordinator.LoadScene("EndingScene");
         }
     }
 }

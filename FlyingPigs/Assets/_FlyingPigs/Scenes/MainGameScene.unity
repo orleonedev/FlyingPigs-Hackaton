@@ -1271,7 +1271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!225 &534743795
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1836,7 +1836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &669271151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3987,6 +3987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReceivedMessage
       objectReference: {fileID: 0}
+    - target: {fileID: 994594639008105202, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1794262382741092636, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -3997,11 +4001,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1794262382741092636, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.8619166
+      value: 0.7597309
       objectReference: {fileID: 0}
     - target: {fileID: 3825985478564503791, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 31.21
+      value: 15.809999
       objectReference: {fileID: 0}
     - target: {fileID: 4201625240805699567, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_Pivot.x
@@ -4566,7 +4570,8 @@ MonoBehaviour:
   FirstMessage: {fileID: 3800726414586499802}
   SelectedAnswer: {fileID: 8549754618587979193}
   ResponseMessage: {fileID: 1453385540}
-  PossibleAnswersContainer: {fileID: 56933632}
+  PossibleAnswersContainer: {fileID: 56933630}
+  possibleAnswerPrefab: {fileID: 7612604750308827566, guid: d353f2e6180eb45caa0888d30dd615ce, type: 3}
 --- !u!4 &1553560680
 Transform:
   m_ObjectHideFlags: 0
@@ -4841,7 +4846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1675542937
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5697,6 +5702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 1535827386}
+  coordinator: {fileID: 691134405}
   animator: {fileID: 534743796}
   animationLabel: {fileID: 1939295944}
 --- !u!4 &2085208326
@@ -5741,17 +5747,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114568524}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 2.8571427, y: 0.7142857, z: 5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.3, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1136895178}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.39999962, y: -0}
-  m_SizeDelta: {x: 0.2, y: 0.2}
+  m_AnchoredPosition: {x: -0.4, y: -0}
+  m_SizeDelta: {x: 1.5, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2114568526
 MonoBehaviour:
@@ -5850,7 +5856,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 64d4d19584fc34c77b4ea8871d9037c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6161,6 +6167,10 @@ PrefabInstance:
     - target: {fileID: 5965981888375500036, guid: 9b40900de9cde41b0bc1669c8b065784, type: 3}
       propertyPath: m_Name
       value: SelectedAnswer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5965981888375500036, guid: 9b40900de9cde41b0bc1669c8b065784, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6434456700911239691, guid: 9b40900de9cde41b0bc1669c8b065784, type: 3}
       propertyPath: m_Pivot.x

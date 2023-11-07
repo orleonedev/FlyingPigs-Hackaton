@@ -23,9 +23,9 @@ public class ChatEventSpawner : MonoBehaviour
     [SerializeField]
     public GameObject ResponseMessage;
     [SerializeField]
-    public VerticalLayoutGroup PossibleAnswersContainer;
-
-    private PossibleAnswer possibleAnswerPrefab;
+    public GameObject PossibleAnswersContainer;
+    [SerializeField]
+    private GameObject possibleAnswerPrefab;
 
     private bool didAnswer = false;
     private bool ghosted = false;
@@ -76,8 +76,8 @@ public class ChatEventSpawner : MonoBehaviour
         FirstMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.StartingMessage);
         foreach (Answers possibleAnswer in newChatEvent.chatEvent.answers)
         {
-            PossibleAnswer newObject = Instantiate(possibleAnswerPrefab, PossibleAnswersContainer.transform);
-            newObject.setText(possibleAnswer.answerText);
+            GameObject newObject = Instantiate(possibleAnswerPrefab, PossibleAnswersContainer.transform);
+            newObject.GetComponent<PossibleAnswer>().setText(possibleAnswer.answerText);
         }
     }
 
@@ -112,6 +112,7 @@ public class ChatEventSpawner : MonoBehaviour
     public void OnGhostedSender() {
         SelectedAnswer.SetActive(true);
         ResponseMessage.SetActive(true);
+        RemoveElementsFromPossibleAnswerContainer();
         SelectedAnswer.GetComponent<SelectedAnswer>().setText("...");
         ResponseMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.ghosting.senderResponse);
         GameStatisticsManager.Instance.updateStatsWith(newChatEvent.chatEvent.ghosting.updates);

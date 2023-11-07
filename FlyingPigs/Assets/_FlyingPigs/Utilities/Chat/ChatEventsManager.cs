@@ -139,7 +139,8 @@ public class ChatEventsManager
 
     private Characters GetRandomCharacter() {
         var values = Enum.GetValues(typeof(GameEventTypes));
-        var random = new System.Random();
-        return (Characters)values.GetValue(random.Next(values.Length));
+        //var random = new System.Random();
+        Debug.Log(values.Length);
+        return (Characters)values.GetValue(UnityEngine.Random.Range(0, values.Length-1));
     }
 }
