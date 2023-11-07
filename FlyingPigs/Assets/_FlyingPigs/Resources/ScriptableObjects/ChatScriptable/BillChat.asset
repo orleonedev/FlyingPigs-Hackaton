@@ -87,7 +87,8 @@ MonoBehaviour:
         values:
         - -0.1
     statConditions: []
-    employerConditions: []
+    employerConditions:
+    - neededEmployer: 2
   previousEvents: []
   specificChatEvents:
   - StartingMessage: "Yo amico, il boss mi ha detto che cercavi un lavoro pi\xF9
