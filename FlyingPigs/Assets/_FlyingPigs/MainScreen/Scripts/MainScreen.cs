@@ -11,6 +11,12 @@ public class MainScreen : MonoBehaviour
     [SerializeField]
     public GameObject transitionLayer;
 
+    [SerializeField]
+    public Animator animator;
+
+    [SerializeField]
+    public Coordinator coordinator;
+
     private int loopNum = -1;
 
     void Start()
@@ -26,8 +32,12 @@ public class MainScreen : MonoBehaviour
         FakeGameManager.Instance.ReloadGame();
     }
 
-    void Update()
-    {
-        
+    public void StartGame(){
+        animator.SetBool("gameStart", true);
+        Invoke("LoadScene", 1.5f);
+    }
+
+    private void LoadScene(){
+        coordinator.LoadScene("MainGameScene");
     }
 }
