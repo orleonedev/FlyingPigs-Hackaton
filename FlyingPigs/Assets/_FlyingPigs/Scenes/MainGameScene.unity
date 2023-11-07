@@ -5720,6 +5720,7 @@ MonoBehaviour:
   animator: {fileID: 534743796}
   animationLabel: {fileID: 1939295944}
   fadingCanva: {fileID: 534743794}
+  chatEventSpawner: {fileID: 1553560679}
 --- !u!4 &2085208326
 Transform:
   m_ObjectHideFlags: 0

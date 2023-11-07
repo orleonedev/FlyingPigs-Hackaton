@@ -18,6 +18,7 @@ public class GameLoopManager : MonoBehaviour
     public OnMinigameEventDelegate OnMinigameEvent;
     public delegate void OnChatEventDelegate();
     public OnChatEventDelegate OnChatEvent;
+    public OnChatEventDelegate OnChatTutorialGhostableEvent;
 
     private bool loopEnabled = false;
     private bool alive = true;
@@ -29,6 +30,7 @@ public class GameLoopManager : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private TMP_Text animationLabel;
     [SerializeField] private GameObject fadingCanva;
+    [SerializeField] private ChatEventSpawner chatEventSpawner;
 
     void Awake() {
         statsManager = GameStatisticsManager.Instance;
@@ -41,6 +43,12 @@ public class GameLoopManager : MonoBehaviour
             fadingCanva.SetActive(true);
             Debug.Log("PREPARE FOR NEXT DAY");
             PrepareForNextDay();
+            
+            chatEventSpawner.OnTutorialChatEvent();
+            gameState.SwitchToChat();
+            chatEventSpawner.SetupChat();
+
+            
         } else {
             fadingCanva.SetActive(false);
             Debug.Log("UPDATE UI");
@@ -147,6 +155,9 @@ public class GameLoopManager : MonoBehaviour
             SetLoopTo(true);
             Debug.Log("LOOP START");
             PrepareForNextDay();
+            if (statsManager.gameStats.Day == 2) {
+                OnChatTutorialGhostableEvent?.Invoke();
+            }
         } else {
             coordinator.LoadScene("EndingScene");
         }

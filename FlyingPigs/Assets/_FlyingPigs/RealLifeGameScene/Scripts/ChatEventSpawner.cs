@@ -37,6 +37,7 @@ public class ChatEventSpawner : MonoBehaviour
     void Start()
     {
         gameLoopManager.OnChatEvent += OnChatEvent;
+        gameLoopManager.OnChatTutorialGhostableEvent += OnChatTutorialGhostableEvent;
 
     }
 
@@ -56,6 +57,26 @@ public class ChatEventSpawner : MonoBehaviour
                 chatNotification.SetActive(false);
             }
         }
+    }
+
+    public void OnTutorialChatEvent() {
+        newChatEvent = ChatEventsManager.Instance.PickGregTutorial();
+        ResetUI();
+        SenderLabel.text = newChatEvent.SenderName;
+    } 
+
+    public void OnChatTutorialGhostableEvent() {
+        Debug.Log("Create the Chat Notification");
+
+        newChatEvent = ChatEventsManager.Instance.PickGregTutorial();
+        ResetUI();
+        SenderLabel.text = newChatEvent.SenderName;
+
+        chatNotification.SetActive(true);
+        timelapse = 30f;
+        updateEnable = true;
+        didAnswer = false;
+        ghosted = false;
     }
 
     public void OnChatEvent() {

@@ -35,6 +35,19 @@ public class ChatEventsManager
 
     private readonly GameStatisticsManager StatsManager = GameStatisticsManager.Instance;
 
+    public ChatEventWithSender PickGregTutorial() {
+
+         List<ChatEvent> tutorialList = GregChatEvents.Instance.tutorialChatEvents;
+
+        ChatEventWithSender chatEventWithSender = new ChatEventWithSender
+        {
+            SenderName = "Greg",
+            chatEvent = tutorialList.Except(GregChatEvents.Instance.previousTutorialEvents).ToList().First()
+        };
+        GregChatEvents.Instance.previousTutorialEvents.Add(chatEventWithSender.chatEvent);
+        return chatEventWithSender;
+    }
+
     public ChatEventWithSender PickChatEvent() {
 
         List<Characters> availables = new List<Characters>();
