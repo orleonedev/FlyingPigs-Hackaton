@@ -97,6 +97,7 @@ MonoBehaviour:
   mainTheme: {fileID: 8300000, guid: dc77856c122b14f51bf77383f10ba42a, type: 3}
   mainGameTheme: {fileID: 8300000, guid: eac40de8a3634e44e856706ec4ebee3b, type: 3}
   minigameTheme: {fileID: 8300000, guid: eda7fd8b95d72d84ba01799492b5e3a1, type: 3}
+  mainThemeCredits: {fileID: 8300000, guid: dc77856c122b14f51bf77383f10ba42a, type: 3}
 --- !u!1 &592493680073624149
 GameObject:
   m_ObjectHideFlags: 0
