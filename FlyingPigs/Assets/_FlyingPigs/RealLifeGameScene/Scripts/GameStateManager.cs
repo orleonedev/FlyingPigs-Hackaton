@@ -12,7 +12,7 @@ public class GameStateManager : MonoBehaviour
 
     [SerializeField]
     public AudioManager audioManager;
-    private int numOfAudioSource = -1;
+    public int numOfAudioSource = -1;
 
     void Start()
     {
@@ -24,7 +24,8 @@ public class GameStateManager : MonoBehaviour
             ChatSceneObject.SetActive(false);
         }
         InGameSceneObject.SetActive(true);
-        numOfAudioSource = audioManager.PlaySoundLoop(audioManager.mainGameTheme);
+        numOfAudioSource = audioManager.PlaySoundLoop(audioManager.mainGameTheme, 0f);
+        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[numOfAudioSource], 3f, 1f));
     }
 
     public void SwitchToChat() {

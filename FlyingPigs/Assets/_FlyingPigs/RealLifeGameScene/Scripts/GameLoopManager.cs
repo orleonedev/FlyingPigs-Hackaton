@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -140,6 +141,7 @@ public class GameLoopManager : MonoBehaviour
 
     public void CloseAndRestart() {
         SetLoopTo(false);
+        StartCoroutine(audioManager.Fade(false, audioManager.audioSourcesLoop[gameState.numOfAudioSource], 0.5f, 0f));
         audioManager.PlaySound(audioManager.endOfDayClip);
         fadingCanva.SetActive(true);
         animationLabel.text = "Fine Giorno " + statsManager.gameStats.Day.ToString();
