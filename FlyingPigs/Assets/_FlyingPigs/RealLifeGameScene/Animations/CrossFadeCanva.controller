@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: isGameOver
+    m_ConditionEvent: isDayOver
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1621291703128932765}
@@ -61,7 +61,7 @@ AnimatorController:
   m_Name: CrossFadeCanva
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: isGameOver
+  - m_Name: isDayOver
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -141,7 +141,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: isGameOver
+    m_ConditionEvent: isDayOver
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -899494734671645406}
