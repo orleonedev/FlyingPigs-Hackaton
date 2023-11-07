@@ -99,7 +99,7 @@ MonoBehaviour:
     statConditions:
     - gameStat: 1
       statComparisonType: 0
-      value: 20
+      value: 0.2
     employerConditions: []
   - StartingMessage: "Ammetto che mi stai sorprendendo positivamente, sei uno dei
       migliori membri della nostra gilda, dimmi un p\xF2 cosa ti rende cos\xEC bravo?\r"

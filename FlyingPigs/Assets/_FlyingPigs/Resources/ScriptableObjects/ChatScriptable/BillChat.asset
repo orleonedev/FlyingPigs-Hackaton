@@ -100,10 +100,11 @@ MonoBehaviour:
       senderResponse: "Nessun problema amico, ci vediamo domani allora e mi raccomando,
         non smettere mai di tappare! (-5 famiglia +10 gioco -20 dollari al giorno)\r"
       updates:
-        keys: 0100000008000000
+        keys: 010000000800000001000000
         values:
         - 0.2
         - 2
+        - 0.1
     - answerText: "Apprezzo il gesto ma devo mantenere una famiglia e non posso permettermi
         una paga minore.\r"
       senderResponse: "Tranquillo amico, lo capisco, perdita tua per\xF2 stavo organizzando
