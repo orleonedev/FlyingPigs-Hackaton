@@ -36,44 +36,64 @@ public class ChatEventsManager
     private readonly GameStatisticsManager StatsManager = GameStatisticsManager.Instance;
 
     public ChatEventWithSender PickChatEvent() {
-        
-        List<ChatEvent> availableList = new List<ChatEvent>();
+
+        List<Characters> availables = new List<Characters>();
+
+        List<ChatEvent> gregList = ListWithRequirementsMet( Filter(GregChatEvents.Instance));
+        if (gregList.Count > 0) {
+            availables.Add(Characters.Greg);
+        }
+        List<ChatEvent> sarahList = ListWithRequirementsMet( Filter(SarahChatEvents.Instance));
+        if (sarahList.Count > 0) {
+            availables.Add(Characters.Sarah);
+        }
+        List<ChatEvent> evelynList = ListWithRequirementsMet( Filter(EvelyneChatEvents.Instance));
+        if (evelynList.Count > 0) {
+            availables.Add(Characters.Evelyne);
+        }
+        List<ChatEvent> EmployerList = ListWithRequirementsMet( Filter(EmployerChatEvents.Instance));
+        if (EmployerList.Count > 0) {
+            availables.Add(Characters.Josh);
+        }
+        List<ChatEvent> markList = ListWithRequirementsMet( Filter(MarkChatEvents.Instance));
+        if (markList.Count > 0) {
+            availables.Add(Characters.Mark);
+        }
+        List<ChatEvent> billList = ListWithRequirementsMet( Filter(BillChatEvents.Instance));
+        if (billList.Count > 0) {
+            availables.Add(Characters.Bill);
+        }
+
         ChatEventWithSender chatEventWithSender = new ChatEventWithSender();
-        switch(GetRandomCharacter()){
+        switch(GetRandomCharacterFromAvailable(availables)){
             case Characters.Greg:
-            availableList = ListWithRequirementsMet( Filter(GregChatEvents.Instance));
             chatEventWithSender.SenderName = "Greg";
-            chatEventWithSender.chatEvent = availableList[UnityEngine.Random.Range(0, availableList.Count-1)];
+            chatEventWithSender.chatEvent = gregList[UnityEngine.Random.Range(0, gregList.Count)];
             AddToPreviousList(GregChatEvents.Instance, chatEventWithSender.chatEvent);
             break;
             case Characters.Sarah:
-            availableList = ListWithRequirementsMet( Filter(SarahChatEvents.Instance));
             chatEventWithSender.SenderName = "Sarah";
-            chatEventWithSender.chatEvent = availableList[UnityEngine.Random.Range(0, availableList.Count-1)];
+            chatEventWithSender.chatEvent = sarahList[UnityEngine.Random.Range(0, sarahList.Count)];
             AddToPreviousList(SarahChatEvents.Instance, chatEventWithSender.chatEvent);
             break;
             case Characters.Evelyne:
-            availableList = ListWithRequirementsMet( Filter(EvelyneChatEvents.Instance));
             chatEventWithSender.SenderName = "Evelyne";
-            chatEventWithSender.chatEvent = availableList[UnityEngine.Random.Range(0, availableList.Count-1)];
+            chatEventWithSender.chatEvent = evelynList[UnityEngine.Random.Range(0, evelynList.Count)];
             AddToPreviousList(EvelyneChatEvents.Instance, chatEventWithSender.chatEvent);
             break;
             case Characters.Josh:
-            availableList = ListWithRequirementsMet( Filter(EmployerChatEvents.Instance));
-            chatEventWithSender.SenderName = "Josh";
-            chatEventWithSender.chatEvent = availableList[UnityEngine.Random.Range(0, availableList.Count-1)];
+            chatEventWithSender.SenderName = StatsManager.ActualEmployer().ToString();
+            chatEventWithSender.chatEvent = EmployerList[UnityEngine.Random.Range(0, EmployerList.Count)];
             AddToPreviousList(EmployerChatEvents.Instance, chatEventWithSender.chatEvent);
             break;
             case Characters.Mark:
-            availableList = ListWithRequirementsMet( Filter(MarkChatEvents.Instance));
             chatEventWithSender.SenderName = "Mark";
-            chatEventWithSender.chatEvent = availableList[UnityEngine.Random.Range(0, availableList.Count-1)];
+            chatEventWithSender.chatEvent = markList[UnityEngine.Random.Range(0, markList.Count)];
             AddToPreviousList(MarkChatEvents.Instance, chatEventWithSender.chatEvent);
             break;
             case Characters.Bill:
-            availableList = ListWithRequirementsMet( Filter(BillChatEvents.Instance));
             chatEventWithSender.SenderName = "Bill";
-            chatEventWithSender.chatEvent = availableList[UnityEngine.Random.Range(0, availableList.Count-1)];
+            chatEventWithSender.chatEvent = billList[UnityEngine.Random.Range(0, billList.Count)];
             AddToPreviousList(BillChatEvents.Instance, chatEventWithSender.chatEvent);
             break;
         }
@@ -142,5 +162,9 @@ public class ChatEventsManager
         //var random = new System.Random();
         Debug.Log(values.Length);
         return (Characters)values.GetValue(UnityEngine.Random.Range(0, values.Length));
+    }
+
+    private Characters GetRandomCharacterFromAvailable(List<Characters> available) {
+        return available.ElementAt(UnityEngine.Random.Range(0,available.Count));
     }
 }

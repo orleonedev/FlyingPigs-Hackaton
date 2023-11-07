@@ -12,6 +12,7 @@ public class ClickableVase : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject playAreaObject;
     [SerializeField] private VaseSpawner vaseSpawner;
+    public bool canBeTouched = true;
 
 
     private void Start(){
@@ -23,7 +24,7 @@ public class ClickableVase : MonoBehaviour
 
     private void Update()
     {
-        if(Input.touchCount > 0){
+        if(Input.touchCount > 0 && canBeTouched){
             Touch touch = Input.GetTouch(0);
                 
             if(touch.phase == TouchPhase.Began){
@@ -42,12 +43,13 @@ public class ClickableVase : MonoBehaviour
             //Vase Animation
             if (isBlue)
             {
-                Debug.Log ("Tutto ok");
+                //Debug.Log ("Tutto ok");
                 vaseSpawner.numberOfBlueVases --; 
+                canBeTouched = false;
             }
             else
             {
-                Debug.Log("Hai cacato");
+                vaseSpawner.RedVaseDestroyed();
             }
             animator.SetBool("isBroken", true); 
 

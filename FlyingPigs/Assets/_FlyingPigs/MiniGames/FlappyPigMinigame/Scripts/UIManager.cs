@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     }
 
     private void OnGameOver() {
+        Debug.Log("Flappy Pig time elapsed "+ PigScript.timeElapsed);
         SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
             {GameStatsEnum.TimeElapsed, PigScript.timeElapsed},
             {GameStatsEnum.GameHealth, (PigScript.level - 1) * 0.02f},

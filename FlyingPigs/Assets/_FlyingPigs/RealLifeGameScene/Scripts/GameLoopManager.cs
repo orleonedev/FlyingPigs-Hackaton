@@ -26,8 +26,6 @@ public class GameLoopManager : MonoBehaviour
 
     private bool tickClock = true; 
 
-    private GameEventTypes eventToFire;
-
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private Animator animator;
     [SerializeField] private TMP_Text animationLabel;
@@ -47,7 +45,9 @@ public class GameLoopManager : MonoBehaviour
         } else {
             fadingCanva.SetActive(false);
             Debug.Log("UPDATE UI");
+            statsManager.UpdateClock();
             statsManager.gameStats.OnValuesChanged?.Invoke();
+
         }
         SetLoopTo(true);
         Debug.Log("LOOP START");
@@ -75,9 +75,6 @@ public class GameLoopManager : MonoBehaviour
                     return;
                 }
 
-                
-
-
                 if (((int)statsManager.gameStats.TimeElapsed) % 30 == 0 && !eventTriggered) {
                     eventTriggered = true;
                     Debug.Log("SEND EVENT");
@@ -87,23 +84,23 @@ public class GameLoopManager : MonoBehaviour
                         OnChatEvent?.Invoke();
                     } else {
                         //fire one
-                        switch (eventToFire) {
+                        switch (statsManager.gameStats.EventToFire) {
                             case GameEventTypes.MinigameEvent:
                             Debug.Log("FIRE GAME");
                             OnMinigameEvent?.Invoke();
-                            eventToFire = GameEventTypes.ChatEvent;
+                            statsManager.gameStats.EventToFire = GameEventTypes.ChatEvent;
                             break;
                             case GameEventTypes.ChatEvent:
                             Debug.Log("FIRE CHAT");
                             OnChatEvent?.Invoke();
-                            eventToFire = GameEventTypes.MinigameEvent;
+                            statsManager.gameStats.EventToFire = GameEventTypes.MinigameEvent;
                             break;
                         }
                         
 
                     }
                 }
-                if((int)statsManager.gameStats.TimeElapsed % 30 == 1 && eventTriggered) {
+                if((int)statsManager.gameStats.TimeElapsed % 2 == 1 && eventTriggered) {
                     eventTriggered = false;
                 }
         }
@@ -112,16 +109,13 @@ public class GameLoopManager : MonoBehaviour
 
     public void PrepareForNextDay() {
         audioManager.PlaySound(audioManager.startOfDayClip);
+        statsManager.gameStats.TimeElapsed = 0f;
         statsManager.gameStats.CurrentDayLenght = statsManager.gameStats.NextPlayTime + statsManager.gameStats.ModifierPlayTime;
-        float hoursDifference = statsManager.gameStats.CurrentDayLenght/60f;
-        uint newCurrentHours = (uint)(23.5f-hoursDifference);
-        uint newCurrentMinutes = (uint)Math.Floor(statsManager.gameStats.CurrentDayLenght%60);
-        statsManager.SetClockTo(newCurrentHours,newCurrentMinutes);
+        statsManager.UpdateClock();
         statsManager.SetNextDay();
         animationLabel.text = "Giorno " + statsManager.gameStats.Day.ToString();
+        statsManager.gameStats.EventToFire = GetRandomEventType();
         animator.SetBool("isDayOver", false);
-        statsManager.gameStats.TimeElapsed = 0f;
-        eventToFire = GetRandomEventType();
         statsManager.updateStatsWith(statsManager.fixedUpdates);
         MinigamesList.Instance.PlayedGamesOfTheDay = new List<string>();
         statsManager.gameStats.ModifierPlayTime = 0;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -84,6 +85,19 @@ public class GameStatisticsManager
             hours = (hours+1)%24;
             gameStats.CurrentHours = hours;
         } 
+    }
+
+
+    public void UpdateClock(){
+        TimeSpan endTime = new TimeSpan(23, 30, 0);
+
+        // Subtract the given duration from 23:30
+        TimeSpan remainingTime = endTime.Subtract(TimeSpan.FromMinutes(gameStats.CurrentDayLenght - gameStats.TimeElapsed));
+
+        // Assign the calculated hour and minutes
+        uint currentHour = (uint)remainingTime.Hours;
+        uint currentMinutes = (uint) remainingTime.Minutes;
+        SetClockTo(currentHour,currentMinutes);
     }
 
     public void SetClockTo(uint newHours, uint newMinutes) {
