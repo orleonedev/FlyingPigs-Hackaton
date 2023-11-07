@@ -65,6 +65,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip mainGameTheme;
     public AudioClip minigameTheme;
 
+    [Header("Credits")]
+    public AudioClip mainThemeCredits;
+
     void Start() {
         /*
         audioSources = this.GetComponentsInChildren<AudioSource>();
