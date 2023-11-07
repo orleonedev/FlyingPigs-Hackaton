@@ -346,7 +346,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 116.35
+  m_fontSize: 116.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1271,7 +1271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &534743795
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5703,6 +5703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: {fileID: 1535827386}
   coordinator: {fileID: 691134405}
+  audioManager: {fileID: 703850423}
   animator: {fileID: 534743796}
   animationLabel: {fileID: 1939295944}
 --- !u!4 &2085208326
