@@ -17,9 +17,6 @@ public class GameStatisticsManager
     
     public GameStats gameStats = GameStats.Instance;
 
-    public delegate void OnDepleatedStatDelegate(GameStatsEnum stat);
-    public OnDepleatedStatDelegate OnDepleatedStat;
-
     public SerializableDictionary<GameStatsEnum,float> fixedUpdates = new SerializableDictionary<GameStatsEnum, float>(){
             {GameStatsEnum.GameHealth, -0.1f},
             {GameStatsEnum.RealMoney, 40},
@@ -33,32 +30,19 @@ public class GameStatisticsManager
             switch (stat.Key) {
                 case GameStatsEnum.RealHealth:
                     gameStats.RealHealth += stat.Value;
-                    if (gameStats.RealHealth <= 0) {
-                        OnDepleatedStat(GameStatsEnum.RealHealth);
-                    }
+                    
                 break;
                 case GameStatsEnum.GameHealth:
                     gameStats.GameHealth += stat.Value;
-                    if (gameStats.GameHealth <= 0) {
-                        OnDepleatedStat(GameStatsEnum.GameHealth);
-                    }
+                    
                 break;
                 case GameStatsEnum.RealMoney:
                     gameStats.RealMoney += stat.Value;
-                    if (gameStats.RealMoney <= 0) {
-                        OnDepleatedStat(GameStatsEnum.RealMoney);
-                    }
+                    
                 break;
                 case GameStatsEnum.GameCurrency:
                     gameStats.GameCurrency += stat.Value;
-                    if (gameStats.GameCurrency <= 0) {
-                        gameStats.RealMoney -= 100f;
-                        if (gameStats.RealMoney <= 0) {
-                            OnDepleatedStat(GameStatsEnum.RealMoney);
-                        }
-                        gameStats.GameCurrency += 500f;
-
-                    }
+                    
                 break;
 
                 case GameStatsEnum.NextPlayTime:
@@ -227,6 +211,13 @@ public class GameStatisticsManager
             return true;
         } else {
             return false;
+        }
+    }
+
+    public void CheckAndRechargeCurrency() {
+        if (gameStats.GameCurrency <= 0) {
+            gameStats.RealMoney -= 100f;
+            gameStats.GameCurrency += 500f;
         }
     }
 }

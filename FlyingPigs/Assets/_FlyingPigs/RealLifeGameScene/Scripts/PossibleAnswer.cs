@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PossibleAnswer : MonoBehaviour
 {
+    public delegate void OnSelectedAnswerDelegate(int index);
+    public OnSelectedAnswerDelegate OnSelectedAnswer;
     private int elementIndex;
     [SerializeField]
     private TMP_Text textComponent;
@@ -21,7 +23,8 @@ public class PossibleAnswer : MonoBehaviour
     }
 
     public void SelectAnswer() {
-
+        Debug.Log("Tap On Answer");
+        OnSelectedAnswer(elementIndex);
     }
 
     public void setIndex(int index) {

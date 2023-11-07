@@ -78,6 +78,8 @@ public class ChatEventSpawner : MonoBehaviour
         {
             GameObject newObject = Instantiate(possibleAnswerPrefab, PossibleAnswersContainer.transform);
             newObject.GetComponent<PossibleAnswer>().setText(possibleAnswer.answerText);
+            newObject.GetComponent<PossibleAnswer>().setIndex(newChatEvent.chatEvent.answers.IndexOf(possibleAnswer));
+            newObject.GetComponent<PossibleAnswer>().OnSelectedAnswer += OnAnswerSelected;
         }
     }
 
@@ -96,7 +98,7 @@ public class ChatEventSpawner : MonoBehaviour
     }
 
     public void OnAnswerSelected(int index){
-
+        Debug.Log("ON ANSWER SELECTED");
         didAnswer = true;
         chatNotification.SetActive(false);
         RemoveElementsFromPossibleAnswerContainer();

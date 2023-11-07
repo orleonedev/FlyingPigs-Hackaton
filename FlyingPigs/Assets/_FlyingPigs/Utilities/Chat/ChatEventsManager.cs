@@ -33,7 +33,7 @@ public class ChatEventsManager
 
     private ChatEventsManager() {}
 
-    private GameStatisticsManager StatsManager = GameStatisticsManager.Instance;
+    private readonly GameStatisticsManager StatsManager = GameStatisticsManager.Instance;
 
     public ChatEventWithSender PickChatEvent() {
         
@@ -138,9 +138,9 @@ public class ChatEventsManager
     }
 
     private Characters GetRandomCharacter() {
-        var values = Enum.GetValues(typeof(GameEventTypes));
+        var values = Enum.GetValues(typeof(Characters));
         //var random = new System.Random();
         Debug.Log(values.Length);
-        return (Characters)values.GetValue(UnityEngine.Random.Range(0, values.Length-1));
+        return (Characters)values.GetValue(UnityEngine.Random.Range(0, values.Length));
     }
 }

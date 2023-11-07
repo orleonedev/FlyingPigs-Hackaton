@@ -37,7 +37,6 @@ public class GameLoopManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        statsManager.OnDepleatedStat += OnDepleatedStat;
         Debug.Log("Time Elapsed: "+statsManager.gameStats.TimeElapsed);
         if (statsManager.gameStats.TimeElapsed == 0) {
             Debug.Log("PREPARE FOR NEXT DAY");
@@ -144,14 +143,9 @@ public class GameLoopManager : MonoBehaviour
         Invoke("StartDay", 4.0f);
     }
 
-    public void OnDepleatedStat(GameStatsEnum stat){
-        /*Debug.Log("DEAD: " + stat.ToString());
-        SetLoopTo(false);
-        alive = false;*/
-    }
-
     private void StartDay(){
         if(!statsManager.CheckDepleatedStats() && statsManager.gameStats.Day < 10){
+            statsManager.CheckAndRechargeCurrency();
             SetLoopTo(true);
             Debug.Log("LOOP START");
             PrepareForNextDay();
