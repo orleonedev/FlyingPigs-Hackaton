@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -75,11 +76,13 @@ public class AudioManager : MonoBehaviour
         audioSourceLoop.loop = true;
         Array.Resize(ref audioSources, audioSources.Length - 1);
         */
+
     }
 
-    public void PlaySound(AudioClip clip){
+    public void PlaySound(AudioClip clip, float volume = 1f){
         foreach(AudioSource audioSource in audioSources){
             if(!audioSource.isPlaying){
+                audioSource.volume = volume;
                 audioSource.clip = clip;
                 audioSource.Play();
                 return;
@@ -87,9 +90,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public int PlaySoundLoop(AudioClip clip){
+    public int PlaySoundLoop(AudioClip clip, float volume = 1f){
         for (int i = 0; i < audioSourcesLoop.Length; i++) {
             if(!audioSourcesLoop[i].isPlaying){
+                audioSourcesLoop[i].volume = volume;
                 audioSourcesLoop[i].clip = clip;
                 audioSourcesLoop[i].Play();
                 return i;
@@ -102,5 +106,22 @@ public class AudioManager : MonoBehaviour
         if(audioSourcesLoop[i].isPlaying) {
             audioSourcesLoop[i].Stop();
         }
+    }
+
+    public IEnumerator Fade(bool fadeIn, AudioSource source, float duration, float targetVolume){
+        if(!fadeIn){
+            double lenghtOfSource = (double) source.clip.samples/source.clip.frequency;
+            yield return new WaitForSecondsRealtime((float) lenghtOfSource - duration);
+        }
+
+        float time = 0f;
+        float startVolume = source.volume;
+        while(time < duration){
+            time += Time.deltaTime;
+            source.volume = Mathf.Lerp(startVolume, targetVolume, time/duration);
+            yield return null;
+        }
+
+        yield break;
     }
 }
