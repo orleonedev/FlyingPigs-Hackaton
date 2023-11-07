@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -326107684, guid: 210e0c5148b543841bef459fb7fc678c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   playAreaObject: {fileID: 0}
   vaseSpawner: {fileID: 0}
+  canBeTouched: 1
 --- !u!60 &812344501498261173
 PolygonCollider2D:
   m_ObjectHideFlags: 0
