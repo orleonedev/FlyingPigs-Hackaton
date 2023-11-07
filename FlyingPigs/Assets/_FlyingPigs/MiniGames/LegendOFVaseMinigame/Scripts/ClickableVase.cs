@@ -43,17 +43,20 @@ public class ClickableVase : MonoBehaviour
             if (isBlue)
             {
                 Debug.Log ("Tutto ok");
-                vaseSpawner.numberOfBlueVases --;
-                Destroy(vase);
+                vaseSpawner.numberOfBlueVases --; 
             }
             else
             {
                 Debug.Log("Hai cacato");
-                Destroy(vase);
             }
+            animator.SetBool("isBroken", true); 
 
         } 
 
         audioManager.PlaySound(audioManager.shootClip);
+    }
+    public void BreakVase()
+    {
+        Destroy(vase);
     }
 }
