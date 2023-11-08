@@ -52,6 +52,7 @@ public class GameLoopManager : MonoBehaviour
             
         } else {
             fadingCanva.SetActive(false);
+            fadingCanva.GetComponent<CanvasGroup>().alpha = 0f;
             Debug.Log("UPDATE UI");
             statsManager.UpdateClock();
             statsManager.gameStats.OnValuesChanged?.Invoke();

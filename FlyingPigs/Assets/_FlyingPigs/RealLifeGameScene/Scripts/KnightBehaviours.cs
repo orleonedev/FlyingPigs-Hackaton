@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class KnightBehaviour : MonoBehaviour
 {
     [SerializeField] private Animator fadingCanvaAnimator;
+    [SerializeField] private CanvasGroup fadingCanvaGroup;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject gameView;
     [SerializeField] private GameObject enemy;
@@ -49,8 +50,8 @@ public class KnightBehaviour : MonoBehaviour
         Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
         Vector2 touchPos = new Vector2(wp.x, wp.y);
         Collider2D tapped = Physics2D.OverlapPoint(touchPos);
-     
-        if(tapped && tapped == gameView.GetComponent<Collider2D>() && (!fadingCanvaAnimator.GetBool("isDayOver") && !fadingCanvaAnimator.gameObject.GetComponent<CanvasGroup>().blocksRaycasts))
+        Debug.Log("ALPHA: " + fadingCanvaGroup.alpha);
+        if(tapped && tapped == gameView.GetComponent<Collider2D>() && (!fadingCanvaAnimator.GetBool("isDayOver") && fadingCanvaGroup.alpha == 0f))
         {
             knightAnimator.SetBool("isAttacking", true);
             
