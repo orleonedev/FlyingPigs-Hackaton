@@ -30,9 +30,6 @@ EditorBuildSettings:
     path: Assets/_FlyingPigs/Scenes/PigHunt.unity
     guid: b3e9cb65b9e6bab4b8dff3c021cc6953
   - enabled: 1
-    path: Assets/_FlyingPigs/Scenes/Credits.unity
-    guid: 5090bef9a8d8b4a0e9138344f84921c3
-  - enabled: 1
     path: Assets/_FlyingPigs/Scenes/EndingScene.unity
     guid: 6af61d593095f9a4e8c4dd67e5eb96c7
   - enabled: 1

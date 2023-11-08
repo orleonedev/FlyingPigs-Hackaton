@@ -25,7 +25,7 @@ public class GameStateManager : MonoBehaviour
         }
         InGameSceneObject.SetActive(true);
         numOfAudioSource = audioManager.PlaySoundLoop(audioManager.mainGameTheme, 0f);
-        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[numOfAudioSource], 1.5f, 1f));
+        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[numOfAudioSource], 1.5f, 0.7f));
     }
 
     public void SwitchToChat() {

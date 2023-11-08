@@ -79,7 +79,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void PlaySound(AudioClip clip, float volume = 1f){
+    public void PlaySound(AudioClip clip, float volume = 0.7f){
         foreach(AudioSource audioSource in audioSources){
             if(!audioSource.isPlaying){
                 audioSource.volume = volume;
@@ -90,7 +90,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public int PlaySoundLoop(AudioClip clip, float volume = 1f){
+    public int PlaySoundLoop(AudioClip clip, float volume = 0.5f){
         for (int i = 0; i < audioSourcesLoop.Length; i++) {
             if(!audioSourcesLoop[i].isPlaying){
                 audioSourcesLoop[i].volume = volume;

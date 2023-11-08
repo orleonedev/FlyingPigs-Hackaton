@@ -24,7 +24,7 @@ public class MainScreen : MonoBehaviour
         Application.targetFrameRate = 60;
         loopNum = audioManager.PlaySoundLoop(audioManager.mainTheme);
         audioManager.audioSourcesLoop[loopNum].volume = 0f;
-        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[loopNum], 1.5f, 1f));
+        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[loopNum], 1.5f, 0.7f));
         GameStatisticsManager.Instance.ReloadGame();
         GregChatEvents.Instance.ResetPreviousList();
         EvelyneChatEvents.Instance.ResetPreviousList();

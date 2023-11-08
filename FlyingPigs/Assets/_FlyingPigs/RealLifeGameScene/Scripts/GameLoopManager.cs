@@ -143,7 +143,7 @@ public class GameLoopManager : MonoBehaviour
 
     public void CloseAndRestart() {
         SetLoopTo(false);
-        audioManager.PlaySound(audioManager.endOfDayClip);
+        audioManager.PlaySound(audioManager.endOfDayClip, 1.0f);
         StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[gameState.numOfAudioSource], 1f, 0f));
         fadingCanva.SetActive(true);
         animationLabel.text = "Fine Giorno " + statsManager.gameStats.Day.ToString();
