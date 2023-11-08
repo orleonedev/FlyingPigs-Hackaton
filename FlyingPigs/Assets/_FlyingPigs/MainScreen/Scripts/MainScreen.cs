@@ -21,6 +21,7 @@ public class MainScreen : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         loopNum = audioManager.PlaySoundLoop(audioManager.mainTheme);
         audioManager.audioSourcesLoop[loopNum].volume = 0f;
         StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[loopNum], 1.5f, 1f));
