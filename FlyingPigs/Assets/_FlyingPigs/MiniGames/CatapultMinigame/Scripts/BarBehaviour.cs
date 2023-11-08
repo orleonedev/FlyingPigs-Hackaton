@@ -44,7 +44,7 @@ public class BarBehaviour : MonoBehaviour
         }
 
         if (shouldMove) {
-            count += 0.1f * rising * level / 2;
+            count += 0.1f * (float) rising * (float) level * 0.5f;
         }
 
         if (!timer.GetCounting() && !gameOver) {
