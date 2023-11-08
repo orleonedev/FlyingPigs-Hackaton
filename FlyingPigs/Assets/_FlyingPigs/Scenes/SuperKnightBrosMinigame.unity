@@ -185,6 +185,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c792ce4f8a244e3d8ab210a4c5bfada, type: 3}
+--- !u!114 &297371410 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4445645419777774946, guid: 7c792ce4f8a244e3d8ab210a4c5bfada, type: 3}
+  m_PrefabInstance: {fileID: 297371409}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4a64811c8034994945557ca1ad65ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &316269087 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6533734696749777193, guid: 047a8a8a9cc8603429329a409a87b436, type: 3}
@@ -899,6 +910,10 @@ MonoBehaviour:
     m_Bits: 128
   isGrounded: 0
   animator: {fileID: 1528093119}
+  audioManager: {fileID: 462756831}
+  imageShow: {fileID: 5622289800492842606}
+  timer: {fileID: 1575224987}
+  coordinator: {fileID: 297371410}
 --- !u!212 &1528093116
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1045,6 +1060,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 462756831}
+    - target: {fileID: -1727939045106793050, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
+      propertyPath: isTimeBasedMinigame
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 513382098853690615, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6911447
@@ -1158,6 +1177,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
+--- !u!114 &1575224987 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -1727939045106793050, guid: 0ce12fdceac967a4dba5d26d86c8b808, type: 3}
+  m_PrefabInstance: {fileID: 1575224986}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac4159027b196e4880315724a9d74d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1648990003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
+  skj: {fileID: 1528093114}
   animator: {fileID: 1648990008}
 --- !u!61 &1648990005
 BoxCollider2D:
@@ -1786,6 +1817,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3760cdc96f7af04191a284fdba3804f, type: 3}
+--- !u!114 &5622289800492842606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6877810827872478246, guid: c3760cdc96f7af04191a284fdba3804f, type: 3}
+  m_PrefabInstance: {fileID: 5622289800492842605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b73c6ed67f706408c3f56d83f4afb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

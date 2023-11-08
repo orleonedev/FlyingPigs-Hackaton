@@ -76,6 +76,9 @@ public class VaseSpawner : MonoBehaviour
             imageShow.SwitchShow(true);
             timeElapsed += 10 - timer.GetTime();
             timer.PauseTimer();
+            if (level >= 5) {
+                audioManager.PlaySound(audioManager.endMinigameSucc);
+            }
             StartCoroutine(EndLevelAfterTime(2f));
         } 
     }
@@ -106,7 +109,6 @@ public class VaseSpawner : MonoBehaviour
             RestartGame();
         }
         else {
-            audioManager.PlaySound(audioManager.endMinigameSucc);
             OnGameOver();
         }
     }
