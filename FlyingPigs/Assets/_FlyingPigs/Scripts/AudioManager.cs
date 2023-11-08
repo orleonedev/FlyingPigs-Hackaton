@@ -57,6 +57,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip playerWallImpact;
     public AudioClip castleDestruction;
 
+    [Header("Legend of Vase")]
+    public AudioClip vaseClip;
+
     [Header("End Minigame")]
     public AudioClip endMinigameFail;
     public AudioClip endMinigameSucc;

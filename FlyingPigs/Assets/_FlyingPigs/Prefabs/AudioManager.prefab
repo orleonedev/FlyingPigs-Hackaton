@@ -92,6 +92,7 @@ MonoBehaviour:
   catapultLoop: {fileID: 8300000, guid: 7bae8ad8764948d4cb7d61ab98d9bab6, type: 3}
   playerWallImpact: {fileID: 8300000, guid: cbd19ce996d55e346a0e0f7f0aacf517, type: 3}
   castleDestruction: {fileID: 8300000, guid: f1fb39e116bb6ca4e9abb207cfbf7232, type: 3}
+  vaseClip: {fileID: 8300000, guid: b682b4694d8c5724aaf95e425abf321e, type: 3}
   endMinigameFail: {fileID: 8300000, guid: 5728f79005b9c384f8b80a7863fd548e, type: 3}
   endMinigameSucc: {fileID: 8300000, guid: c4c7c41457016f2468a6331082bc9b28, type: 3}
   mainTheme: {fileID: 8300000, guid: dc77856c122b14f51bf77383f10ba42a, type: 3}
