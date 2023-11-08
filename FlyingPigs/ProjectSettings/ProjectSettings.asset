@@ -9,7 +9,7 @@ PlayerSettings:
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
   defaultScreenOrientation: 0
-  targetDevice: 2
+  targetDevice: 0
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: FlyingPigs
@@ -139,7 +139,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.8
   preloadedAssets:
-  - {fileID: 2771670375895765227, guid: c3913868ab3994853a32acf3dd957972, type: 2}
+  - {fileID: 2120176767196224998, guid: c3913868ab3994853a32acf3dd957972, type: 2}
   - {fileID: 11400000, guid: 15e6d18ea64874e29aeff0d4452bb301, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -163,16 +163,16 @@ PlayerSettings:
     Android: com.FlyingPigs.ObsessiveOdisseyRealLifeReckoning
     Lumin: com.DefaultCompany.com.unity.template.mobile2D
     Standalone: com.FlyingPigs.FlyingPigsHackaton
-    iPhone: com.FlyingPigs.Obsessive-Odissey--Real-Life-Reckoning
+    iPhone: com.FlyingPigs.ObsessiveOdisseyRealLifeReckoning
     tvOS: com.DefaultCompany.com.unity.template.mobile2D
   buildNumber:
     Standalone: 0
     VisionOS: 0
     iPhone: 0
     tvOS: 0
-  overrideDefaultApplicationIdentifier: 0
+  overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 22
+  AndroidMinSdkVersion: 26
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -239,13 +239,13 @@ PlayerSettings:
   iOSRenderExtraFrameOnPause: 0
   iosCopyPluginsCodeInsteadOfSymlink: 0
   appleDeveloperTeamID: 
-  iOSManualSigningProvisioningProfileID: 
+  iOSManualSigningProvisioningProfileID: 8c181477-2303-402e-8f26-3c6b45fccf36
   tvOSManualSigningProvisioningProfileID: 
   VisionOSManualSigningProvisioningProfileID: 
-  iOSManualSigningProvisioningProfileType: 0
+  iOSManualSigningProvisioningProfileType: 2
   tvOSManualSigningProvisioningProfileType: 0
   VisionOSManualSigningProvisioningProfileType: 0
-  appleEnableAutomaticSigning: 0
+  appleEnableAutomaticSigning: 2
   iOSRequireARKit: 0
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 1
