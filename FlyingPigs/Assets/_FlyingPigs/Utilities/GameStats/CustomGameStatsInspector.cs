@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(GameStats))]
 public class CustomGameStatsInspector : Editor {
     public override void OnInspectorGUI () {
@@ -29,3 +30,4 @@ public class CustomGameStatsInspector : Editor {
         
     }
 }
+#endif
