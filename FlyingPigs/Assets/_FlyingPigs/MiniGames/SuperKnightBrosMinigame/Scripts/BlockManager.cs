@@ -8,24 +8,28 @@ public class BlockManager : MonoBehaviour
 {
     public float moveSpeed = 3.5f; // Velocità di movimento
     private bool movingRight = true; // Direzione iniziale
+    private bool isDead = false;
+    [SerializeField] private SuperKnightJump skj;
     [SerializeField] Animator animator;
 
     // Variabili per rilevare i contatti
 
     private void Update()
     {
-        // Movimento laterale
-        MoveHorizontally();
+        if(!isDead) {
+            // Movimento laterale
+            MoveHorizontally();
 
-        // Rileva i contatti
-        CheckContacts();
+            // Rileva i contatti (solo debug)
+            //CheckContacts();
+        }
     }
 
     void MoveHorizontally()
     {
         float horizontalInput = movingRight ? 1.0f : -1.0f;
         Vector3 movement = new Vector3(horizontalInput, 0, 0);
-        transform.Translate(movement * moveSpeed * Time.deltaTime);
+        transform.Translate(movement * SuperKnightJump.level * moveSpeed * Time.deltaTime);
         //movespeed deve essere moltiplicata * il livello del minigioco
 
         // Cambia direzione quando raggiunge il limite destro o sinistro
@@ -39,8 +43,7 @@ public class BlockManager : MonoBehaviour
         }
     }
 
-    void CheckContacts()
-{
+    void CheckContacts() {
     
     // Raycast a sinistra
     RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, 0.6f);
@@ -73,16 +76,20 @@ private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Codice da eseguire quando il collider entra in collisione con un oggetto contrassegnato come "Player".
-            Debug.Log("Collisione con il giocatore!");
-            animator.SetBool("isBroken", true);
+            if (!isDead) {
+                // Codice da eseguire quando il collider entra in collisione con un oggetto contrassegnato come "Player".
+                isDead = true;
+                //Debug.Log("Collisione con il giocatore!");
+                animator.SetBool("isBroken", true);
+                skj.OnBlockDestroyed();
+            }
             
         }
     }
-    public void BlockBreaker()
-    {
-        Destroy(this.gameObject);
-    }
+public void BlockBreaker()
+{
+    Destroy(this.gameObject);
+}
 }
 
 
