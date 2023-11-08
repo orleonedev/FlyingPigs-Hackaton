@@ -15,7 +15,8 @@ public class PigScript : MonoBehaviour
     [SerializeField] private ImageShow imageShow;
     public static int level = 1;
     public static float timeElapsed = 0f;
-    public bool checkCollision = false; 
+    public bool checkCollision = false;
+    private bool gameOver = false;
 
     private void Update()
     {
@@ -30,8 +31,8 @@ public class PigScript : MonoBehaviour
             }
         }
 
-        if(!timer.GetCounting()){
-            timeElapsed += 10 - timer.GetTime();
+        if(!timer.GetCounting() && !gameOver){
+            gameOver = true;
             if (level >= 5) {
                 audioManager.PlaySound(audioManager.endMinigameSucc);
             }
