@@ -27,6 +27,8 @@ public class ChatEventSpawner : MonoBehaviour
     [SerializeField]
     private GameObject possibleAnswerPrefab;
 
+    [SerializeField] AudioManager audioManager;
+
     private bool didAnswer = false;
     private bool ghosted = false;
     private ChatEventWithSender newChatEvent;
@@ -87,6 +89,7 @@ public class ChatEventSpawner : MonoBehaviour
         ResetUI();
         SenderLabel.text = newChatEvent.SenderName;
 
+        audioManager.PlaySound(audioManager.messageNotificationClip, 1.0f);
         chatNotification.SetActive(true);
         timelapse = 30f;
         updateEnable = true;
@@ -126,6 +129,7 @@ public class ChatEventSpawner : MonoBehaviour
         RemoveElementsFromPossibleAnswerContainer();
         SelectedAnswer.SetActive(true);
         ResponseMessage.SetActive(true);
+        audioManager.PlaySound(audioManager.messageBubbleClip, 1.0f);
         SelectedAnswer.GetComponent<SelectedAnswer>().setText(newChatEvent.chatEvent.answers[index].answerText);
         ResponseMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.answers[index].senderResponse);
         GameStatisticsManager.Instance.updateStatsWith(newChatEvent.chatEvent.answers[index].updates);

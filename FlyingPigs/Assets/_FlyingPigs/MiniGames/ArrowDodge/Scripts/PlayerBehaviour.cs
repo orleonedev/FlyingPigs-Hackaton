@@ -17,7 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
             arrows.speed = 0;
             collisionLevel = ArrowBehaviour.level;
             audioManager.PlaySound(audioManager.playerHit);
-            audioManager.PlaySound(audioManager.endMinigameFail);
+            audioManager.PlaySound(audioManager.endMinigameFail, 1f);
             inputManagerArrow.canMove = false;
             ArrowBehaviour.timeElapsed += 10 - timer.GetTime();
             timer.PauseTimer();
