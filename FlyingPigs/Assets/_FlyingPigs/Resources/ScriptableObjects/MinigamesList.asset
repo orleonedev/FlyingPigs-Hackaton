@@ -20,10 +20,4 @@ MonoBehaviour:
   - PigHunt
   - LegendOfVaseMinigame
   - SuperKnightBrosMinigame
-  PlayedGamesOfTheDay:
-  - FruitSamuraiMinigame
-  - FlappyPigMinigame
-  - ArrowDodge
-  - SuperKnightBrosMinigame
-  - PigHunt
-  - LegendOfVaseMinigame
+  PlayedGamesOfTheDay: []
