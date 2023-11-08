@@ -44,18 +44,17 @@ public class ClickableVase : MonoBehaviour
             if (isBlue)
             {
                 //Debug.Log ("Tutto ok");
-                vaseSpawner.numberOfBlueVases --; 
+                vaseSpawner.numberOfBlueVases--; 
                 canBeTouched = false;
             }
             else
             {
                 vaseSpawner.RedVaseDestroyed();
             }
+            audioManager.PlaySound(audioManager.vaseClip);
             animator.SetBool("isBroken", true); 
 
-        } 
-
-        audioManager.PlaySound(audioManager.shootClip);
+        }
     }
     public void BreakVase()
     {
