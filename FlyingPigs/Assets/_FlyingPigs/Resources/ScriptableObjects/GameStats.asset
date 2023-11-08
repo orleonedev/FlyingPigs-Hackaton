@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71fb9547670643cfab666ea1f9467de, type: 3}
   m_Name: GameStats
   m_EditorClassIdentifier: 
-  _realHealth: 0.4
-  _gameHealth: 0.5
-  _realMoney: 1280
+  _realHealth: 0.6
+  _gameHealth: 0.6
+  _realMoney: 1200
   _moneyMultiplier: 1
   _gameCurrency: 300
   _currencyMultiplier: 1
-  _currentHours: 22
-  _currentMinutes: 32
-  _day: 2
-  _nextPlayTime: 60
+  _currentHours: 0
+  _currentMinutes: 0
+  _day: 0
+  _nextPlayTime: 210
   _modifierPlayTime: 0
-  _timeElapsed: 3.8052468
-  _currentDayLenght: 60
+  _timeElapsed: 0
+  _currentDayLenght: 210
   _employer: 0
   _eventToFire: 1

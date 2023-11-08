@@ -66,7 +66,7 @@ MonoBehaviour:
   genericSuccessClip: {fileID: 8300000, guid: ec55961702bda544d8f8f41387c4a22e, type: 3}
   genericFailClip: {fileID: 8300000, guid: 0832d1e584321f24e924ac51d9b92b60, type: 3}
   gameOverClip: {fileID: 8300000, guid: 00b8909eda9c6754aa4c85d889fb2f99, type: 3}
-  messageBubbleClip: {fileID: 8300000, guid: 32178d536d4b71e488e35a19105e4ade, type: 3}
+  messageBubbleClip: {fileID: 8300000, guid: 7b47146ccd041a24da6d4b0105e9235b, type: 3}
   messageNotificationClip: {fileID: 8300000, guid: 8763a4bdd3f395643b9d7a04323706e5, type: 3}
   typingClip: {fileID: 8300000, guid: 9137f9ad30b1c3746b932c4ad39775a1, type: 3}
   buyGemsClip: {fileID: 8300000, guid: a12a8d98aa0ea0648a325f18670a066d, type: 3}
