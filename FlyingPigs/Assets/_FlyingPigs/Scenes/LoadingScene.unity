@@ -1189,7 +1189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782383589}
   m_Layer: 5
-  m_Name: LegendOfVase
+  m_Name: LegendOfVaseMinigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1324,6 +1324,8 @@ MonoBehaviour:
   - {fileID: 1572470368}
   - {fileID: 697639960}
   - {fileID: 347006412}
+  - {fileID: 782383588}
+  - {fileID: 1741204585}
 --- !u!114 &830906257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3248,7 +3250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1741204586}
   m_Layer: 5
-  m_Name: SuperKnightBros
+  m_Name: SuperKnightBrosMinigame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
