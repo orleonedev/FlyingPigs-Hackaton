@@ -117,6 +117,7 @@ public class GameLoopManager : MonoBehaviour
 
     public void PrepareForNextDay() {
         audioManager.PlaySound(audioManager.startOfDayClip);
+        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[gameState.numOfAudioSource], 2f, 1f));
         statsManager.gameStats.TimeElapsed = 0f;
         statsManager.gameStats.CurrentDayLenght = statsManager.gameStats.NextPlayTime + statsManager.gameStats.ModifierPlayTime;
         statsManager.UpdateClock();
@@ -141,8 +142,8 @@ public class GameLoopManager : MonoBehaviour
 
     public void CloseAndRestart() {
         SetLoopTo(false);
-        StartCoroutine(audioManager.Fade(false, audioManager.audioSourcesLoop[gameState.numOfAudioSource], 0.5f, 0f));
         audioManager.PlaySound(audioManager.endOfDayClip);
+        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[gameState.numOfAudioSource], 1f, 0f));
         fadingCanva.SetActive(true);
         animationLabel.text = "Fine Giorno " + statsManager.gameStats.Day.ToString();
         animator.SetBool("isDayOver", true);
