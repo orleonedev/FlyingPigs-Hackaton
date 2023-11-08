@@ -22,6 +22,8 @@ public class MainScreen : MonoBehaviour
     void Start()
     {
         loopNum = audioManager.PlaySoundLoop(audioManager.mainTheme);
+        audioManager.audioSourcesLoop[loopNum].volume = 0f;
+        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[loopNum], 1.5f, 1f));
         GameStatisticsManager.Instance.ReloadGame();
         GregChatEvents.Instance.ResetPreviousList();
         EvelyneChatEvents.Instance.ResetPreviousList();
@@ -34,6 +36,7 @@ public class MainScreen : MonoBehaviour
 
     public void StartGame(){
         animator.SetBool("gameStart", true);
+        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[loopNum], 1.5f, 0f));
         Invoke("LoadScene", 1.5f);
     }
 

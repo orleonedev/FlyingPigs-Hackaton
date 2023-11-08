@@ -7,6 +7,7 @@ public class EndingManager : MonoBehaviour
 {
     private GameStats gameStats;
     [SerializeField] private Coordinator coordinator;
+    [SerializeField] private Animator fadingCanvaAnimator;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private List<GameObject> GoodEndings;
     [SerializeField] private List<GameObject> BadEndings;
@@ -29,6 +30,9 @@ public class EndingManager : MonoBehaviour
         } else {
             numOfAudioSource = audioManager.PlaySoundLoop(audioManager.GoodEndingClip);
         }
+
+        audioManager.audioSourcesLoop[numOfAudioSource].volume = 0f;
+        StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[numOfAudioSource], 1f, 1f));
     }
 
     public void ChooseEnding(){
@@ -59,9 +63,15 @@ public class EndingManager : MonoBehaviour
 
     public void EndGame(){
         if (numOfAudioSource != -1) {
-            audioManager.StopSoundLoop(numOfAudioSource);
-            numOfAudioSource = -1;
+            fadingCanvaAnimator.SetBool("didEnd", true);
+            StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[numOfAudioSource], 1f, 0f));
+            Invoke("LoadMainScene", 1f);
         }
+    }
+
+    public void LoadMainScene(){
+        audioManager.StopSoundLoop(numOfAudioSource);
+        numOfAudioSource = -1;
         coordinator.LoadScene("MainScene");
     }
 }
