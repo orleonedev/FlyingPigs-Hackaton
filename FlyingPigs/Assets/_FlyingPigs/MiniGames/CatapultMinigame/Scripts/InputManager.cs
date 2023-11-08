@@ -5,13 +5,12 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    private PlayerInput playerInput;
+    [SerializeField] private PlayerInput playerInput;
     private InputAction pressAction;
-
-    public BarBehaviour bar;
+    [SerializeField] private BarBehaviour bar;
 
     private void Awake() {
-        playerInput = GetComponent<PlayerInput>();
+        playerInput.SwitchCurrentActionMap("CatapultMinigame");
         pressAction = playerInput.actions.FindAction("TouchInput");
     }
 
@@ -24,7 +23,6 @@ public class InputManager : MonoBehaviour
     }
 
     private void TouchPressed(InputAction.CallbackContext context) {
-        //float value = context.ReadValue<float>();
         bar.OnPress();
     }
 }
