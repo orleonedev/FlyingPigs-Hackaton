@@ -346,7 +346,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 116.35
+  m_fontSize: 116.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2616,6 +2616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3ac29016125ff428470719127570d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadingCanvaAnimator: {fileID: 534743796}
   audioManager: {fileID: 703850423}
   gameView: {fileID: 1411234541}
   enemy: {fileID: 1396624240}
@@ -4371,6 +4372,7 @@ MonoBehaviour:
   InGameSceneObject: {fileID: 1442730511}
   ChatSceneObject: {fileID: 1465730377}
   audioManager: {fileID: 703850423}
+  numOfAudioSource: -1
 --- !u!4 &1535827387
 Transform:
   m_ObjectHideFlags: 0
