@@ -60,14 +60,14 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
     
-    [Range(0f, 999f)]
+    [Range(0f, 99999f)]
     public float _gameCurrency;
     public float GameCurrency {
         get {
             return _gameCurrency;
         }
         set {
-            _gameCurrency = Math.Clamp(value,0f,999f);
+            _gameCurrency = Math.Clamp(value,0f,99999f);
             OnValuesChanged?.Invoke();
         }
     }
@@ -120,14 +120,14 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
-    [Range(0,300)]
+    [Range(0,500)]
     public uint _nextPlayTime;
     public uint NextPlayTime {
         get {
             return _nextPlayTime;
         }
         set {
-            _nextPlayTime = Math.Clamp(value, 0, 300 );
+            _nextPlayTime = Math.Clamp(value, 0, 500 );
         }
     }
 
@@ -142,25 +142,25 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
-    [Range(0,300)]
+    [Range(0,500)]
     public float _timeElapsed;
     public float TimeElapsed {
         get {
             return _timeElapsed;
         }
         set {
-            _timeElapsed = Math.Clamp(value, 0f, 300f );
+            _timeElapsed = Math.Clamp(value, 0f, 500f );
         }
     }
 
-    [Range(0,300)]
+    [Range(0,500)]
     public float _currentDayLenght;
     public float CurrentDayLenght {
         get {
             return _currentDayLenght;
         }
         set {
-            _currentDayLenght = Math.Clamp(value, 0f, 300f );
+            _currentDayLenght = Math.Clamp(value, 0f, 500f );
         }
     }
 
