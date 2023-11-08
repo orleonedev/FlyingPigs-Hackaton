@@ -55,6 +55,7 @@ public class ChatEventSpawner : MonoBehaviour
             if (timelapse <= -10 && ghosted) {
                 updateEnable = false;
                 chatNotification.SetActive(false);
+                ResetUI();
             }
         }
     }

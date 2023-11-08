@@ -149,6 +149,7 @@ public class GameLoopManager : MonoBehaviour
         animationLabel.text = "Fine Giorno " + statsManager.gameStats.Day.ToString();
         animator.SetBool("isDayOver", true);
         Debug.Log("RESTART");
+        
         // transizione
         Invoke("StartDay", 4.0f);
     }
@@ -160,6 +161,7 @@ public class GameLoopManager : MonoBehaviour
             Debug.Log("LOOP START");
             PrepareForNextDay();
             if (statsManager.gameStats.Day == 2) {
+                eventTriggered = true;
                 OnChatTutorialGhostableEvent?.Invoke();
             }
         } else {
