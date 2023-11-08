@@ -109,8 +109,11 @@ public class ChatEventSpawner : MonoBehaviour
     }
 
     private void ResetUI() {
+        FirstMessage.GetComponent<ReceivedMessage>().ResetScrollbar();
         SelectedAnswer.SetActive(false);
+        SelectedAnswer.GetComponent<SelectedAnswer>().ResetScrollbar();
         ResponseMessage.SetActive(false);
+        ResponseMessage.GetComponent<ReceivedMessage>().ResetScrollbar();
         RemoveElementsFromPossibleAnswerContainer();
     }
 
