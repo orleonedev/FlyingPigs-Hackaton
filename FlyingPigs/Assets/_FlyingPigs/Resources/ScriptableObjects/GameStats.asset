@@ -18,12 +18,12 @@ MonoBehaviour:
   _moneyMultiplier: 1
   _gameCurrency: 300
   _currencyMultiplier: 1
-  _currentHours: 23
-  _currentMinutes: 16
+  _currentHours: 22
+  _currentMinutes: 32
   _day: 2
-  _nextPlayTime: 20
+  _nextPlayTime: 60
   _modifierPlayTime: 0
-  _timeElapsed: 6.554038
-  _currentDayLenght: 20
+  _timeElapsed: 3.8052468
+  _currentDayLenght: 60
   _employer: 0
   _eventToFire: 1

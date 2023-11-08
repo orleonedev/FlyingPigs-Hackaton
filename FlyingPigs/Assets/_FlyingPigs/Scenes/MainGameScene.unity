@@ -2617,6 +2617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadingCanvaAnimator: {fileID: 534743796}
+  fadingCanvaGroup: {fileID: 534743795}
   audioManager: {fileID: 703850423}
   gameView: {fileID: 1411234541}
   enemy: {fileID: 1396624240}
