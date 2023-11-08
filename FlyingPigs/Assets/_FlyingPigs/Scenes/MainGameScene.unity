@@ -346,7 +346,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 116.35
+  m_fontSize: 116.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4575,6 +4575,7 @@ MonoBehaviour:
   ResponseMessage: {fileID: 1453385540}
   PossibleAnswersContainer: {fileID: 56933630}
   possibleAnswerPrefab: {fileID: 7612604750308827566, guid: d353f2e6180eb45caa0888d30dd615ce, type: 3}
+  audioManager: {fileID: 703850423}
 --- !u!4 &1553560680
 Transform:
   m_ObjectHideFlags: 0

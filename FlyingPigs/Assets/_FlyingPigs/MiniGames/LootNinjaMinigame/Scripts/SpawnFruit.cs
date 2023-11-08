@@ -30,7 +30,7 @@ public class SpawnFruit : MonoBehaviour
                 StartCoroutine(RestartLevelAfterTime(2.0f));
             }
             else {
-                audioManager.PlaySound(audioManager.endMinigameSucc);
+                audioManager.PlaySound(audioManager.endMinigameSucc, 1f);
                 timeElapsed += 10 - timer.GetTime();
                 StartCoroutine(EndLevelAfterTime(2.0f));
             }
@@ -50,7 +50,7 @@ public class SpawnFruit : MonoBehaviour
     }
 
     public void GameOver() {
-        audioManager.PlaySound(audioManager.endMinigameFail);
+        audioManager.PlaySound(audioManager.endMinigameFail, 1f);
         timeElapsed += 10 - timer.GetTime();
         CancelInvoke();
         imageShow.SwitchShow(false);

@@ -64,8 +64,8 @@ public class ArrowBehaviour : MonoBehaviour
                         imageShow.SwitchShow(true);
                         timeElapsed += 10 - timer.GetTime();
                         timer.PauseTimer();
+                        audioManager.PlaySound(audioManager.endMinigameSucc, 1f);
                         Invoke("EndGame", 2f);
-                        audioManager.PlaySound(audioManager.endMinigameSucc);
                     }
                 }
                 levelEnded = true;

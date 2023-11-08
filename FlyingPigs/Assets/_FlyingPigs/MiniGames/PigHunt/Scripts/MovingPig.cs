@@ -55,7 +55,7 @@ public class MovingPig : MonoBehaviour
             }
             else if (this.transform.position.x <= -0.5f)
             {
-                angle = UnityEngine.Random.Range(55.0f, 65.0f);
+                angle = UnityEngine.Random.Range(60.0f, 65.0f);
             }
 
             sprite.flipX = false;
@@ -68,7 +68,7 @@ public class MovingPig : MonoBehaviour
             }
             else if (this.transform.position.x > 0.5f)
             {
-                angle = UnityEngine.Random.Range(115.0f, 125.0f);
+                angle = UnityEngine.Random.Range(120.0f, 125.0f);
             }
 
             sprite.flipX = true;

@@ -34,7 +34,7 @@ public class PigScript : MonoBehaviour
         if(!timer.GetCounting() && !gameOver){
             gameOver = true;
             if (level >= 5) {
-                audioManager.PlaySound(audioManager.endMinigameSucc);
+                audioManager.PlaySound(audioManager.endMinigameSucc, 1f);
             }
             timeElapsed += 10 - timer.GetTime();
             StartCoroutine(EndLevelAfterTime(2.0f));
@@ -46,7 +46,7 @@ public class PigScript : MonoBehaviour
         if(!checkCollision) {
             checkCollision = true;
             audioManager.PlaySound(audioManager.woodLogClip);
-            audioManager.PlaySound(audioManager.endMinigameFail);
+            audioManager.PlaySound(audioManager.endMinigameFail, 1f);
             imageShow.SwitchShow(false);
             timeElapsed += 10 - timer.GetTime();
             StartCoroutine(PlayerDeath(2f));

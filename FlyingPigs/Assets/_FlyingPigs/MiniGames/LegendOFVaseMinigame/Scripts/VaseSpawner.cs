@@ -60,7 +60,7 @@ public class VaseSpawner : MonoBehaviour
     void Update() {
         if(!timer.GetCounting() && !gameOver) {
             gameOver = true;
-            audioManager.PlaySound(audioManager.endMinigameFail);
+            audioManager.PlaySound(audioManager.endMinigameFail, 1f);
             timeElapsed += 10 - timer.GetTime();
             foreach(ClickableVase vase in vases) {
                 vase.canBeTouched = false;
@@ -77,7 +77,7 @@ public class VaseSpawner : MonoBehaviour
             timeElapsed += 10 - timer.GetTime();
             timer.PauseTimer();
             if (level >= 5) {
-                audioManager.PlaySound(audioManager.endMinigameSucc);
+                audioManager.PlaySound(audioManager.endMinigameSucc, 1f);
             }
             StartCoroutine(EndLevelAfterTime(2f));
         } 
@@ -144,7 +144,7 @@ public class VaseSpawner : MonoBehaviour
     }
 
     public void RedVaseDestroyed() {
-        audioManager.PlaySound(audioManager.endMinigameFail);
+        audioManager.PlaySound(audioManager.endMinigameFail, 1f);
         imageShow.SwitchShow(false);
         timeElapsed += 10 - timer.GetTime();
         timer.PauseTimer();

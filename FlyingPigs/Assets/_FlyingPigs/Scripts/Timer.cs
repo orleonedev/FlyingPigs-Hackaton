@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
                 else {
                     timesupText.enabled = true;
                 }
-                audioManager.PlaySound(audioManager.timeUpClip);
+                audioManager.PlaySound(audioManager.timeUpClip, 0.4f);
                 if (audioSourceNumber != -1) {
                     audioManager.StopSoundLoop(audioSourceNumber);
                 }

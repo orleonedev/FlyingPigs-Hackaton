@@ -43,7 +43,7 @@ public class SuperKnightJump : MonoBehaviour
         if(!timer.GetCounting() && !gameOver) {
             gameOver = true;
             canMove = false;
-            audioManager.PlaySound(audioManager.endMinigameFail);
+            audioManager.PlaySound(audioManager.endMinigameFail, 1f);
             timeElapsed += 10 - timer.GetTime();
             timer.PauseTimer();
             StartCoroutine(PlayerDeath(2f));
@@ -81,7 +81,7 @@ public class SuperKnightJump : MonoBehaviour
         timeElapsed += 10 - timer.GetTime();
         timer.PauseTimer();
         if (level >= 5) {
-            audioManager.PlaySound(audioManager.endMinigameSucc);
+            audioManager.PlaySound(audioManager.endMinigameSucc, 1f);
         }
         StartCoroutine(EndLevelAfterTime(2f));
     }
