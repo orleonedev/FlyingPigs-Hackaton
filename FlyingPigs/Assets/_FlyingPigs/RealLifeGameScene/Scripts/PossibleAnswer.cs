@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PossibleAnswer : MonoBehaviour
 {
@@ -29,5 +30,9 @@ public class PossibleAnswer : MonoBehaviour
 
     public void setIndex(int index) {
         elementIndex = index;
+    }
+
+    public void ResetScrollbar() {
+        gameObject.GetComponentInChildren<Scrollbar>().value = 1;
     }
 }
