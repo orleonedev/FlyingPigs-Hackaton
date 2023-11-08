@@ -50,7 +50,7 @@ public class KnightBehaviour : MonoBehaviour
         Vector2 touchPos = new Vector2(wp.x, wp.y);
         Collider2D tapped = Physics2D.OverlapPoint(touchPos);
      
-        if(tapped && tapped == gameView.GetComponent<Collider2D>() && !fadingCanvaAnimator.GetBool("isDayOver"))
+        if(tapped && tapped == gameView.GetComponent<Collider2D>() && (!fadingCanvaAnimator.GetBool("isDayOver") && !fadingCanvaAnimator.gameObject.GetComponent<CanvasGroup>().blocksRaycasts))
         {
             knightAnimator.SetBool("isAttacking", true);
             
