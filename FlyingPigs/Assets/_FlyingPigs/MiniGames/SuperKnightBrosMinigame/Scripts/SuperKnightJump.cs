@@ -73,6 +73,7 @@ public class SuperKnightJump : MonoBehaviour
     {
         // Applica una forza verso l'alto per effettuare il salto
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        audioManager.PlaySound(audioManager.jump);
     }
 
     public void OnBlockDestroyed() {

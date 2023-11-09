@@ -214,6 +214,14 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 4758358973348696186, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 8300000, guid: 02a6b5eb97335234cae941f532eb8fca, type: 3}
+    - target: {fileID: 4758358973348696186, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
+      propertyPath: rockSmash
+      value: 
+      objectReference: {fileID: 8300000, guid: 03d343117bc92f342873acfeb9dd66c5, type: 3}
+    - target: {fileID: 4758358973348696186, guid: d6922cc8baa53b845bc88334f95212bf, type: 3}
       propertyPath: catapultLoop
       value: 
       objectReference: {fileID: 8300000, guid: 7bae8ad8764948d4cb7d61ab98d9bab6, type: 3}
@@ -1223,6 +1231,7 @@ MonoBehaviour:
   moveSpeed: 3.5
   skj: {fileID: 1528093114}
   animator: {fileID: 1648990008}
+  audioManager: {fileID: 462756831}
 --- !u!61 &1648990005
 BoxCollider2D:
   m_ObjectHideFlags: 0
