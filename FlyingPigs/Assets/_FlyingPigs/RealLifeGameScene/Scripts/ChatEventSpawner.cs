@@ -131,8 +131,9 @@ public class ChatEventSpawner : MonoBehaviour
         chatNotification.SetActive(false);
         RemoveElementsFromPossibleAnswerContainer();
         SelectedAnswer.SetActive(true);
+        //audioManager.PlaySound(audioManager.messageBubbleClip, 2.0f);
         ResponseMessage.SetActive(true);
-        audioManager.PlaySound(audioManager.messageBubbleClip, 1.0f);
+        audioManager.PlaySound(audioManager.messageNotificationClip, 1.0f);
         SelectedAnswer.GetComponent<SelectedAnswer>().setText(newChatEvent.chatEvent.answers[index].answerText);
         ResponseMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.answers[index].senderResponse);
         GameStatisticsManager.Instance.updateStatsWith(newChatEvent.chatEvent.answers[index].updates);

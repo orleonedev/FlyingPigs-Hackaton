@@ -60,6 +60,10 @@ public class AudioManager : MonoBehaviour
     [Header("Legend of Vase")]
     public AudioClip vaseClip;
 
+    [Header("SuperKnightBros")]
+    public AudioClip jump;
+    public AudioClip rockSmash;
+
     [Header("End Minigame")]
     public AudioClip endMinigameFail;
     public AudioClip endMinigameSucc;
