@@ -19,7 +19,7 @@ public class MainScreenPig : MonoBehaviour
         pigImage = this.GetComponent<Image>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(isGoingRight){
             if(rectTransform.localPosition.x >= 1000f){
@@ -38,4 +38,5 @@ public class MainScreenPig : MonoBehaviour
         rectTransform.localPosition += dir * speed * Time.deltaTime;
         rectTransform.localPosition += Vector3.up * Mathf.Sin(rectTransform.localPosition.x) * 400 * Time.deltaTime;
     }
+
 }

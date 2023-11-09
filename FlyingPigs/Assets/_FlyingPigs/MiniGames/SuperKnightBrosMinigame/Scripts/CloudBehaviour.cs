@@ -16,7 +16,7 @@ public class CloudBehaviour : MonoBehaviour
         rectTransform = this.GetComponent<RectTransform>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(rectTransform.localPosition.x >= 1800f){
             Destroy(this.gameObject);

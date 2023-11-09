@@ -37,14 +37,14 @@ public class BarBehaviour : MonoBehaviour
         }
     }
     
-    private void Update() {
+    private void FixedUpdate() {
         SetValue(count, 100);
         if (count >= 100 || count <= 0) {
             rising = -rising;
         }
 
         if (shouldMove) {
-            count += 0.1f * (float) rising * (float) level * 0.5f;
+            count += rising * level;
         }
 
         if (!timer.GetCounting() && !gameOver) {
