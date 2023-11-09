@@ -51,7 +51,7 @@ public class ClickableVase : MonoBehaviour
             {
                 vaseSpawner.RedVaseDestroyed();
             }
-            audioManager.PlaySound(audioManager.vaseClip);
+            audioManager.PlaySound(audioManager.vaseClip, 0.5f);
             animator.SetBool("isBroken", true); 
 
         }

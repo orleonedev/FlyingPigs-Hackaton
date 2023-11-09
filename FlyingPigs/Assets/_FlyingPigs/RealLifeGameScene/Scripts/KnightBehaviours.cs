@@ -100,6 +100,6 @@ public class KnightBehaviour : MonoBehaviour
     }
 
     public void PlayAttackSound(){
-        audioManager.PlaySound(audioManager.attack, 0.1f);
+        audioManager.PlaySound(audioManager.attack, 0.25f);
     }
 }
