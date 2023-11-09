@@ -21,6 +21,9 @@ public class ReceivedMessage : MonoBehaviour
     }
 
     public void ResetScrollbar() {
-        gameObject.GetComponentInChildren<Scrollbar>().value = 1;
+        Scrollbar scrollbar = gameObject.GetComponentInChildren<Scrollbar>();
+        if(scrollbar != null) {
+            scrollbar.value = 1;
+        }
     }
 }
