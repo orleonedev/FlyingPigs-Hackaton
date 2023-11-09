@@ -70,6 +70,7 @@ public class EndingManager : MonoBehaviour
     }
 
     public void LoadMainScene(){
+        Debug.Log("TEST END GAME");
         audioManager.StopSoundLoop(numOfAudioSource);
         numOfAudioSource = -1;
         coordinator.LoadScene("MainScene");
