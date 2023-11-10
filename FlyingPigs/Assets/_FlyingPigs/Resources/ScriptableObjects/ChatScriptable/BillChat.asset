@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20af85cd74e504019ba9b969da0f19a6, type: 3}
+  m_Name: BillChat
+  m_EditorClassIdentifier: 
+  SenderName: Bill
+  chatEvents:
+  - StartingMessage: "Yo amico, il boss mi ha detto che cercavi un lavoro pi\xF9
+      scialla, ho un negozio nel tuo quartiere, la paga non \xE8 alta ma ti lascerei
+      giocare a Obsessive Odyssey e avresti pi\xF9 tempo libero.\r"
+    answers:
+    - answerText: "Grazie mille Bill, non vedevo l\u2019ora di prendere un lavoro
+        pi\xF9 tranquillo\r"
+      senderResponse: "Nessun problema amico, ci vediamo domani allora e mi raccomando,
+        non smettere mai di tappare! (-5 famiglia +10 gioco -20 dollari al giorno)\r"
+      updates:
+        keys: 000000000800000001000000
+        values:
+        - -0.05
+        - 2
+        - 0.1
+    - answerText: "Apprezzo il gesto ma devo mantenere una famiglia e non posso permettermi
+        una paga minore.\r"
+      senderResponse: "Tranquillo amico, lo capisco, perdita tua per\xF2 stavo organizzando
+        un torneo in questi giorni mentre tu starai a sgobbare (-10 gioco)\r"
+      updates:
+        keys: 01000000
+        values:
+        - -0.1
+    ghosting:
+      answerText: 
+      senderResponse: "Amico pensavo avessi detto al boss che eri interessato, odio
+        quando mi ignorano, lo fanno gi\xE0 le ragazze non ho bisogno lo facciano
+        anche i membri della gilda (-15 gioco)\r"
+      updates:
+        keys: 010000000a000000
+        values:
+        - -0.15
+        - 0
+    statConditions:
+    - gameStat: 10
+      statComparisonType: 1
+      value: 0
+    employerConditions: []
+  - StartingMessage: "Yo amico, domani volevo organizzare un evento multiplayer in
+      locale di Obsessive Odyssey, si tratterebbe di un paio d\u2019ore in pi\xF9
+      nel negozio, ma in cambio guadagneremo un sacco di cristalli per la gilda!\r"
+    answers:
+    - answerText: "Che figata! Certo che ci sono Bill\r"
+      senderResponse: "Ottimo amico, ci divertiremo un mondo! (-2 ore libere domani
+        +1000 cristalli -20 famiglia)\r"
+      updates:
+        keys: 050000000300000000000000
+        values:
+        - -120
+        - 1000
+        - -0.2
+    - answerText: "Grazie dell\u2019invito ma preferisco tornare a casa dalla mia
+        famiglia\r"
+      senderResponse: "Tua perdita amico (+10 famiglia -5 gioco)\r"
+      updates:
+        keys: 0000000001000000
+        values:
+        - 0.1
+        - -0.05
+    - answerText: "Posso esserci ma dovrai pagarmi il tempo extra\r"
+      senderResponse: "Vedo cosa posso fare amico, magari potresti gestire le persone
+        tu cos\xEC giustifico con mio padre la paga extra, sar\xE0 comunque divertente
+        ( +500 cristalli  + 30 dollari)\r"
+      updates:
+        keys: 0300000002000000
+        values:
+        - 500
+        - 30
+    ghosting:
+      answerText: 
+      senderResponse: "Amico se non ti fa rispondere subito un torneo non so proprio
+        quali sono le tue priorit\xE0, lascia stare ce ne sar\xE0 un'altro il prossimo
+        mese (-10 gioco)\r"
+      updates:
+        keys: 01000000
+        values:
+        - -0.1
+    statConditions: []
+    employerConditions:
+    - neededEmployer: 2
+  - StartingMessage: "Amico so che \xE8 una rottura ma ho avuto un incidente con
+      la macchina e non parte pi\xF9, domani dovrai gestire il negozio da solo o
+      non lo possiamo aprire, si dovrai aprire e chiudere tu ma ti pago un extra
+      in cristalli, fammi sapere.\r"
+    answers:
+    - answerText: "Il mio orario \xE8 chiaro, se devo aprire e chiudere io, semplicemente
+        chiuder\xF2 prima e l\u2019orario rimarr\xE0 invariato, un extra in cristalli
+        non mi sembra una valuta accettabile\r"
+      senderResponse: "Amico per quelli come noi c'\xE8 poca differenza tra dollari
+        e cristalli, ma fa come vuoi (nessun cambiamento)\r"
+      updates:
+        keys: 
+        values: []
+    - answerText: "Tranquillo amico, i flying Pig si coprono a vicenda\r"
+      senderResponse: "Sapevo di poter contare su di te ( -mezz\u2019ora di tempo
+        libero domani +500 cristalli +10 gioco)\r"
+      updates:
+        keys: 050000000300000001000000
+        values:
+        - -30
+        - 500
+        - 0.1
+    ghosting:
+      answerText: 
+      senderResponse: "Amico mi abbandoni nel momento del bisogno? Comunque lascia
+        stare, ho trovato una soluzione (-10 gioco)\r"
+      updates:
+        keys: 01000000
+        values:
+        - -0.1
+    statConditions: []
+    employerConditions:
+    - neededEmployer: 2
+  previousEvents: []
+  specificChatEvents: []
+  previousSpecificChatEvents: []

@@ -1,0 +1,278 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5bf834377ca4002a0e0b96540b5444, type: 3}
+  m_Name: EmployerChat
+  m_EditorClassIdentifier: 
+  SenderName: John
+  chatEvents:
+  - StartingMessage: "Il tuo pc ha avuto dei problemi nel passaggio dei dati, per
+      fortuna hai i dati salvati in casa e mi servirebbe che domani rimani qui un
+      p\xF2 di tempo extra per ricopiare tutto, spero non sia un problema, ovviamente
+      ti pagherei l\u2019extra."
+    answers:
+    - answerText: "Nessun problema \r"
+      senderResponse: "Ottimo come sempre, scusa per il disturbo (- mezz\u2019ora
+        tempo libero domani + 30 dollari)\r"
+      updates:
+        keys: 0500000002000000
+        values:
+        - -30
+        - 30
+    - answerText: 'Non avrai il mio tempo libero, fallo fare a qualcun altro
+
+'
+      senderResponse: "Se non hai intenzione di farlo tu lo far\xF2 fare ad un tecnico,
+        verr\xE0 scalato dal tuo stipendio (-20 dollari)\r\n"
+      updates:
+        keys: 02000000
+        values:
+        - -20
+    - answerText: 'Domani posso evitare di accompagnare mia figlia a scuola e venire
+        prima per risolvere questo problema
+
+'
+      senderResponse: "Come vuoi tu, l\u2019importante \xE8 che venga fatto (-5 famiglia
+        +30 dollari)\r\n"
+      updates:
+        keys: 0000000002000000
+        values:
+        - -0.05
+        - 30
+    ghosting:
+      answerText: 
+      senderResponse: 'Visto che non rispondevi ho chiamato un tecnico, lo scalo
+        dal tuo stipendio (-20 dollari)
+
+'
+      updates:
+        keys: 02000000
+        values:
+        - -20
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Domani avremo l\u2019accesso ad una nuova app per gli acquisti,chi
+      la installa riceve un bonus ma richiede un reset del telefono, fammi sapere
+      se devo segnarti nella lista.\r"
+    answers:
+    - answerText: "Ci tengo alle mie app e i miei file, non resetter\xF2 il mio telefono\r\n"
+      senderResponse: "Come vuoi (nessun cambiamento)\t\r\n"
+      updates:
+        keys: 
+        values: []
+    - answerText: 'Un bonus solo per installare un app? contami subito
+
+'
+      senderResponse: 'Ottima scelta (+50 dollari -10 gioco)
+
+'
+      updates:
+        keys: 0200000001000000
+        values:
+        - 50
+        - 10
+    - answerText: 'Con quel bonus potrei comprarmi dei cristalli, ottimo
+
+'
+      senderResponse: "Quello che fai con i tuoi soldi non \xE8 affar mio (-10 gioco
+        +250 cristalli)\r\n"
+      updates:
+        keys: 0100000003000000
+        values:
+        - -0.1
+        - 250
+    ghosting:
+      answerText: 
+      senderResponse: 'Visto che non rispondevi ti ho segnato fuori (nessun cambiamento)
+
+'
+      updates:
+        keys: 
+        values: []
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Domani sar\xE0 necessario fare degli straordinari per completare
+      gli ultimi ordini, puoi rifiutarti ma sappi che questi straordinari verranno
+      pagati il doppio\r"
+    answers:
+    - answerText: 'Non comprerete il mio tempo
+
+'
+      senderResponse: 'Capisco (nessun cambiamento)
+
+'
+      updates:
+        keys: 
+        values: []
+    - answerText: 'Nessun problema
+
+'
+      senderResponse: 'Perfetto (-1 ora e mezza tempo libero domani +80 dollari)
+
+'
+      updates:
+        keys: 0500000002000000
+        values:
+        - -90
+        - 80
+    ghosting:
+      answerText: 
+      senderResponse: "Certe scelte vanno prese con una certa velocit\xE0, ho trovato
+        chi coprir\xE0 questo lavoro extra (nessun cambiamento)\r\n"
+      updates:
+        keys: 
+        values: []
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Domani ho bisogno che tu faccia un incontro vicino casa tua
+      dopo pranzo, potrai poi considerarti libero per la giornata, fammi sapere se
+      ti va bene\r"
+    answers:
+    - answerText: "Ottimo, cos\xEC torner\xF2 prima a casa dalla mia famiglia\r\n"
+      senderResponse: Buon per te (+ 1 ora libera domani +20 famiglia)
+      updates:
+        keys: 0500000000000000
+        values:
+        - 60
+        - 20
+    - answerText: "Ottimo, pi\xF9 tempo libero per me\r"
+      senderResponse: 'Divertiti (+1 ora e mezza il giorno dopo)
+
+'
+      updates:
+        keys: 05000000
+        values:
+        - 90
+    ghosting:
+      answerText: 
+      senderResponse: "Visto che non rispondevi ho dovuto assegnare l\u2019incontro
+        ad un altro, mi dispiace (nessun cambiamento)\r\n"
+      updates:
+        keys: 
+        values: []
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Il cliente ha anticipato la scadenza di un progetto e dobbiamo
+      preparare gli ultimi dettagli il prima possibile, se ci sei domani per un extra
+      riceverai un bonus sostanzioso\r"
+    answers:
+    - answerText: 'Nessun problema, considera il progetto concluso
+
+'
+      senderResponse: 'Sei il migliore (-1 ora il giorno dopo +100 dollari)
+
+'
+      updates:
+        keys: 0500000002000000
+        values:
+        - -60
+        - 100
+    - answerText: 'Domani non sono disponibile
+
+'
+      senderResponse: "Peccato, trover\xF2 qualcuno per sostituirti (nessun cambiamento)\r"
+      updates:
+        keys: 
+        values: []
+    - answerText: 'Posso trattenermi ma per poco
+
+'
+      senderResponse: "Ogni aiuto \xE8 benvenuto (- mezz\u2019ora il giorno dopo,
+        +30 dollari)\r\n"
+      updates:
+        keys: 0500000002000000
+        values:
+        - -30
+        - 30
+    ghosting:
+      answerText: 
+      senderResponse: "Ho dovuto trovare qualcuno per sostituirti, cerca di rispondere
+        prima ai messaggi )nessun cambiamento)\r"
+      updates:
+        keys: 
+        values: []
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Ricordi il progetto al quale stavamo lavorando? Il cliente
+      ha chiamato e vuole dei cambiamenti all\u2019ultimo secondo, se puoi occupartene
+      tu domani ti dar\xF2 un bel bonus altrimenti faccio io\r"
+    answers:
+    - answerText: 'Me ne occupo io
+
+'
+      senderResponse: 'Ottimo (-1 ora il giorno dopo +50 dollari)
+
+'
+      updates:
+        keys: 0500000002000000
+        values:
+        - -60
+        - 50
+    - answerText: 'Non posso, occupatene tu
+
+'
+      senderResponse: 'Capisco (nessun cambiamento)
+
+'
+      updates:
+        keys: 
+        values: []
+    - answerText: 'Possiamo occuparcene insieme
+
+'
+      senderResponse: Buona soluzione (- mezz'ora il giorno dopo +30 dollari)
+      updates:
+        keys: 0500000002000000
+        values:
+        - -30
+        - 30
+    ghosting:
+      answerText: 
+      senderResponse: Ho capito me ne occupo io, ma cerca di rispondermi (nessun
+        cambiamento)
+      updates:
+        keys: 
+        values: []
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "L\u2019azienda ha organizzato un pic nic domani dopo pranzo,
+      la partecipazione \xE8 volontaria ma se non vieni potrai tornare a casa, conto
+      te e la tua famiglia?\r"
+    answers:
+    - answerText: "Certamente! \r\n"
+      senderResponse: "Perfetto, sono sicuro che si divertiranno (+40 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - 0.4
+    - answerText: 'Preferisco stare a casa
+
+'
+      senderResponse: 'Queste occasioni sono ottime per la famiglia, ma fa come vuoi
+        (+2 ore libere domani -10 famiglia)
+
+'
+      updates:
+        keys: 0500000000000000
+        values:
+        - 120
+        - -0.1
+    ghosting:
+      answerText: 
+      senderResponse: "Visto che non rispondevi ho segnato il tuo nome ma non quello
+        della tua famiglia, ci vediamo domani (-20 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - 0.2
+    statConditions: []
+    employerConditions: []
+  previousEvents: []

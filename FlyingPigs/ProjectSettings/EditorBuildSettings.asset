@@ -6,7 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/_FlyingPigs/Scenes/MainScene.unity
+    guid: 0187ab7c8de47401482694598ee2f0ed
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/LoadingScene.unity
+    guid: 1e2683dfe146b43449fb778c62cbe5bc
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/MainGameScene.unity
+    guid: 0088b20db9a72482cb800acad764d5f3
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/FlappyPigMinigame.unity
+    guid: d2c161d214be44d4888073375dc1f422
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/CatapultMinigame.unity
+    guid: e4350af2f2e891e44aa9af4d877efd55
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/ArrowDodge.unity
+    guid: 209ca1b13a44b5b478817aa6965879a7
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/FruitSamuraiMinigame.unity
+    guid: 505002d6e450246cc91c90e7aacabdd1
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/PigHunt.unity
+    guid: b3e9cb65b9e6bab4b8dff3c021cc6953
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/EndingScene.unity
+    guid: 6af61d593095f9a4e8c4dd67e5eb96c7
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/LegendOfVaseMinigame.unity
+    guid: fc4e4a01872f09140a7755f8f26cb1ad
+  - enabled: 1
+    path: Assets/_FlyingPigs/Scenes/SuperKnightBrosMinigame.unity
+    guid: 70d88075e86dfe948b11cd467529c848
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: c3913868ab3994853a32acf3dd957972, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 15e6d18ea64874e29aeff0d4452bb301, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 2ced871e71b7505489fd9c46425b39bf, type: 2}

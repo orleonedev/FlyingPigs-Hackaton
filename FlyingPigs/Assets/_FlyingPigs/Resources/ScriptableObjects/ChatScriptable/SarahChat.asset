@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f365621c8877a46158923df1c74aa4e0, type: 3}
+  m_Name: SarahChat
+  m_EditorClassIdentifier: 
+  SenderName: Sarah
+  chatEvents:
+  - StartingMessage: "Papi! Domani c'\xE8 la festa di compleanno di Cynthia ma non
+      ho un vestito, puoi finanziare i sogni della tua dolce principessina di avere
+      un bel vestitino?\r"
+    answers:
+    - answerText: "Non posso dirti di no, ma non fare tardi! \r"
+      senderResponse: "Grazie mille oh nobile cavaliere, la tua principessa sar\xE0
+        la pi\xF9 bella delle belle (meno 100 dollari + 30 famiglia)\r"
+      updates:
+        keys: 0200000000000000
+        values:
+        - -100
+        - 0.3
+    - answerText: "Va bene, ma niente di troppo costoso\r"
+      senderResponse: "Va bene padretirchio (ti voglio bene) ( -50 dollari + 15 famiglia\r"
+      updates:
+        keys: 0200000000000000
+        values:
+        - -50
+        - 0.15
+    - answerText: "Hai gi\xE0 dei vestiti\r"
+      senderResponse: "Si ma sono terribili! ti odio (-15 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.15
+    ghosting:
+      answerText: 
+      senderResponse: "Visto che non rispondevi mi ha accompagnato la mamma <3 (-50
+        dollari)\r"
+      updates:
+        keys: 02000000
+        values:
+        - -50
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Papi! Sto giocando ad Obsessive Odyssey ma sono rimasta bloccata
+      in Pig Hunt, mi passeresti dei cristalli per migliorare il mio personaggio?\r"
+    answers:
+    - answerText: 'Devi migliorare tu, non il tuo personaggio
+
+'
+      senderResponse: "Si ma cos\xEC \xE8 noioso e lento! (+20 gioco -5 famiglia)\r"
+      updates:
+        keys: 0100000000000000
+        values:
+        - 0.2
+        - -0.05
+    - answerText: "Va bene, ma non riuscir\xF2 a farti entrare nei Flying Pigs se
+        non migliori\r"
+      senderResponse: "Grazie mille papi! cercher\xF2 di migliorare (-50 cristalli
+        +10 famiglia)\r"
+      updates:
+        keys: 0300000000000000
+        values:
+        - -50
+        - 0.1
+    - answerText: "Perch\xE9 non lo fai fare a me? Cos\xEC ti sblocco e vai avanti\r"
+      senderResponse: "Va bene lo stesso! (+5 gioco +5 famiglia)\r"
+      updates:
+        keys: 0100000000000000
+        values:
+        - 0.05
+        - 0.05
+    ghosting:
+      answerText: 
+      senderResponse: "Continuo a rimanere bloccata e ora anche ignorata da mio padre\u2026
+        maledetti maiali volanti! (-10 famiglia -5 gioco)\r"
+      updates:
+        keys: 0000000001000000
+        values:
+        - -0.1
+        - -0.05
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Papi! Ti ricordo che domani c'\xE8 il concerto di Cadencia
+      ed io e Cynthia dovevamo andare con sua madre, purtroppo ha avuto problemi
+      con l\u2019auto, ci puoi accompagnare tu?\r"
+    answers:
+    - answerText: "Vi chiamo un Taxi\r"
+      senderResponse: "Ok grazie mille! (+10 famiglia -30 dollari)\r"
+      updates:
+        keys: 0000000002000000
+        values:
+        - 0.1
+        - -30
+    - answerText: "Nessun problema\r"
+      senderResponse: "Sei il migliore pap\xEC! (meno mezz\u2019ora il giorno dopo
+        +20 famiglia)\r"
+      updates:
+        keys: 0500000000000000
+        values:
+        - -30
+        - 0.2
+    - answerText: 'Trova una soluzione
+
+'
+      senderResponse: "Eri tu la mia soluzione... (-20 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.2
+    ghosting:
+      answerText: 
+      senderResponse: "Come al solito dovr\xF2 chiedere alla mamma, grazie mille\u2026
+        (-25 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.25
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Papi stavo pensando che se avessi un'auto tu avresti pi\xF9
+      tempo libero, per stare con la mamma o giocare a Obsessive Odyssey, avessi
+      i soldi me la comprerei ma non dispongo di dollari, tuttavia, potrei ripagarti
+      in cristalli! \r"
+    answers:
+    - answerText: "Se ti va bene un\u2019auto usata, si pu\xF2 fare!\r"
+      senderResponse: "Mi va bene qualsiasi cosa con un motore e 4 ruote, affare
+        fatto! (-300 dollari + 1 ora al giorno e +500cristalli  + 20 famiglia)\r"
+      updates:
+        keys: 02000000040000000300000000000000
+        values:
+        - -300
+        - 60
+        - 500
+        - 0.2
+    - answerText: "Scordatelo\r"
+      senderResponse: "Sei pessimo! tutte le mie amiche hanno un auto! (-10 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.1
+    - answerText: "Mi hai convinto, ma il tuo debito sar\xE0 alto!\r"
+      senderResponse: "Sei il migliore dei migliori! Grazie mille Papi! (-750 dollari
+        + 1 ora al giorno  +1000 cristalli +40 famiglia)\r"
+      updates:
+        keys: 02000000040000000300000000000000
+        values:
+        - -750
+        - 60
+        - 1000
+        - 0.4
+    ghosting:
+      answerText: 
+      senderResponse: "Capisco che tu non sia interessato, ma addirittura ghostarmi
+        mi sembra eccessivo, Sei pessimo! (-20 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.2
+    statConditions:
+    - gameStat: 7
+      statComparisonType: 0
+      value: 4
+    employerConditions: []
+  - StartingMessage: "Papi! Sar\xF2 sincera, domani ho un test e non me la sento
+      di andare, se rimanessi a casa, magari chiamando la scuola e dicendo che sono
+      malata, io avrei pi\xF9 tempo per studiare e sarei pi\xF9 tranquilla!\r"
+    answers:
+    - answerText: 'Va bene, ma che non diventi un abitudine
+
+'
+      senderResponse: 'Grazie mille papi sei il migliore! (+10 famiglia)
+
+'
+      updates:
+        keys: 00000000
+        values:
+        - 0.1
+    - answerText: "Utilizza quel tempo per migliorare su Obsessive Odyssey\r"
+      senderResponse: 'Oh, ok (+10 gioco -5 famiglia)
+
+'
+      updates:
+        keys: 0100000000000000
+        values:
+        - 0.1
+        - -0.05
+    - answerText: "Andrai a scuola e ti prenderai le tue responsabilit\xE0\r\n"
+      senderResponse: 'UFF! (+5 famiglia)
+
+'
+      updates:
+        keys: 00000000
+        values:
+        - 0.05
+    ghosting:
+      answerText: 
+      senderResponse: "Chi tace acconsente e se la mamma avr\xE0 lamentele le dir\xF2
+        che eri d\u2019accordo! (-5 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.05
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Papi! Il tuo nuovo collega continua a mandarmi richieste d\u2019amicizia
+      su Obsessive Odyssey ma non voglio accettarlo perch\xE9 \xE8 un tipo cringe\r"
+    answers:
+    - answerText: "Ignoralo \xE8 un cretino\r\n"
+      senderResponse: 'OK, allora lo blocco (+10 famiglia -20 gioco)
+
+'
+      updates:
+        keys: 0000000001000000
+        values:
+        - 0.1
+        - -0.2
+    - answerText: "Accettarlo non ti costa niente al massimo lo blocchi dopo\r"
+      senderResponse: "Ci pu\xF2 stare, magari mi faccio dare qualche cristallo prima\u2026
+        eheh. (+5 famiglia +5 gioco)\r"
+      updates:
+        keys: 0000000001000000
+        values:
+        - 0.05
+        - 0.05
+    - answerText: "Accettalo, \xE8 il mio nuovo capo ed \xE8 un flying pig\r\n"
+      senderResponse: "Va bene ma se scrive cose strane urlo (+20 gioco -5 famiglia)\r"
+      updates:
+        keys: 0100000000000000
+        values:
+        - 0.2
+        - -0.05
+    ghosting:
+      answerText: 
+      senderResponse: "Lo ignorer\xF2 come stai facendo con me (-20 gioco -10 famiglia)\r"
+      updates:
+        keys: 0100000000000000
+        values:
+        - -0.2
+        - -0.1
+    statConditions: []
+    employerConditions:
+    - neededEmployer: 2
+  - StartingMessage: Papi! Zio Mark mi ha fatto scaricare un programma della Vanzitech
+      che tiene sotto controllo il mio telefono ed ha fatto spia alla mamma che gioco
+      ad obsessive odyssey a scuola!
+    answers:
+    - answerText: 'Disinstalla subito tutto, non mi piace che vieni spiata
+
+'
+      senderResponse: "Mamma aveva deciso di installarla, ma sono d\u2019accordo!
+        (+10 famiglia +10 gioco)\r"
+      updates:
+        keys: 0000000001000000
+        values:
+        - 0.1
+        - 0.1
+    - answerText: "Lascia stare l\u2019app, non dovresti giocare durante l\u2019orario
+        scolastico\r"
+      senderResponse: "Parli proprio tu che giochi al lavoro? Va bene\u2026(+20 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - 0.2
+    - answerText: "Chieder\xF2 a tuo zio il controllo dell\u2019app cos\xEC potrai
+        giocare quanto vuoi\r"
+      senderResponse: "Grazie, sar\xF2 comunque spiata, ma almeno posso giocare (+20
+        gioco)\r"
+      updates:
+        keys: 01000000
+        values:
+        - 0.2
+    ghosting:
+      answerText: 
+      senderResponse: "Quindi io ti dico che tua figlia viene spiata e tu non fai
+        niente? sei pessimo!(-10 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.1
+    statConditions: []
+    employerConditions:
+    - neededEmployer: 1
+  previousEvents: []

@@ -50,6 +50,62 @@ public partial class @TouchInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ArrowMinigame"",
+            ""id"": ""7f554de4-33da-45ad-89b9-5dd53afbd0dc"",
+            ""actions"": [
+                {
+                    ""name"": ""TouchInput"",
+                    ""type"": ""Value"",
+                    ""id"": ""2dacbdec-6c6a-4a00-bcbd-167012599f5c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""40708794-2564-4e1d-b648-513337190d31"",
+                    ""path"": ""<Touchscreen>/position/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TouchInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""FlappyPigMinigame"",
+            ""id"": ""781bd5a0-f923-4e56-a88b-314d0144380f"",
+            ""actions"": [
+                {
+                    ""name"": ""TouchInput"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca207385-98ee-426a-b9a7-75eced9998c8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2c98c22a-115c-48ac-9996-9a7337a5d6f0"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TouchInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -57,6 +113,12 @@ public partial class @TouchInputs: IInputActionCollection2, IDisposable
         // CatapultMinigame
         m_CatapultMinigame = asset.FindActionMap("CatapultMinigame", throwIfNotFound: true);
         m_CatapultMinigame_TouchInput = m_CatapultMinigame.FindAction("TouchInput", throwIfNotFound: true);
+        // ArrowMinigame
+        m_ArrowMinigame = asset.FindActionMap("ArrowMinigame", throwIfNotFound: true);
+        m_ArrowMinigame_TouchInput = m_ArrowMinigame.FindAction("TouchInput", throwIfNotFound: true);
+        // FlappyPigMinigame
+        m_FlappyPigMinigame = asset.FindActionMap("FlappyPigMinigame", throwIfNotFound: true);
+        m_FlappyPigMinigame_TouchInput = m_FlappyPigMinigame.FindAction("TouchInput", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -160,7 +222,107 @@ public partial class @TouchInputs: IInputActionCollection2, IDisposable
         }
     }
     public CatapultMinigameActions @CatapultMinigame => new CatapultMinigameActions(this);
+
+    // ArrowMinigame
+    private readonly InputActionMap m_ArrowMinigame;
+    private List<IArrowMinigameActions> m_ArrowMinigameActionsCallbackInterfaces = new List<IArrowMinigameActions>();
+    private readonly InputAction m_ArrowMinigame_TouchInput;
+    public struct ArrowMinigameActions
+    {
+        private @TouchInputs m_Wrapper;
+        public ArrowMinigameActions(@TouchInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @TouchInput => m_Wrapper.m_ArrowMinigame_TouchInput;
+        public InputActionMap Get() { return m_Wrapper.m_ArrowMinigame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ArrowMinigameActions set) { return set.Get(); }
+        public void AddCallbacks(IArrowMinigameActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ArrowMinigameActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ArrowMinigameActionsCallbackInterfaces.Add(instance);
+            @TouchInput.started += instance.OnTouchInput;
+            @TouchInput.performed += instance.OnTouchInput;
+            @TouchInput.canceled += instance.OnTouchInput;
+        }
+
+        private void UnregisterCallbacks(IArrowMinigameActions instance)
+        {
+            @TouchInput.started -= instance.OnTouchInput;
+            @TouchInput.performed -= instance.OnTouchInput;
+            @TouchInput.canceled -= instance.OnTouchInput;
+        }
+
+        public void RemoveCallbacks(IArrowMinigameActions instance)
+        {
+            if (m_Wrapper.m_ArrowMinigameActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IArrowMinigameActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ArrowMinigameActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ArrowMinigameActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public ArrowMinigameActions @ArrowMinigame => new ArrowMinigameActions(this);
+
+    // FlappyPigMinigame
+    private readonly InputActionMap m_FlappyPigMinigame;
+    private List<IFlappyPigMinigameActions> m_FlappyPigMinigameActionsCallbackInterfaces = new List<IFlappyPigMinigameActions>();
+    private readonly InputAction m_FlappyPigMinigame_TouchInput;
+    public struct FlappyPigMinigameActions
+    {
+        private @TouchInputs m_Wrapper;
+        public FlappyPigMinigameActions(@TouchInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @TouchInput => m_Wrapper.m_FlappyPigMinigame_TouchInput;
+        public InputActionMap Get() { return m_Wrapper.m_FlappyPigMinigame; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(FlappyPigMinigameActions set) { return set.Get(); }
+        public void AddCallbacks(IFlappyPigMinigameActions instance)
+        {
+            if (instance == null || m_Wrapper.m_FlappyPigMinigameActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_FlappyPigMinigameActionsCallbackInterfaces.Add(instance);
+            @TouchInput.started += instance.OnTouchInput;
+            @TouchInput.performed += instance.OnTouchInput;
+            @TouchInput.canceled += instance.OnTouchInput;
+        }
+
+        private void UnregisterCallbacks(IFlappyPigMinigameActions instance)
+        {
+            @TouchInput.started -= instance.OnTouchInput;
+            @TouchInput.performed -= instance.OnTouchInput;
+            @TouchInput.canceled -= instance.OnTouchInput;
+        }
+
+        public void RemoveCallbacks(IFlappyPigMinigameActions instance)
+        {
+            if (m_Wrapper.m_FlappyPigMinigameActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IFlappyPigMinigameActions instance)
+        {
+            foreach (var item in m_Wrapper.m_FlappyPigMinigameActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_FlappyPigMinigameActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public FlappyPigMinigameActions @FlappyPigMinigame => new FlappyPigMinigameActions(this);
     public interface ICatapultMinigameActions
+    {
+        void OnTouchInput(InputAction.CallbackContext context);
+    }
+    public interface IArrowMinigameActions
+    {
+        void OnTouchInput(InputAction.CallbackContext context);
+    }
+    public interface IFlappyPigMinigameActions
     {
         void OnTouchInput(InputAction.CallbackContext context);
     }
