@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18233f4b63daaeb4aa6d1f011458577a, type: 3}
   m_Name: FakeGameManager
   m_EditorClassIdentifier: 
-  expBarFill: 0.46666676
-  expToLevelUp: 15
-  expLimitProgress: 1.5
-  knightLevel: 2
+  expBarFill: 0
+  expToLevelUp: 5
+  expLimitProgress: 1.2
+  knightLevel: 1

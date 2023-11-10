@@ -13,8 +13,8 @@ public class FakeGameManager : SingletonScriptableObject<FakeGameManager>
 
     public void ReloadGame(){
         expBarFill = 0.0f;
-        expToLevelUp = 10.0f;
-        expLimitProgress = 1.5f;
+        expToLevelUp = 5.0f;
+        expLimitProgress = 1.2f;
         knightLevel = 1;
     }
 }

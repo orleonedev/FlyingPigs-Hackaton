@@ -18,6 +18,10 @@ public class KnightBehaviour : MonoBehaviour
     protected float elapsedTime;
     protected int enemyLives;
     protected Animator enemyAnimator;
+    private SerializableDictionary<GameStatsEnum,float> fixedUpdates = new SerializableDictionary<GameStatsEnum, float>(){
+        {GameStatsEnum.GameHealth, 0.05f},
+        {GameStatsEnum.GameCurrency, 2f}
+    };
 
     private void Start(){
         expBarFill.fillAmount = FakeGameManager.Instance.expBarFill;
@@ -85,6 +89,7 @@ public class KnightBehaviour : MonoBehaviour
         if(expBarFill.fillAmount + fillAmount >= 1){
             expBarFill.fillAmount = (expBarFill.fillAmount + fillAmount)%1;
             FakeGameManager.Instance.knightLevel++;
+            GameStatisticsManager.Instance.updateStatsWith(fixedUpdates);
             expLabel.text = "Lvl " + FakeGameManager.Instance.knightLevel.ToString();
             FakeGameManager.Instance.expToLevelUp *= FakeGameManager.Instance.expLimitProgress;
             audioManager.PlaySound(audioManager.levelUp);
@@ -100,6 +105,6 @@ public class KnightBehaviour : MonoBehaviour
     }
 
     public void PlayAttackSound(){
-        audioManager.PlaySound(audioManager.attack, 0.1f);
+        audioManager.PlaySound(audioManager.attack, 0.25f);
     }
 }
