@@ -21,5 +21,9 @@ Alternandoti fra minigiochi frenetici e messaggi personali a risposta multipla, 
 ## Where I can play? 
 - Android - Install APK -> [GDrive](https://drive.google.com/drive/folders/1aA_fN69kaDO8zUfj1ivVy4uzAvO70tvk?usp=sharing)
 
+  <img src="apk.png" alt="apk QrCode" width="180" height="180"/>
+
 - iPhone - Testflight link -> [Join TestFlight](https://testflight.apple.com/join/uYak5scv)
+
+  <img src="testflight.png" alt="apk QrCode" width="180" height="180"/>
 
