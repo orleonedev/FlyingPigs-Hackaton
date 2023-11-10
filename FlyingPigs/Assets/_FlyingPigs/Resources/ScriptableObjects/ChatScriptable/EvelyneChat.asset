@@ -23,7 +23,7 @@ MonoBehaviour:
         keys: 0500000000000000
         values:
         - -60
-        - -0.1
+        - 0.1
     - answerText: "Eve, sono impegnato domani per\xF2 posso mandarti un taxi!\r"
       senderResponse: "OK. ( -30 dollari)\r"
       updates:
@@ -56,7 +56,7 @@ MonoBehaviour:
         keys: 0200000000000000
         values:
         - -100
-        - 30
+        - 0.3
     - answerText: "Andranno bene dei fiori\r"
       senderResponse: Un classico (-10 dollari)
       updates:
@@ -68,7 +68,7 @@ MonoBehaviour:
       updates:
         keys: 00000000
         values:
-        - -20
+        - -0.2
     ghosting:
       answerText: 
       senderResponse: "Visto che non rispondevi sono andata nel panico e le ho regalato
@@ -88,12 +88,13 @@ MonoBehaviour:
       pi\xF9 tempo insieme."
     answers:
     - answerText: "Vanzitech? WOW! digli di contattarmi subito\t\r"
-      senderResponse: "Ottimo! sono sicura che adorerai lavorare con lui! (prossimo
-        messaggio sar\xE0 quello di Mark e +10 famiglia)\r"
+      senderResponse: "Ottimo! sono sicura che adorerai lavorare con lui! ( e +10
+        famiglia)\r"
       updates:
-        keys: 00000000
+        keys: 0000000009000000
         values:
         - 0.1
+        - 1
     - answerText: "Digli che lo ringrazio ma sto bene con il mio lavoro\r"
       senderResponse: "Sicuro? Guarda che \xE8 una buona occasione\u2026 ne riparliamo
         il mese prossimo al suo compleanno. (-10 famiglia)\r"
@@ -109,7 +110,7 @@ MonoBehaviour:
       updates:
         keys: 00000000
         values:
-        - -30
+        - -0.3
     statConditions:
     - gameStat: 2
       statComparisonType: 0
@@ -299,7 +300,7 @@ MonoBehaviour:
         values:
         - -300
         - -100
-        - 0.7
+        - 0.8
     - answerText: "Giochino Ossessivo? almeno lui non mi tratta come un bancomat!\r"
       senderResponse: "Questa notte vado a dormire da mia madre (-20 famiglia)\r"
       updates:
@@ -405,197 +406,4 @@ MonoBehaviour:
         - -0.3
     statConditions: []
     employerConditions: []
-  previousEvents:
-  - StartingMessage: "Amore, domani dopo il lavoro potresti passare a prendermi?
-      Ho bisogno di un passaggio,la mia macchina \xE8 ancora dal meccanico.\r"
-    answers:
-    - answerText: "Nessun problema!\r"
-      senderResponse: "Grazie mille! (-1 ora libera domani,+ 10 famiglia)\r"
-      updates:
-        keys: 0500000000000000
-        values:
-        - -60
-        - -0.1
-    - answerText: "Eve, sono impegnato domani per\xF2 posso mandarti un taxi!\r"
-      senderResponse: "OK. ( -30 dollari)\r"
-      updates:
-        keys: 02000000
-        values:
-        - -30
-    - answerText: "Non posso, dovrai arrangiarti \r"
-      senderResponse: "Disponibile come sempre vedo\u2026(- 20 famiglia)\r"
-      updates:
-        keys: 00000000
-        values:
-        - -0.2
-    ghosting:
-      answerText: 
-      senderResponse: "Mi stai seriamente ignorando per giocare con il telefono?
-        lo vedo che sei online! (- 30 famiglia)\r"
-      updates:
-        keys: 00000000
-        values:
-        - -30
-    statConditions: []
-    employerConditions: []
-  - StartingMessage: "Ogni Halloween i nostri nemici decorano il giardino e noi non
-      facciamo mai niente, quest\u2019anno non permetter\xF2 che la nostra sia la
-      casa meno spaventosa del quartiere!\r"
-    answers:
-    - answerText: "Finanzier\xF2 il tuo progetto! Rendi la nostra casa terrificante!\r"
-      senderResponse: "Detto fatto! Sono passata in un negozio specializzato ed ho
-        comprato un sacco di roba, spaventeremo tutti! (-150 dollari, +30 famiglia)\r"
-      updates:
-        keys: 0200000000000000
-        values:
-        - -150
-        - 0.3
-    - answerText: "Domani passo a prendere qualche addobbo oltre a quelli che sono
-        in garage, sar\xE0 divertente\r"
-      senderResponse: "In effetti in garage ho trovato un sacco di cose inquietanti
-        rendiamo spaventosa questa casa! (- un ora libera domani -20 dollari +30
-        famiglia)\r"
-      updates:
-        keys: 050000000200000000000000
-        values:
-        - -60
-        - -20
-        - 0.3
-    - answerText: 'Non farti fregare dal consumismo Eve
-
-'
-      senderResponse: 'Sei noioso! (- 10 famiglia)
-
-'
-      updates:
-        keys: 00000000
-        values:
-        - -0.1
-    ghosting:
-      answerText: 
-      senderResponse: 'Ho capito, non ti interessa, me ne occupo io, come sempre.
-        (-50 dollari -10 famiglia)
-
-'
-      updates:
-        keys: 0200000000000000
-        values:
-        - -50
-        - -0.1
-    statConditions: []
-    employerConditions: []
-  - StartingMessage: "Ultimamente TUA figlia \xE8 insopportabile, continua a rubarmi
-      i vestiti, a fare tardi la sera e portare brutti voti da scuola, dobbiamo fare
-      qualcosa!\r"
-    answers:
-    - answerText: "Domani le parliamo e cerchiamo di capire cosa sta succedendo,
-        \xE8 una fase ma deve darsi una regolata.\r"
-      senderResponse: "Dici che baster\xE0? preparati che ci vorr\xE0 un bel po '.
-        ( - 1 ora e mezza libera +40 famiglia)\r"
-      updates:
-        keys: 0500000000000000
-        values:
-        - -90
-        - 0.4
-    - answerText: "Perch\xE9 non chiami la tua amica psicologa? sapr\xE0 sicuramente
-        cosa fare\r"
-      senderResponse: "Sai che ti dico? Erica avr\xE0 sicuramente la soluzione! (-
-        200 dollari +20 famiglia)\r"
-      updates:
-        keys: 0200000000000000
-        values:
-        - -200
-        - 0.2
-    - answerText: "Eve stai calma, non ho tempo per i vostri litigi tra donne per
-        i vestiti.\r"
-      senderResponse: "Sei serio? Non ricordavo di aver sposato un idiota maschilista!
-        (-20 famiglia)\r"
-      updates:
-        keys: 00000000
-        values:
-        - -0.2
-    ghosting:
-      answerText: 
-      senderResponse: "Ho deciso io, domani andiamo dalla mia amica Erica per una
-        bella sessione di famiglia (- 1 ora il giorno dopo e -100 dollari)\r"
-      updates:
-        keys: 0500000002000000
-        values:
-        - -90
-        - -100
-    statConditions: []
-    employerConditions: []
-  - StartingMessage: "Amore, ti ricordo che fra qualche giorno \xE8 il compleanno
-      di tua madre, le stavo andando a comprare il regalo, cosa vuoi prenderle?\r"
-    answers:
-    - answerText: "Prendile una bella collana\r"
-      senderResponse: "Ne ho vista una bellissima, sono sicuro che la adorer\xE0
-        (- 100 dollari +30 famiglia)\r"
-      updates:
-        keys: 0200000000000000
-        values:
-        - -100
-        - 30
-    - answerText: "Andranno bene dei fiori\r"
-      senderResponse: Un classico (-10 dollari)
-      updates:
-        keys: 02000000
-        values:
-        - -10
-    - answerText: "La vita le ha gi\xE0 regalato me, non sprecare soldi per un regalo\r"
-      senderResponse: "Come vuoi\u2026 (-20 famiglia)\r"
-      updates:
-        keys: 00000000
-        values:
-        - -20
-    ghosting:
-      answerText: 
-      senderResponse: "Visto che non rispondevi sono andata nel panico e le ho regalato
-        delle scarpe ortopediche (-100 dollari -10 famiglia)\r"
-      updates:
-        keys: 0200000000000000
-        values:
-        - -100
-        - -0.1
-    statConditions: []
-    employerConditions: []
-  - StartingMessage: "Il garage \xE8 ancora pieno di cianfrusaglie, sto seriamente
-      pensando di prendere della benzina e bruciare tutto, dammi un motivo per non
-      farlo.\r"
-    answers:
-    - answerText: 'Prenderebbe fuoco casa, scema.
-
-'
-      senderResponse: "Ma non mi dire? Domani butto tutto (-20 famiglia)\r"
-      updates:
-        keys: 00000000
-        values:
-        - -0.2
-    - answerText: "Perch\xE9 non vendiamo tutto al mercato dell\u2019usato?\r\n"
-      senderResponse: "Ci vorr\xE0 un p\xF2 ma buona idea! (- 1 ora libera domani,
-        +300 dollari +20 famiglia)"
-      updates:
-        keys: 050000000200000000000000
-        values:
-        - -60
-        - 300
-        - 0.2
-    - answerText: "Domani metto tutto a posto, ci sono alcuni ricordi e sono sicuro
-        ci siano dei codici per Obsessive Odissey da qualche parte. \r\n"
-      senderResponse: "Fa come vuoi ma non voglio pi\xF9 vedere quel casino.(- mezz'ora
-        tempo libero domani + 1000 cristalli)"
-      updates:
-        keys: 0500000003000000
-        values:
-        - 30
-        - 1000
-    ghosting:
-      answerText: 
-      senderResponse: "Ho chiamato il mio amico Fred, domani buttiamo tutto (-30
-        famiglia)\r"
-      updates:
-        keys: 00000000
-        values:
-        - -0.3
-    statConditions: []
-    employerConditions: []
+  previousEvents: []

@@ -14,6 +14,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SenderName: Mark
   chatEvents:
+  - StartingMessage: "Salve,\r\nCome dicevo a mia sorella ho bisogno di qualcuno
+      che copra il mio posto alla VanziTech, non \xE8 un lavoro da poco ma conosco
+      le tue qualit\xE0 e sono sicuro che tu possa cavartela alla grande, l\u2019ufficio
+      \xE8 pi\xF9 lontano da casa tua quindi spenderai un ora in pi\xF9 al giorno
+      tra andata e ritorno ma sono sicuro che l\u2019aumento dello stipendio ed il
+      fatto che Evelyne lavori qui a fianco ne valgano la pena, allora posso contarti
+      dei nostri?\r"
+    answers:
+    - answerText: "Certamente, ho sempre desiderato lavorare alla Vanzitech!\r"
+      senderResponse: "Perfetto, allora potrai cominciare gi\xE0 da domani, benvenuto
+        nel futuro! (+20 famiglia +20 dollari al giorno -1 ora al giorno)\r"
+      updates:
+        keys: 0800000000000000
+        values:
+        - 1
+        - 0.2
+    - answerText: "Ripensandoci, ci tengo al mio tempo libero quindi no grazie\r"
+      senderResponse: "Peccato, stai rinunciando ad una grande offerta e sono sicuro
+        che Eve te la far\xE0 pagare amico! (-10 famiglia)\r"
+      updates:
+        keys: 0000000009000000
+        values:
+        - -0.1
+        - 0
+    ghosting:
+      answerText: 
+      senderResponse: "Prender\xF2 il tuo silenzio come un no, a questo punto lo
+        dicevi direttamente ad Eve prima e non mi facevi perdere prezioso tempo.
+        (-20 famiglia)\r"
+      updates:
+        keys: 0000000009000000
+        values:
+        - -0.2
+        - 0
+    statConditions:
+    - gameStat: 9
+      statComparisonType: 1
+      value: 0
+    employerConditions: []
   - StartingMessage: "Salve,\r\nAbbiamo ricevuto delle lamentele sul tuo conto, sembra
       che ogni 10 minuti tu ti metta al telefono ed avvii Obsessive odyssey durante
       l\u2019orario di lavoro, so che si tratta di pochi secondi ma credo sia meglio
@@ -84,39 +123,5 @@ MonoBehaviour:
     employerConditions:
     - neededEmployer: 1
   previousEvents: []
-  specificChatEvents:
-  - StartingMessage: "Salve,\r\nCome dicevo a mia sorella ho bisogno di qualcuno
-      che copra il mio posto alla VanziTech, non \xE8 un lavoro da poco ma conosco
-      le tue qualit\xE0 e sono sicuro che tu possa cavartela alla grande, l\u2019ufficio
-      \xE8 pi\xF9 lontano da casa tua quindi spenderai un ora in pi\xF9 al giorno
-      tra andata e ritorno ma sono sicuro che l\u2019aumento dello stipendio ed il
-      fatto che Evelyne lavori qui a fianco ne valgano la pena, allora posso contarti
-      dei nostri?\r"
-    answers:
-    - answerText: "Certamente, ho sempre desiderato lavorare alla Vanzitech!\r"
-      senderResponse: "Perfetto, allora potrai cominciare gi\xE0 da domani, benvenuto
-        nel futuro! (+20 famiglia +20 dollari al giorno -1 ora al giorno)\r"
-      updates:
-        keys: 0800000000000000
-        values:
-        - 1
-        - 0.2
-    - answerText: "Ripensandoci, ci tengo al mio tempo libero quindi no grazie\r"
-      senderResponse: "Peccato, stai rinunciando ad una grande offerta e sono sicuro
-        che Eve te la far\xE0 pagare amico! (-10 famiglia)\r"
-      updates:
-        keys: 00000000
-        values:
-        - -0.1
-    ghosting:
-      answerText: 
-      senderResponse: "Prender\xF2 il tuo silenzio come un no, a questo punto lo
-        dicevi direttamente ad Eve prima e non mi facevi perdere prezioso tempo.
-        (-20 famiglia)\r"
-      updates:
-        keys: 00000000
-        values:
-        - -0.2
-    statConditions: []
-    employerConditions: []
+  specificChatEvents: []
   previousSpecificChatEvents: []
