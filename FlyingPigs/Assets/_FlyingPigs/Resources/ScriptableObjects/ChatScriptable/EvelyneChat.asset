@@ -114,7 +114,10 @@ MonoBehaviour:
     statConditions:
     - gameStat: 2
       statComparisonType: 0
-      value: 500
+      value: 750
+    - gameStat: 9
+      statComparisonType: 0
+      value: 0
     employerConditions: []
   - StartingMessage: "Ultimamente TUA figlia \xE8 insopportabile, continua a rubarmi
       i vestiti, a fare tardi la sera e portare brutti voti da scuola, dobbiamo fare

@@ -172,6 +172,9 @@ MonoBehaviour:
     - gameStat: 7
       statComparisonType: 1
       value: 3
+    - gameStat: 10
+      statComparisonType: 0
+      value: 0
     employerConditions: []
   - StartingMessage: Ho saputo che hai un nuovo lavoro presso la VanziTech, ti farei
       i complimenti ma ho notato che avrai meno tempo da dedicare al gioco, non farti

@@ -38,7 +38,7 @@ MonoBehaviour:
       updates:
         keys: 00000000
         values:
-        - 0.15
+        - -0.15
     ghosting:
       answerText: 
       senderResponse: "Visto che non rispondevi mi ha accompagnato la mamma <3 (-50

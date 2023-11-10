@@ -25,16 +25,18 @@ public class VaseSpawner : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(totalNumberOfVases);
+        
         totalNumberOfVases += 2 * (level - 1);
-        Debug.Log(totalNumberOfVases);
-        for (int i = 0; i < totalNumberOfVases; i++)        {
+        
+        for (int i = 0; i < totalNumberOfVases; i++) {
+
             // Genera una posizione casuale
             Vector3 spawnPosition = GetRandomSpawnPosition(playArea.position, playArea.localScale / 2.5f);
             // Verifica che la posizione soddisfi i criteri (distanza minima)
             while (!IsPositionValid(spawnPosition))
             {
-                spawnPosition = GetRandomSpawnPosition(playArea.position, playArea.localScale / 2.5f);            }
+                spawnPosition = GetRandomSpawnPosition(playArea.position, playArea.localScale / 2.5f);
+            }
 
             // Aggiungi la posizione alla lista delle posizioni generata
             spawnedPositions.Add(spawnPosition);
