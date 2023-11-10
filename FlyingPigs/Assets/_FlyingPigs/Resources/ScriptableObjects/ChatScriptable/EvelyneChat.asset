@@ -88,8 +88,8 @@ MonoBehaviour:
       pi\xF9 tempo insieme."
     answers:
     - answerText: "Vanzitech? WOW! digli di contattarmi subito\t\r"
-      senderResponse: "Ottimo! sono sicura che adorerai lavorare con lui! ( e +10
-        famiglia)\r"
+      senderResponse: "Ottimo! sono sicura che adorerai lavorare con lui! (Potrai
+        essere contattato da Mark, +10 famiglia)\r"
       updates:
         keys: 0000000009000000
         values:
@@ -409,4 +409,133 @@ MonoBehaviour:
         - -0.3
     statConditions: []
     employerConditions: []
-  previousEvents: []
+  previousEvents:
+  - StartingMessage: "Ultimamente TUA figlia \xE8 insopportabile, continua a rubarmi
+      i vestiti, a fare tardi la sera e portare brutti voti da scuola, dobbiamo fare
+      qualcosa!\r"
+    answers:
+    - answerText: "Domani le parliamo e cerchiamo di capire cosa sta succedendo,
+        \xE8 una fase ma deve darsi una regolata.\r"
+      senderResponse: "Dici che baster\xE0? preparati che ci vorr\xE0 un bel po '.
+        ( - 1 ora e mezza libera +40 famiglia)\r"
+      updates:
+        keys: 0500000000000000
+        values:
+        - -90
+        - 0.4
+    - answerText: "Perch\xE9 non chiami la tua amica psicologa? sapr\xE0 sicuramente
+        cosa fare\r"
+      senderResponse: "Sai che ti dico? Erica avr\xE0 sicuramente la soluzione! (-
+        200 dollari +20 famiglia)\r"
+      updates:
+        keys: 0200000000000000
+        values:
+        - -200
+        - 0.2
+    - answerText: "Eve stai calma, non ho tempo per i vostri litigi tra donne per
+        i vestiti.\r"
+      senderResponse: "Sei serio? Non ricordavo di aver sposato un idiota maschilista!
+        (-20 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.2
+    ghosting:
+      answerText: 
+      senderResponse: "Ho deciso io, domani andiamo dalla mia amica Erica per una
+        bella sessione di famiglia (- 1 ora il giorno dopo e -100 dollari)\r"
+      updates:
+        keys: 0500000002000000
+        values:
+        - -90
+        - -100
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Il garage \xE8 ancora pieno di cianfrusaglie, sto seriamente
+      pensando di prendere della benzina e bruciare tutto, dammi un motivo per non
+      farlo.\r"
+    answers:
+    - answerText: 'Prenderebbe fuoco casa, scema.
+
+'
+      senderResponse: "Ma non mi dire? Domani butto tutto (-20 famiglia)\r\n\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.2
+    - answerText: "Perch\xE9 non vendiamo tutto al mercato dell\u2019usato?\r\n"
+      senderResponse: "Ci vorr\xE0 un p\xF2 ma buona idea! (- 1 ora libera domani,
+        +300 dollari +20 famiglia)\r"
+      updates:
+        keys: 050000000200000000000000
+        values:
+        - -60
+        - 300
+        - 0.2
+    - answerText: "Domani metto tutto a posto, ci sono alcuni ricordi e sono sicuro
+        ci siano dei codici per Obsessive Odissey da qualche parte. \r\n"
+      senderResponse: "Fa come vuoi ma non voglio pi\xF9 vedere quel casino.(- mezz'ora
+        il giorno dopo + 1000 cristalli)\r\n"
+      updates:
+        keys: 0500000003000000
+        values:
+        - -30
+        - 1000
+    ghosting:
+      answerText: 
+      senderResponse: "Ho chiamato il mio amico Fred, domani buttiamo tutto (-30
+        famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.3
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Amore, ultimamente io e Sarah ti abbiamo visto un p\xF2 lontano
+      e distratto, quando torni da lavoro stai tutto il tempo davanti al cellulare
+      e sei scorbutico nei nostri confronti va tutto bene?\r"
+    answers:
+    - answerText: "Si amore, scusami se ultimamente sono stato un p\xF2 assente,
+        che ne dici se domani andiamo fuori e stiamo un p\xF2 insieme? Stacco il
+        telefono per una giornata e mi concentro su quello che conta davvero. (l\u2019intero
+        giorno dopo viene saltato, +50 famiglia -30 gioco)\r\n"
+      senderResponse: 'Sarebbe magnifico, Sarah ha detto che conosce un posto divertente
+        dove andare domani, ti amo.(Salta l''intera giornata di domani, +50 famiglia
+        -30 gioco)
+
+'
+      updates:
+        keys: 050000000000000001000000
+        values:
+        - -400
+        - 0.5
+        - -0.3
+    - answerText: "Hai ragione, ultimamente sono un p\xF2 impegnato con il lavoro
+        ed uso il gioco per alleviare lo stress, perch\xE9 non andate tu e sarah
+        al cinema domani se riesco vi raggiungo\r"
+      senderResponse: "Va bene amore, ricordati che se vuoi noi ci siamo, cerca di
+        esserci ( - 30 dollari +20 famiglia)\r"
+      updates:
+        keys: 0200000000000000
+        values:
+        - -30
+        - 0.2
+    - answerText: "No, mia moglie e mia figlia continuano a rompere e a chiedermi
+        soldi in continuazione.\r"
+      senderResponse: "Fai schifo (-25 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.25
+    ghosting:
+      answerText: 
+      senderResponse: "\u2026(-20 famiglia)\r"
+      updates:
+        keys: 00000000
+        values:
+        - -0.2
+    statConditions:
+    - gameStat: 0
+      statComparisonType: 0
+      value: 0.3
+    employerConditions: []

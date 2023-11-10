@@ -144,10 +144,8 @@ MonoBehaviour:
     answers:
     - answerText: "Wow, grazie, puoi dare il mio contatto a Bill, digli che sono
         interessato.\r"
-      senderResponse: 'Perfetto, mi devi un favore, ricordalo. ( potrai ricevere
-        messaggi da Bill, +10 gioco)
-
-'
+      senderResponse: Perfetto, mi devi un favore, ricordalo. ( Potrai ricevere messaggi
+        da Bill, +10 gioco)
       updates:
         keys: 010000000a000000
         values:
@@ -343,7 +341,45 @@ MonoBehaviour:
       statComparisonType: 0
       value: 0.4
     employerConditions: []
-  previousEvents: []
+  previousEvents:
+  - StartingMessage: "Ehy amico, ho conosciuto un ragazzo che vende i suoi cristalli
+      a met\xE0 prezzo rispetto allo shop, se sei interessato fammi sapere, ovviamente
+      una parte dei cristalli andrebbe a me per il disturbo di mettervi in contatto,
+      mi sembra il minimo, tranquillo l'ho fatto millevolte, per il bene della gilda!"
+    answers:
+    - answerText: "Qualche cristallo in pi\xF9 non fa male, eccoti 20 dollari\r\n\r"
+      senderResponse: "Con un'occasione del genere potevi spendere di pi\xF9 ma ecco
+        a te (-20 dollari + 150 cristalli)\r"
+      updates:
+        keys: 0200000003000000
+        values:
+        - -20
+        - 150
+    - answerText: "Ottimo! meglio investire un bel po ' cos\xEC da massimizzare il
+        profitto! Eccoti un centone\r"
+      senderResponse: "Ottimo affare ragazzo! (-100 dollari + 750 Cristalli + 10
+        gioco)\r"
+      updates:
+        keys: 020000000300000001000000
+        values:
+        - -100
+        - 750
+        - 0.1
+    - answerText: "Preferisco non shoppare grazie\r\r"
+      senderResponse: "Occasione mancata, me ne ricorder\xF2 (-10 gioco)\r\r"
+      updates:
+        keys: 01000000
+        values:
+        - -0.1
+    ghosting:
+      answerText: 
+      senderResponse: "Come ti permetti di ignorare le mie offerte? NOOB (-20 gioco)\r"
+      updates:
+        keys: 01000000
+        values:
+        - -0.2
+    statConditions: []
+    employerConditions: []
   tutorialChatEvents:
   - StartingMessage: "Mi congratulo per essere stato ammesso nella nostra prestigiosa
       gilda, i Flying Pigs. \xC8 un onore far parte della migliore gilda del mondo,
@@ -445,5 +481,48 @@ MonoBehaviour:
       updates:
         keys: 
         values: []
+    statConditions: []
+    employerConditions: []
+  - StartingMessage: "Ho notato che ieri hai staccato prima di mezzanotte, mi rendo
+      conto che tu non sia ancora a conoscenza degli standard dei flying pigs quindi
+      sar\xF2 gentile, ogni giorno devi essere al top e se non hai tempo per giocare
+      puoi sempre shoppare, per fortuna Obsessive Odyssey pensa anche  ai nabbi come
+      te"
+    answers:
+    - answerText: "Ho un lavoro e una famiglia, andare a dormire troppo tardi non
+        \xE8 un'opzione \r\n"
+      senderResponse: 'Come ti avevo detto quelle cose sono secondarie, noob.( -30
+        gioco +10 famiglia)
+
+'
+      updates:
+        keys: 0100000000000000
+        values:
+        - -0.3
+        - 0.1
+    - answerText: "\xC8 passato solo un giorno, stai tranquillo boss, dimostrer\xF2
+        presto il mio valore! "
+      senderResponse: "Vedremo, giovane maiale volante, vedremo\u2026 (+5 gioco)"
+      updates:
+        keys: 01000000
+        values:
+        - 0.05
+    - answerText: Avevo giusto in mente di donare 100 cristalli per aumentare i punteggi
+        della gilda!
+      senderResponse: "Ottimo, l\u2019importante \xE8 contribuire come si pu\xF2,
+        il tempo \xE8 denaro ma anche il contrario (-100 cristalli +10 gioco)"
+      updates:
+        keys: 0300000001000000
+        values:
+        - -100
+        - 0.1
+    ghosting:
+      answerText: 
+      senderResponse: Capisco, se non trovi neanche il tempo di rispondere al tuo
+        capo gilda, iniziamo malissimo ragazzo (-30 gioco).
+      updates:
+        keys: 01000000
+        values:
+        - -0.3
     statConditions: []
     employerConditions: []

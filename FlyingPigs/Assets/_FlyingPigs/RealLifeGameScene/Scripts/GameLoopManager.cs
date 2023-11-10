@@ -144,7 +144,10 @@ public class GameLoopManager : MonoBehaviour
     public void CloseAndRestart() {
         SetLoopTo(false);
         audioManager.PlaySound(audioManager.endOfDayClip, 1.0f);
-        gameState.SwitchToInGame();
+        if (gameState.ChatSceneObject.activeInHierarchy) {
+            gameState.SwitchToInGame();
+        }
+        chatEventSpawner.ResetSpawner();
         if (gameState.numOfAudioSource != -1) {
             StartCoroutine(audioManager.Fade(true, audioManager.audioSourcesLoop[gameState.numOfAudioSource], 1f, 0f));
         }
@@ -163,8 +166,8 @@ public class GameLoopManager : MonoBehaviour
             SetLoopTo(true);
             Debug.Log("LOOP START");
             PrepareForNextDay();
+            eventTriggered = true;
             if (statsManager.gameStats.Day == 2) {
-                eventTriggered = true;
                 OnChatTutorialGhostableEvent?.Invoke();
             }
         } else {

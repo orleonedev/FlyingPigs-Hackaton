@@ -346,7 +346,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 116.3
+  m_fontSize: 116.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4569,6 +4569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatNotification: {fileID: 251820665}
   gameLoopManager: {fileID: 2085208325}
+  GameState: {fileID: 1535827386}
   SenderLabel: {fileID: 1421616972}
   FirstMessage: {fileID: 3800726414586499802}
   SelectedAnswer: {fileID: 8549754618587979193}

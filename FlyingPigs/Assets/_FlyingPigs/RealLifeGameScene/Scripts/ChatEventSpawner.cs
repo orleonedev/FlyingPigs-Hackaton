@@ -12,6 +12,8 @@ public class ChatEventSpawner : MonoBehaviour
 
     [SerializeField]
     public GameLoopManager gameLoopManager;
+    [SerializeField]
+    public GameStateManager GameState;
 
     //-------InChatScene Objects --------//
     [SerializeField]
@@ -35,6 +37,7 @@ public class ChatEventSpawner : MonoBehaviour
 
     private float timelapse;
     private bool updateEnable = false;
+    private bool chatWasSet = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +60,9 @@ public class ChatEventSpawner : MonoBehaviour
             if (timelapse <= -10 && ghosted) {
                 updateEnable = false;
                 chatNotification.SetActive(false);
+                if (GameState.ChatSceneObject.activeInHierarchy) {
+                    GameState.SwitchToInGame();
+                }
                 ResetUI();
             }
         }
@@ -98,7 +104,8 @@ public class ChatEventSpawner : MonoBehaviour
     }
 
     public void SetupChat(){
-        FirstMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.StartingMessage);
+        if(!chatWasSet) {
+            FirstMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.StartingMessage);
         foreach (Answers possibleAnswer in newChatEvent.chatEvent.answers)
         {
             GameObject newObject = Instantiate(possibleAnswerPrefab, PossibleAnswersContainer.transform);
@@ -106,6 +113,9 @@ public class ChatEventSpawner : MonoBehaviour
             newObject.GetComponent<PossibleAnswer>().setIndex(newChatEvent.chatEvent.answers.IndexOf(possibleAnswer));
             newObject.GetComponent<PossibleAnswer>().OnSelectedAnswer += OnAnswerSelected;
         }
+        chatWasSet = true;
+        }
+        
     }
 
     private void ResetUI() {
@@ -115,6 +125,7 @@ public class ChatEventSpawner : MonoBehaviour
         ResponseMessage.SetActive(false);
         ResponseMessage.GetComponent<ReceivedMessage>().ResetScrollbar();
         RemoveElementsFromPossibleAnswerContainer();
+        chatWasSet = false;
     }
 
     public void RemoveElementsFromPossibleAnswerContainer()
@@ -148,8 +159,11 @@ public class ChatEventSpawner : MonoBehaviour
         SelectedAnswer.GetComponent<SelectedAnswer>().setText("...");
         ResponseMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.ghosting.senderResponse);
         GameStatisticsManager.Instance.updateStatsWith(newChatEvent.chatEvent.ghosting.updates);
-        
+    }
 
-
+    public void ResetSpawner() {
+        updateEnable = false;
+        chatNotification.SetActive(false);
+        ResetUI();
     }
 }
