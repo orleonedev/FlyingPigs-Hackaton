@@ -19,7 +19,7 @@ Obsessive Odissey è un gestionale in cui vestiamo i panni di un padre di famigl
 Alternandoti fra minigiochi frenetici e messaggi personali a risposta multipla, dovrai cercare di mantenere l'equilibrio fra lavoro, famiglia e gioco per riuscire a vincere il gioco della vita!
 
 ## Where I can play? 
-- Android - Install APK
+- Android - Install APK -> [GDrive](https://drive.google.com/drive/folders/1aA_fN69kaDO8zUfj1ivVy4uzAvO70tvk?usp=sharing)
 
 - iPhone - Testflight link -> [Join TestFlight](https://testflight.apple.com/join/uYak5scv)
 
