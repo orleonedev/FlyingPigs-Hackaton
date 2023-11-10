@@ -43,6 +43,7 @@ public class GameStatisticsManager
                 break;
                 case GameStatsEnum.GameCurrency:
                     gameStats.GameCurrency += stat.Value;
+                    CheckAndRechargeCurrency();
                     
                 break;
 
@@ -71,6 +72,21 @@ public class GameStatisticsManager
                         break;
                     }
                 break;
+                case GameStatsEnum.SpokeToEvelyn:
+                    if (stat.Value > 0f) 
+                    {gameStats.SpokeToEvelyn = true; }
+                    else {
+                        gameStats.SpokeToEvelyn = false;
+                    }
+                break;
+                case GameStatsEnum.SpokeToGreg:
+                    if (stat.Value > 0f) 
+                    {gameStats.SpokeToGreg = true; }
+                    else {
+                        gameStats.SpokeToGreg = false;
+                    }
+                break;
+
             }
         }
     }
@@ -191,6 +207,26 @@ public class GameStatisticsManager
                     return gameStats.TimeElapsed > value;
                 }
             break;
+            case GameStatsEnum.SpokeToEvelyn:
+            if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.SpokeToEvelyn;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.SpokeToEvelyn;
+                }
+            break;
+            case GameStatsEnum.SpokeToGreg:
+            if (comparisonType == StatComparisonType.LessOrEqualThan)
+                {
+                    return gameStats.SpokeToGreg;
+                }
+                else if (comparisonType == StatComparisonType.MoreThan)
+                {
+                    return gameStats.SpokeToGreg;
+                }
+            break;
         }
         return false;
     }
@@ -206,9 +242,9 @@ public class GameStatisticsManager
     public void ReloadGame() {
         gameStats.RealHealth = 0.6f;
         gameStats.GameHealth = 0.6f;
-        gameStats.RealMoney = 1200f;
+        gameStats.RealMoney = 760f;
         gameStats.MoneyMultiplier = 1;
-        gameStats.GameCurrency = 300f;
+        gameStats.GameCurrency = 50f;
         gameStats.CurrencyMultiplier = 1;
         gameStats.CurrentHours = 0;
         gameStats.CurrentMinutes = 0;
@@ -218,6 +254,8 @@ public class GameStatisticsManager
         gameStats.TimeElapsed = 0f;
         gameStats.Employer = EmployerKind.John;
         gameStats.CurrentDayLenght = 210;
+        gameStats.SpokeToEvelyn = false;
+        gameStats.SpokeToGreg = false;
     }
 
     public bool CheckDepleatedStats(){

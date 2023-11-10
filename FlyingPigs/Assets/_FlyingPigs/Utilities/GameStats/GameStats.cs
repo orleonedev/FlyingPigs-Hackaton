@@ -184,6 +184,27 @@ public class GameStats : SingletonScriptableObject<GameStats>
         }
     }
 
+    public bool _spokeToEvelyn;
+    public bool SpokeToEvelyn {
+        get {
+            return _spokeToEvelyn;
+        }
+        set {
+            _spokeToEvelyn = value;
+        }
+    }
+
+    public bool _spokeToGreg;
+    public bool SpokeToGreg {
+        get {
+            return _spokeToGreg;
+        }
+        set {
+            _spokeToGreg = value;
+        }
+    }
+
+
     // public void OnEnable() {
     //     this.RealHealth = 0.6f;
     //     this.GameHealth = 0.6f;

@@ -12,5 +12,7 @@ public enum GameStatsEnum {
     ModifierPlayTime,
     TimeElapsed,
     Day,
-    ActualEmployer
+    ActualEmployer,
+    SpokeToEvelyn,
+    SpokeToGreg
 }

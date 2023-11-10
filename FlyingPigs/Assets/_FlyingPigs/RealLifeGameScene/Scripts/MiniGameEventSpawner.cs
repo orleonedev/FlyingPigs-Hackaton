@@ -14,7 +14,7 @@ public class MiniGameEventSpawner : MonoBehaviour
     [SerializeField]
     public GameLoopManager gameLoopManager;
 
-    private float timelapse = 10f;
+    private float timelapse = 30f;
     private bool updateEnable = false;
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class MiniGameEventSpawner : MonoBehaviour
     public void OnMinigameEvent() {
         Debug.Log("SetVisible the minigame alert");
         MinigameEventAlert.SetActive(true);
-        timelapse = 10f;
+        timelapse = 30f;
         updateEnable = true;
     }
 }
