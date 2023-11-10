@@ -55,26 +55,50 @@ public class ChatEventsManager
         List<ChatEvent> gregList = ListWithRequirementsMet( Filter(GregChatEvents.Instance));
         if (gregList.Count > 0) {
             availables.Add(Characters.Greg);
+        } else {
+            ResetPreviousList(GregChatEvents.Instance);
+            gregList = ListWithRequirementsMet( Filter(GregChatEvents.Instance));
+            if (gregList.Count > 0) availables.Add(Characters.Greg);
         }
         List<ChatEvent> sarahList = ListWithRequirementsMet( Filter(SarahChatEvents.Instance));
         if (sarahList.Count > 0) {
             availables.Add(Characters.Sarah);
+        }else {
+            ResetPreviousList(SarahChatEvents.Instance);
+            sarahList = ListWithRequirementsMet( Filter(SarahChatEvents.Instance));
+            if (sarahList.Count > 0) availables.Add(Characters.Sarah);
         }
         List<ChatEvent> evelynList = ListWithRequirementsMet( Filter(EvelyneChatEvents.Instance));
         if (evelynList.Count > 0) {
             availables.Add(Characters.Evelyne);
+        }else {
+            ResetPreviousList(EvelyneChatEvents.Instance);
+            evelynList = ListWithRequirementsMet( Filter(EvelyneChatEvents.Instance));
+            if (evelynList.Count > 0) availables.Add(Characters.Evelyne);
         }
         List<ChatEvent> EmployerList = ListWithRequirementsMet( Filter(EmployerChatEvents.Instance));
         if (EmployerList.Count > 0) {
             availables.Add(Characters.Josh);
+        }else {
+            ResetPreviousList(EmployerChatEvents.Instance);
+            EmployerList = ListWithRequirementsMet( Filter(EmployerChatEvents.Instance));
+            if (EmployerList.Count > 0) availables.Add(Characters.Josh);
         }
         List<ChatEvent> markList = ListWithRequirementsMet( Filter(MarkChatEvents.Instance));
         if (markList.Count > 0) {
             availables.Add(Characters.Mark);
+        }else {
+            ResetPreviousList(MarkChatEvents.Instance);
+            markList = ListWithRequirementsMet( Filter(MarkChatEvents.Instance));
+            if (markList.Count > 0) availables.Add(Characters.Mark);
         }
         List<ChatEvent> billList = ListWithRequirementsMet( Filter(BillChatEvents.Instance));
         if (billList.Count > 0) {
             availables.Add(Characters.Bill);
+        }else {
+            ResetPreviousList(BillChatEvents.Instance);
+            billList = ListWithRequirementsMet( Filter(BillChatEvents.Instance));
+            if (billList.Count > 0) availables.Add(Characters.Bill);
         }
 
         ChatEventWithSender chatEventWithSender = new ChatEventWithSender();
@@ -123,6 +147,10 @@ public class ChatEventsManager
     public void AddToPreviousList<T>(CharacterChatEvents<T> characterChatEvents, ChatEvent chatEvent) where T: ScriptableObject {
         characterChatEvents.previousEvents.Add(chatEvent);
     }
+    public void ResetPreviousList<T>(CharacterChatEvents<T> characterChatEvents) where T: ScriptableObject {
+        characterChatEvents.previousEvents.Clear();
+    }
+
 
     public List<ChatEvent> ListWithRequirementsMet(List<ChatEvent> startingList){
         List<ChatEvent> requirementsMet = new List<ChatEvent>();
