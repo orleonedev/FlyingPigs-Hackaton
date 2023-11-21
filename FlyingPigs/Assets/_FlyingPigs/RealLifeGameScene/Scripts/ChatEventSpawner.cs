@@ -50,7 +50,7 @@ public class ChatEventSpawner : MonoBehaviour
     void Update()
     {
         if (updateEnable && !didAnswer && GameState.InGameSceneObject.activeInHierarchy){
-            timelapse -= Time.deltaTime;
+            timelapse -= (Time.deltaTime*2);
 
             if (timelapse <= 0 && !ghosted) {
                 ghosted = true;

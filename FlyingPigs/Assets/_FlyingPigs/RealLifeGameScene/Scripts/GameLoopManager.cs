@@ -67,7 +67,7 @@ public class GameLoopManager : MonoBehaviour
         if(alive){ 
             if (loopEnabled) {
                 if (gameState.InGameSceneObject.activeInHierarchy) {
-                    statsManager.gameStats.TimeElapsed += Time.deltaTime;
+                    statsManager.gameStats.TimeElapsed += (Time.deltaTime*2);
                 }
                  
                 if (((int)statsManager.gameStats.TimeElapsed) % 2 == 0 && !tickClock) {

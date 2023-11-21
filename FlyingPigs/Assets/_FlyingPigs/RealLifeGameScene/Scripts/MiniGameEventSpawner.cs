@@ -33,7 +33,7 @@ public class MiniGameEventSpawner : MonoBehaviour
     void Update()
     {
         if (updateEnable && GameState.InGameSceneObject.activeInHierarchy){
-            timelapse -= Time.deltaTime;
+            timelapse -= (Time.deltaTime*2);
 
             if (timelapse <= 0) {
                 updateEnable = false;
