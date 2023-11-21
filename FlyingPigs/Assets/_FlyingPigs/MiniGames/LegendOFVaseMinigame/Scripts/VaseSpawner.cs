@@ -25,6 +25,17 @@ public class VaseSpawner : MonoBehaviour
 
     void Start()
     {
+
+        switch(Camera.main.aspect){
+            case (float) 10/16:
+            case (float) 9/16:
+            case (float) 3/4:
+                playArea.transform.localScale = new Vector3(6f, 8f, 0); //è una pezza
+                break;
+            default:
+                playArea.transform.localScale = new Vector3(3.5f, 7.8f, 0);
+                break;
+        }
         
         totalNumberOfVases += 2 * (level - 1);
         
