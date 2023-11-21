@@ -13,20 +13,18 @@ public class SpawnWall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float altezzaCamera = gameCamera.orthographicSize * 2f;
-        float larghezzaCamera = altezzaCamera * gameCamera.aspect;
 
-        Debug.Log(altezzaCamera);
-        Debug.Log(larghezzaCamera);
+        float cameraHeight = gameCamera.orthographicSize * 2f;
+        float cameraWidth = cameraHeight * gameCamera.aspect;
 
         GameObject leftWall = Instantiate(this.leftW);
-        leftWall.transform.position = new Vector2(-(larghezzaCamera / 2), 0);
+        leftWall.transform.position = new Vector2(-(cameraWidth / 2), 0);
 
         GameObject rightWall = Instantiate(this.rightW);
-        rightWall.transform.position = new Vector2(larghezzaCamera / 2, 0);
+        rightWall.transform.position = new Vector2(cameraWidth / 2, 0);
 
         GameObject upWall = Instantiate(this.upW);
-        upWall.transform.position = new Vector2(0, altezzaCamera / 2);
+        upWall.transform.position = new Vector2(0, cameraHeight / 2);
     }
 
 }
