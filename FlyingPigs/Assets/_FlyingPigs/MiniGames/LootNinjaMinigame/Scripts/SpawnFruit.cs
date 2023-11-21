@@ -47,6 +47,7 @@ public class SpawnFruit : MonoBehaviour
         newObject.GetComponent<CutFruit>().spriteIndex = spriteIndex;
         Sprite objectSprite = objectSprites[spriteIndex];
         newObject.GetComponent<SpriteRenderer>().sprite = objectSprite;
+        //Debug.Log(newObject.transform.localScale);
     }
 
     public void GameOver() {
