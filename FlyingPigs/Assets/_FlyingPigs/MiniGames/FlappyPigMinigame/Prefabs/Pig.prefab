@@ -148,7 +148,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1.75
 --- !u!114 &8633806911928334288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +166,6 @@ MonoBehaviour:
   rigidBody: {fileID: 7027741696412749440}
   force: 250
   yBound: 6
+  audioManager: {fileID: 0}
+  imageShow: {fileID: 0}
+  checkCollision: 0

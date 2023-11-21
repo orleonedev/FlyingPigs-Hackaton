@@ -18,6 +18,18 @@ public class PigScript : MonoBehaviour
     public bool checkCollision = false;
     private bool gameOver = false;
 
+    private void Start(){
+        switch(Camera.main.aspect){
+            case (float) 10/16:
+            case (float) 9/16:
+            case (float) 3/4:
+                this.transform.position = new Vector3(-2.25f, 0.75f, 0);
+                break;
+            default:
+                break;
+        }
+    }
+
     private void Update()
     {
         if(Input.touchCount > 0){
