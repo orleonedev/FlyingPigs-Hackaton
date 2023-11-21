@@ -4837,6 +4837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinigameEventAlert: {fileID: 1297606193}
   gameLoopManager: {fileID: 2085208325}
+  GameState: {fileID: 1535827386}
   audioManager: {fileID: 703850423}
 --- !u!4 &1602616940
 Transform:
