@@ -13,6 +13,8 @@ public class MiniGameEventSpawner : MonoBehaviour
 
     [SerializeField]
     public GameLoopManager gameLoopManager;
+    [SerializeField]
+    public AudioManager audioManager;
 
     private float timelapse = 30f;
     private bool updateEnable = false;
@@ -39,6 +41,7 @@ public class MiniGameEventSpawner : MonoBehaviour
     public void OnMinigameEvent() {
         Debug.Log("SetVisible the minigame alert");
         MinigameEventAlert.SetActive(true);
+        audioManager.PlaySound(audioManager.minigameEventSound, 1.0f);
         timelapse = 30f;
         updateEnable = true;
     }
