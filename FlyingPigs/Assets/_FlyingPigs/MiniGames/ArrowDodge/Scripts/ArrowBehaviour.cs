@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class ArrowBehaviour : MonoBehaviour
 {
     [SerializeField] private Transform arrows;
+    [SerializeField] private Transform arrowsLateral;
     [SerializeField] private Timer timer;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private ImageShow imageShow;
@@ -25,14 +26,14 @@ public class ArrowBehaviour : MonoBehaviour
     {
         Transform[] children = arrows.GetComponentsInChildren<Transform>();
         Destroy(children[UnityEngine.Random.Range(1, children.Count())].gameObject);
-        speed = 2;
+        speed = 1.5f;
         audioManager.PlaySound(audioManager.arrowFire);
     }
 
     void Update()
     {
         if(!descending) {
-            if(arrows.position.y > 6) {
+            if(arrows.position.y > 6f) {
                 descending = true;
                 speed = -speed;
                 int count = arrows.transform.childCount;
@@ -40,15 +41,25 @@ public class ArrowBehaviour : MonoBehaviour
                     Transform child = arrows.transform.GetChild(i);
                     child.gameObject.GetComponent<SpriteRenderer>().sprite = spriteBigArrow;
                 }
+                int countLateral = arrowsLateral.transform.childCount;
+                for(int i = 0; i < countLateral; i++) {
+                    Transform child = arrowsLateral.transform.GetChild(i);
+                    child.gameObject.GetComponent<SpriteRenderer>().sprite = spriteBigArrow;
+                }
             }
         }
         else {
-            if(arrows.position.y < -4) {
+            if(arrows.position.y < -3.8f) {
                 if (!levelEnded) {
 
                     int count = arrows.transform.childCount;
                     for(int i = 0; i < count; i++) {
                         Transform child = arrows.transform.GetChild(i);
+                        child.gameObject.GetComponent<SpriteRenderer>().sprite = spriteEndArrow;
+                    }
+                    int countLateral = arrowsLateral.transform.childCount;
+                    for(int i = 0; i < countLateral; i++) {
+                        Transform child = arrowsLateral.transform.GetChild(i);
                         child.gameObject.GetComponent<SpriteRenderer>().sprite = spriteEndArrow;
                     }
                     speed = 0;
@@ -73,6 +84,7 @@ public class ArrowBehaviour : MonoBehaviour
             }
         }
         arrows.transform.position += transform.up * speed * level * Time.deltaTime;
+        arrowsLateral.transform.position += transform.up * speed * level * Time.deltaTime;
         
         if (!timer.GetCounting()) {
             timeElapsed += 10 - timer.GetTime();
