@@ -309,6 +309,7 @@ MonoBehaviour:
   timer: {fileID: 1143290352}
   coordinator: {fileID: 135008570}
   audioManager: {fileID: 1200826672}
+  gameCamera: {fileID: 1407088576}
 --- !u!1 &846876579
 GameObject:
   m_ObjectHideFlags: 0
