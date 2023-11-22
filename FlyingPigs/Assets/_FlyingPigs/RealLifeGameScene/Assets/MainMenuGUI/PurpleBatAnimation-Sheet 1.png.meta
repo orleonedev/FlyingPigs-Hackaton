@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b81f5ff14d4ff245ae2ccee697191dd
+guid: b706e402e3de3394c98e0a45e98ba479
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -162,13 +162,118 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: caveLevel-Sheet_0
+      name: PurpleBatAnimation-Sheet 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949abdb9ff11ee04c971b132e02ffd24
+      internalID: 339696968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PurpleBatAnimation-Sheet 1_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d52bfa6f181ab74ba33268900dd5aa3
+      internalID: -1574998610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PurpleBatAnimation-Sheet 1_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d9d66f0a388db247ba8741683cdb97c
+      internalID: -2052861122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PurpleBatAnimation-Sheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3979c11fe658094d9b17773741267dc
+      internalID: -1620111793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PurpleBatAnimation-Sheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620bb2ab1a26066429e59452a20f2d5c
+      internalID: -157837705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PurpleBatAnimation-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0fc7cf38718d78498e38522f49dad24
-      internalID: 1433753931
+      spriteID: d8e56da70d23f64448349ba7661971e7
+      internalID: -1925779381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_1
+      name: PurpleBatAnimation-Sheet 1_6
       rect:
         serializedVersion: 2
-        x: 700
+        x: 320
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02ee7f4e5b1643346b19aab3a709d640
-      internalID: -616145151
+      spriteID: c8370b048fa25bf47978429a1f77acc0
+      internalID: 706600790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_2
+      name: PurpleBatAnimation-Sheet 1_7
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 640
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fce92c45e827c94cacc549f61b15b01
-      internalID: -1951682716
+      spriteID: b16d224bd2e201f4f8a1512a5f04ecd1
+      internalID: -768929932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_3
+      name: PurpleBatAnimation-Sheet 1_8
       rect:
         serializedVersion: 2
-        x: 2100
+        x: 960
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +344,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c33827038eeacdf4582ba26803fb119c
-      internalID: 1419028589
+      spriteID: ae70cac91a29a7c4782a54a10c99c2e9
+      internalID: 196402464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_4
+      name: PurpleBatAnimation-Sheet 1_9
       rect:
         serializedVersion: 2
-        x: 2800
+        x: 1280
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,8 +365,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bba0e2229d617d498d97260e6f1c1b0
-      internalID: -588014732
+      spriteID: f030c53a9c0f3a748a2273e5d02f120f
+      internalID: -886247505
       vertices: []
       indices: 
       edges: []
@@ -277,11 +382,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      caveLevel-Sheet_0: 1433753931
-      caveLevel-Sheet_1: -616145151
-      caveLevel-Sheet_2: -1951682716
-      caveLevel-Sheet_3: 1419028589
-      caveLevel-Sheet_4: -588014732
+      PurpleBatAnimation-Sheet 1_0: 339696968
+      PurpleBatAnimation-Sheet 1_1: -1574998610
+      PurpleBatAnimation-Sheet 1_2: -2052861122
+      PurpleBatAnimation-Sheet 1_3: -1620111793
+      PurpleBatAnimation-Sheet 1_4: -157837705
+      PurpleBatAnimation-Sheet 1_5: -1925779381
+      PurpleBatAnimation-Sheet 1_6: 706600790
+      PurpleBatAnimation-Sheet 1_7: -768929932
+      PurpleBatAnimation-Sheet 1_8: 196402464
+      PurpleBatAnimation-Sheet 1_9: -886247505
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

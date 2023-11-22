@@ -11,14 +11,15 @@ public class KnightBehaviour : MonoBehaviour
     [SerializeField] private CanvasGroup fadingCanvaGroup;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject gameView;
-    [SerializeField] private GameObject enemy = null;
-    [SerializeField] private GameObject[] enemies;
+    [SerializeField] private GameObject[] gameViews;
+    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject[] gameViewEnemies;
+    [SerializeField] private GameObject[] caveGameViewEnemies;
     [SerializeField] private Animator knightAnimator;
     [SerializeField] private TMP_Text expLabel;
     [SerializeField] private Image expBarFill;
     [SerializeField] protected float time;
     protected float elapsedTime;
-    //public static int enemyLives;
     protected Animator enemyAnimator;
     protected float spawnRate;
     protected bool doLerp = false;
@@ -79,10 +80,10 @@ public class KnightBehaviour : MonoBehaviour
     }
 
     private void CheckTouch(Vector3 pos){
+        CheckGameView();
         Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
         Vector2 touchPos = new Vector2(wp.x, wp.y);
         Collider2D tapped = Physics2D.OverlapPoint(touchPos);
-        Debug.Log("ALPHA: " + fadingCanvaGroup.alpha);
         if(tapped && tapped == gameView.GetComponent<Collider2D>() && (!fadingCanvaAnimator.GetBool("isDayOver") && fadingCanvaGroup.alpha == 0f))
         {
             knightAnimator.SetBool("isAttacking", true);
@@ -95,30 +96,36 @@ public class KnightBehaviour : MonoBehaviour
     }
 
     public void SpawnEnemy(){
+        foreach(GameObject enemy in gameViewEnemies){
+            enemy.SetActive(false);
+        }
+    
+        foreach(GameObject enemy in caveGameViewEnemies){
+            enemy.SetActive(false);
+        }
+
         var spawnRate = UnityEngine.Random.Range(0f, 100f);
 
         switch(spawnRate){
             case <= 5:
-                enemy = enemies[3];
+                enemy = ((GameStats.Instance.Day % 2 == 0) ? caveGameViewEnemies[3] : gameViewEnemies[3]);
                 break;
             case <= 20:
-                enemy = enemies[2];
+                enemy = ((GameStats.Instance.Day % 2 == 0) ? caveGameViewEnemies[2] : gameViewEnemies[2]);
                 break;
             case <= 50:
-                enemy = enemies[1];
+                enemy = ((GameStats.Instance.Day % 2 == 0) ? caveGameViewEnemies[1] : gameViewEnemies[1]);
                 break;
             case <= 100:
-                enemy = enemies[0];
+                enemy = ((GameStats.Instance.Day % 2 == 0) ? caveGameViewEnemies[0] : gameViewEnemies[0]);
                 break;
             default:
-                enemy = enemies[0];
+                enemy = ((GameStats.Instance.Day % 2 == 0) ? caveGameViewEnemies[0] : gameViewEnemies[0]);
                 break;
         }
 
         enemyAnimator = enemy.GetComponent<Animator>();
-        //enemyLives = enemy.GetComponent<MainGameEnemy>().GetLives();
         enemy.SetActive(true);
-        //isEnemyAlive = true;
     }
 
     public void DestroyEnemy(){
@@ -164,15 +171,6 @@ public class KnightBehaviour : MonoBehaviour
     }
 
     public void CheckEnemyHealth(){
-        /*if(enemy.activeInHierarchy){
-            if(enemyLives > 1) {
-                enemyAnimator.SetBool("isAttacked", true);
-            } else {
-                DestroyEnemy();
-                audioManager.PlaySound(audioManager.slimeDeath);
-            }
-            enemyLives--;
-        }*/
         if(enemy.activeInHierarchy){
             if(enemy.GetComponent<MainGameEnemy>().IsAlive()){
                 enemyAnimator.SetBool("isAttacked", true);
@@ -181,6 +179,14 @@ public class KnightBehaviour : MonoBehaviour
                 DestroyEnemy();
                 audioManager.PlaySound(audioManager.slimeDeath);
             }
+        }
+    }
+
+    public void CheckGameView(){
+        if(GameStats.Instance.Day % 2 == 0){
+            gameView = gameViews[1];
+        } else {
+            gameView = gameViews[0];
         }
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b81f5ff14d4ff245ae2ccee697191dd
+guid: a1d4f0f0948df7c49aa10b5db5fcb560
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -162,13 +162,118 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: caveLevel-Sheet_0
+      name: YellowBatAnimation-Sheet 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa8c085aaecda24d9edbb6c8c2dd8e6
+      internalID: -516773550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowBatAnimation-Sheet 1_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ee8516604ab4942adff050085c0c27
+      internalID: 1786180835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowBatAnimation-Sheet 1_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f529edb42d8ddff49ac723308c6f9ce4
+      internalID: -1549780580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowBatAnimation-Sheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de002be1bb3e34844b4e40091b86dfa5
+      internalID: -1948163689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowBatAnimation-Sheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bcfa1fde17fba4e843f8f8fe50f2e8
+      internalID: -1435407476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YellowBatAnimation-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0fc7cf38718d78498e38522f49dad24
-      internalID: 1433753931
+      spriteID: 6596b71b3b65be940afd454631e77029
+      internalID: 386235782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_1
+      name: YellowBatAnimation-Sheet 1_6
       rect:
         serializedVersion: 2
-        x: 700
+        x: 320
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02ee7f4e5b1643346b19aab3a709d640
-      internalID: -616145151
+      spriteID: 356b379ca1f0493468211ebb0971dd03
+      internalID: -476072045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_2
+      name: YellowBatAnimation-Sheet 1_7
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 640
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fce92c45e827c94cacc549f61b15b01
-      internalID: -1951682716
+      spriteID: 996f00c97929b994ebd7f52aef633ae4
+      internalID: -1715340038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_3
+      name: YellowBatAnimation-Sheet 1_8
       rect:
         serializedVersion: 2
-        x: 2100
+        x: 960
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +344,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c33827038eeacdf4582ba26803fb119c
-      internalID: 1419028589
+      spriteID: 75994437b3e965c4d939a1aede2bf318
+      internalID: -1086904636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_4
+      name: YellowBatAnimation-Sheet 1_9
       rect:
         serializedVersion: 2
-        x: 2800
+        x: 1280
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,8 +365,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bba0e2229d617d498d97260e6f1c1b0
-      internalID: -588014732
+      spriteID: 1d41671ce20d2be42bc2e838a44ff382
+      internalID: 420371115
       vertices: []
       indices: 
       edges: []
@@ -277,11 +382,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      caveLevel-Sheet_0: 1433753931
-      caveLevel-Sheet_1: -616145151
-      caveLevel-Sheet_2: -1951682716
-      caveLevel-Sheet_3: 1419028589
-      caveLevel-Sheet_4: -588014732
+      YellowBatAnimation-Sheet 1_0: -516773550
+      YellowBatAnimation-Sheet 1_1: 1786180835
+      YellowBatAnimation-Sheet 1_2: -1549780580
+      YellowBatAnimation-Sheet 1_3: -1948163689
+      YellowBatAnimation-Sheet 1_4: -1435407476
+      YellowBatAnimation-Sheet 1_5: 386235782
+      YellowBatAnimation-Sheet 1_6: -476072045
+      YellowBatAnimation-Sheet 1_7: -1715340038
+      YellowBatAnimation-Sheet 1_8: -1086904636
+      YellowBatAnimation-Sheet 1_9: 420371115
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

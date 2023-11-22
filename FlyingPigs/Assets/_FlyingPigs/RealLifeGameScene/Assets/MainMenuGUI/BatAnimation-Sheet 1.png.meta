@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b81f5ff14d4ff245ae2ccee697191dd
+guid: b268904f8c807874fb27a97abac152af
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -162,13 +162,118 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: caveLevel-Sheet_0
+      name: BatAnimation-Sheet 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ea9098238ab7c4eb3b1fc44a780b6b
+      internalID: 1336906366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BatAnimation-Sheet 1_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0a584a84dbb524cac465976153596a
+      internalID: 1214213046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BatAnimation-Sheet 1_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6941bb13b447c54fbab5f0ed6778cce
+      internalID: -1521036338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BatAnimation-Sheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03d441801e65b14e86503d8c292686f
+      internalID: -309736116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BatAnimation-Sheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7052bbd13baed2c46af2f20c71d2b09b
+      internalID: -1429449983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BatAnimation-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0fc7cf38718d78498e38522f49dad24
-      internalID: 1433753931
+      spriteID: 3388480cc7732ff48b1bf6adb4c39345
+      internalID: -1415792992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_1
+      name: BatAnimation-Sheet 1_6
       rect:
         serializedVersion: 2
-        x: 700
+        x: 320
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02ee7f4e5b1643346b19aab3a709d640
-      internalID: -616145151
+      spriteID: f0e985733cac1e946aa5536811d963c2
+      internalID: -925911809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_2
+      name: BatAnimation-Sheet 1_7
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 640
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fce92c45e827c94cacc549f61b15b01
-      internalID: -1951682716
+      spriteID: 92e0ae4290efb41488bed5916344ffa4
+      internalID: 942362146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_3
+      name: BatAnimation-Sheet 1_8
       rect:
         serializedVersion: 2
-        x: 2100
+        x: 960
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +344,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c33827038eeacdf4582ba26803fb119c
-      internalID: 1419028589
+      spriteID: a325bddbf8f8f8a448eaa8adc9c0f13c
+      internalID: 146041765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_4
+      name: BatAnimation-Sheet 1_9
       rect:
         serializedVersion: 2
-        x: 2800
+        x: 1280
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,8 +365,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bba0e2229d617d498d97260e6f1c1b0
-      internalID: -588014732
+      spriteID: 5c8c768a3957b4a469af57fc3d9d50f4
+      internalID: 582799519
       vertices: []
       indices: 
       edges: []
@@ -277,11 +382,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      caveLevel-Sheet_0: 1433753931
-      caveLevel-Sheet_1: -616145151
-      caveLevel-Sheet_2: -1951682716
-      caveLevel-Sheet_3: 1419028589
-      caveLevel-Sheet_4: -588014732
+      BatAnimation-Sheet 1_0: 1336906366
+      BatAnimation-Sheet 1_1: 1214213046
+      BatAnimation-Sheet 1_2: -1521036338
+      BatAnimation-Sheet 1_3: -309736116
+      BatAnimation-Sheet 1_4: -1429449983
+      BatAnimation-Sheet 1_5: -1415792992
+      BatAnimation-Sheet 1_6: -925911809
+      BatAnimation-Sheet 1_7: 942362146
+      BatAnimation-Sheet 1_8: 146041765
+      BatAnimation-Sheet 1_9: 582799519
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

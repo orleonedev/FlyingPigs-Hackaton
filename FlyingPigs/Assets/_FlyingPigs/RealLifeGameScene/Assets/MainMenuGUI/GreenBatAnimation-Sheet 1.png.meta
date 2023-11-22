@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7b81f5ff14d4ff245ae2ccee697191dd
+guid: 255b7c4a371d6cc41a86fbf39d1d990a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -162,13 +162,118 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: caveLevel-Sheet_0
+      name: GreenBatAnimation-Sheet 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba6a679c9aecff418384710e2bf54c4
+      internalID: -173807777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBatAnimation-Sheet 1_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1da2afb72bb7a479eda121a51e96b9
+      internalID: -1235806301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBatAnimation-Sheet 1_2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3214f9e8d26ac94e8f32ec014f788d9
+      internalID: -1650337539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBatAnimation-Sheet 1_3
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e187bbecf8dc8654290aba949938f6ae
+      internalID: 1574905890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBatAnimation-Sheet 1_4
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 240
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82abb5a7a13392248849f58d6ea77dce
+      internalID: -1017311460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenBatAnimation-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0fc7cf38718d78498e38522f49dad24
-      internalID: 1433753931
+      spriteID: f53d401937e86a243a46a0c5e758244c
+      internalID: 1081201881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_1
+      name: GreenBatAnimation-Sheet 1_6
       rect:
         serializedVersion: 2
-        x: 700
+        x: 320
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02ee7f4e5b1643346b19aab3a709d640
-      internalID: -616145151
+      spriteID: 65fb9f9e7962855418fa254c6d354c2a
+      internalID: -1275598478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_2
+      name: GreenBatAnimation-Sheet 1_7
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 640
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fce92c45e827c94cacc549f61b15b01
-      internalID: -1951682716
+      spriteID: 166e666e3ffb77b42b5197670d4ce2e7
+      internalID: 1251311860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_3
+      name: GreenBatAnimation-Sheet 1_8
       rect:
         serializedVersion: 2
-        x: 2100
+        x: 960
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +344,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c33827038eeacdf4582ba26803fb119c
-      internalID: 1419028589
+      spriteID: 651e87089bf3f124795492d997a6919c
+      internalID: -189307195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caveLevel-Sheet_4
+      name: GreenBatAnimation-Sheet 1_9
       rect:
         serializedVersion: 2
-        x: 2800
+        x: 1280
         y: 0
-        width: 700
-        height: 750
+        width: 320
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,8 +365,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bba0e2229d617d498d97260e6f1c1b0
-      internalID: -588014732
+      spriteID: 44d50dc5ee4fe724e8825876848c2cbb
+      internalID: 2140302052
       vertices: []
       indices: 
       edges: []
@@ -277,11 +382,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      caveLevel-Sheet_0: 1433753931
-      caveLevel-Sheet_1: -616145151
-      caveLevel-Sheet_2: -1951682716
-      caveLevel-Sheet_3: 1419028589
-      caveLevel-Sheet_4: -588014732
+      GreenBatAnimation-Sheet 1_0: -173807777
+      GreenBatAnimation-Sheet 1_1: -1235806301
+      GreenBatAnimation-Sheet 1_2: -1650337539
+      GreenBatAnimation-Sheet 1_3: 1574905890
+      GreenBatAnimation-Sheet 1_4: -1017311460
+      GreenBatAnimation-Sheet 1_5: 1081201881
+      GreenBatAnimation-Sheet 1_6: -1275598478
+      GreenBatAnimation-Sheet 1_7: 1251311860
+      GreenBatAnimation-Sheet 1_8: -189307195
+      GreenBatAnimation-Sheet 1_9: 2140302052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
