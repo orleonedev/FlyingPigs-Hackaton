@@ -93,7 +93,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.13333334
-    functionName: CheckEnemyAttack
+    functionName: CheckEnemyHealth
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
