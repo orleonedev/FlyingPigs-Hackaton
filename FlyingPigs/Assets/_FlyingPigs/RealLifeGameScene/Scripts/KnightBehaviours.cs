@@ -19,6 +19,7 @@ public class KnightBehaviour : MonoBehaviour
     [SerializeField] protected float time;
     protected float elapsedTime;
     protected int enemyLives;
+    protected bool isEnemyAlive = false;
     protected Animator enemyAnimator;
     protected float spawnRate;
     private SerializableDictionary<GameStatsEnum,float> fixedUpdates = new SerializableDictionary<GameStatsEnum, float>(){
@@ -29,7 +30,9 @@ public class KnightBehaviour : MonoBehaviour
     private void Start(){
         expBarFill.fillAmount = GetFillAmount(FakeGameManager.Instance.expPoints);
         expLabel.text = "Lvl " + FakeGameManager.Instance.knightLevel.ToString();
-        SpawnEnemy();
+        if(!isEnemyAlive){
+            SpawnEnemy();
+        }
     }
 
     private void Update()
@@ -102,23 +105,12 @@ public class KnightBehaviour : MonoBehaviour
         enemyAnimator = enemy.GetComponent<Animator>();
         enemyLives = enemy.GetComponent<MainGameEnemy>().getLives();
         enemy.SetActive(true);
+        isEnemyAlive = true;
     }
 
     public void DestroyEnemy(){
         enemy.SetActive(false);
-        //qui recuperiamo i punti esperienza dati dal mostro. Per adesso diamo 1exp per ogni enemy ucciso
-        /*var fillAmount = GetFillAmount(enemy.GetComponent<MainGameEnemy>().getExpGiven());
-
-        if(expBarFill.fillAmount + fillAmount >= 1){
-            expBarFill.fillAmount = (expBarFill.fillAmount + fillAmount)%1;
-            FakeGameManager.Instance.knightLevel++;
-            GameStatisticsManager.Instance.updateStatsWith(fixedUpdates);
-            expLabel.text = "Lvl " + FakeGameManager.Instance.knightLevel.ToString();
-            FakeGameManager.Instance.expToLevelUp = FakeGameManager.Instance.expLimitProgress * FakeGameManager.Instance.knightLevel; 
-            audioManager.PlaySound(audioManager.levelUp);
-        } else {
-            expBarFill.fillAmount += fillAmount;
-        }*/
+        isEnemyAlive = false;
 
         var exp = enemy.GetComponent<MainGameEnemy>().getExpGiven();
         GameStatisticsManager.Instance.updateStatsWith(new SerializableDictionary<GameStatsEnum, float>(){
