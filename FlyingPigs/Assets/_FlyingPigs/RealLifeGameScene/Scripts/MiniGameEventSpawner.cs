@@ -13,6 +13,10 @@ public class MiniGameEventSpawner : MonoBehaviour
 
     [SerializeField]
     public GameLoopManager gameLoopManager;
+
+    [SerializeField]
+    public GameStateManager GameState;
+
     [SerializeField]
     public AudioManager audioManager;
 
@@ -28,8 +32,8 @@ public class MiniGameEventSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (updateEnable){
-            timelapse -= Time.deltaTime;
+        if (updateEnable && GameState.InGameSceneObject.activeInHierarchy){
+            timelapse -= (Time.deltaTime*2);
 
             if (timelapse <= 0) {
                 updateEnable = false;

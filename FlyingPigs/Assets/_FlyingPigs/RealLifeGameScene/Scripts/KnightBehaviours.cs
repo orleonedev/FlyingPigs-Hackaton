@@ -35,7 +35,7 @@ public class KnightBehaviour : MonoBehaviour
     private void Update()
     {
         if(enemyLives <= 0){
-            elapsedTime += Time.deltaTime;
+            elapsedTime += (Time.deltaTime*2);
 
             if(elapsedTime > time && enemyLives <= 0){
                 SpawnEnemy();

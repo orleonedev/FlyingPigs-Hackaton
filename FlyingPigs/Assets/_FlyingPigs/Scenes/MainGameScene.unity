@@ -189,8 +189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3}
-  m_SizeDelta: {x: -2, y: -6}
+  m_AnchoredPosition: {x: 0, y: -4}
+  m_SizeDelta: {x: -2, y: -8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &56933632
 MonoBehaviour:
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 1
-    m_Bottom: 1
+    m_Top: 0
+    m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -1818,8 +1818,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 12}
-  m_SizeDelta: {x: -3, y: 6}
+  m_AnchoredPosition: {x: -6, y: 11}
+  m_SizeDelta: {x: -3, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &669271150
 GameObject:
@@ -1854,8 +1854,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: -2}
-  m_SizeDelta: {x: -3, y: 6}
+  m_AnchoredPosition: {x: -6, y: -4}
+  m_SizeDelta: {x: -3, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691134405 stripped
 MonoBehaviour:
@@ -4021,11 +4021,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1794262382741092636, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.7597309
+      value: 0.7116771
       objectReference: {fileID: 0}
     - target: {fileID: 3825985478564503791, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 15.809999
+      value: 14.809999
       objectReference: {fileID: 0}
     - target: {fileID: 4201625240805699567, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_Pivot.x
@@ -4929,6 +4929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinigameEventAlert: {fileID: 1297606193}
   gameLoopManager: {fileID: 2085208325}
+  GameState: {fileID: 1535827386}
   audioManager: {fileID: 703850423}
 --- !u!4 &1602616940
 Transform:
@@ -4983,8 +4984,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1, y: -4}
-  m_SizeDelta: {x: -3, y: 6}
+  m_AnchoredPosition: {x: -1, y: -5}
+  m_SizeDelta: {x: -3, y: 7}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &1686689072
 GameObject:
@@ -6345,11 +6346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1794262382741092636, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.7597309
+      value: 0.7116771
       objectReference: {fileID: 0}
     - target: {fileID: 3825985478564503791, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 15.809999
+      value: 14.809999
       objectReference: {fileID: 0}
     - target: {fileID: 3825985478564503791, guid: 4a789ab7369934d778dc9f0337685afc, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6471,7 +6472,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 120364200242491287, guid: 9b40900de9cde41b0bc1669c8b065784, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 43.3
+      value: 42.3
       objectReference: {fileID: 0}
     - target: {fileID: 1314971237756469643, guid: 9b40900de9cde41b0bc1669c8b065784, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6483,7 +6484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1314971237756469643, guid: 9b40900de9cde41b0bc1669c8b065784, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.8964803
+      value: 0.8757764
       objectReference: {fileID: 0}
     - target: {fileID: 3843784189449512953, guid: 9b40900de9cde41b0bc1669c8b065784, type: 3}
       propertyPath: textComponent
