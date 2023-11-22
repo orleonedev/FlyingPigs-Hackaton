@@ -11,15 +11,14 @@ public class KnightBehaviour : MonoBehaviour
     [SerializeField] private CanvasGroup fadingCanvaGroup;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject gameView;
-    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject enemy = null;
     [SerializeField] private GameObject[] enemies;
     [SerializeField] private Animator knightAnimator;
     [SerializeField] private TMP_Text expLabel;
     [SerializeField] private Image expBarFill;
     [SerializeField] protected float time;
     protected float elapsedTime;
-    protected int enemyLives;
-    protected bool isEnemyAlive;
+    //public static int enemyLives;
     protected Animator enemyAnimator;
     protected float spawnRate;
     protected bool doLerp = false;
@@ -34,17 +33,17 @@ public class KnightBehaviour : MonoBehaviour
     private void Start(){
         expBarFill.fillAmount = GetFillAmount(FakeGameManager.Instance.expPoints);
         expLabel.text = "Lvl " + FakeGameManager.Instance.knightLevel.ToString();
-        if(!isEnemyAlive){
+        if(enemy == null || !enemy.activeInHierarchy){
             SpawnEnemy();
         }
     }
 
     private void Update()
     {
-        if(enemyLives <= 0){
+        if(enemy == null || !enemy.activeInHierarchy) {
             elapsedTime += (Time.deltaTime*2);
 
-            if(elapsedTime > time && enemyLives <= 0){
+            if(elapsedTime > time && !enemy.activeInHierarchy){
                 SpawnEnemy();
                 elapsedTime = 0.0f;
             }
@@ -117,18 +116,18 @@ public class KnightBehaviour : MonoBehaviour
         }
 
         enemyAnimator = enemy.GetComponent<Animator>();
-        enemyLives = enemy.GetComponent<MainGameEnemy>().getLives();
+        //enemyLives = enemy.GetComponent<MainGameEnemy>().GetLives();
         enemy.SetActive(true);
-        isEnemyAlive = true;
+        //isEnemyAlive = true;
     }
 
     public void DestroyEnemy(){
         enemy.SetActive(false);
-        isEnemyAlive = false;
+        enemy.GetComponent<MainGameEnemy>().ResetDamageTaken();
 
-        var exp = enemy.GetComponent<MainGameEnemy>().getExpGiven();
+        var exp = enemy.GetComponent<MainGameEnemy>().GetExpGiven();
         GameStatisticsManager.Instance.updateStatsWith(new SerializableDictionary<GameStatsEnum, float>(){
-            {GameStatsEnum.GameCurrency, enemy.GetComponent<MainGameEnemy>().getGems()}
+            {GameStatsEnum.GameCurrency, enemy.GetComponent<MainGameEnemy>().GetGems()}
             });
 
         hasLeveledUp = false;
@@ -164,11 +163,20 @@ public class KnightBehaviour : MonoBehaviour
         audioManager.PlaySound(audioManager.attack, 0.25f);
     }
 
-    public void CheckEnemyAttack(){
-        if(enemy.activeInHierarchy){
-            if(enemyLives > 0) {
+    public void CheckEnemyHealth(){
+        /*if(enemy.activeInHierarchy){
+            if(enemyLives > 1) {
                 enemyAnimator.SetBool("isAttacked", true);
-                enemyLives--;
+            } else {
+                DestroyEnemy();
+                audioManager.PlaySound(audioManager.slimeDeath);
+            }
+            enemyLives--;
+        }*/
+        if(enemy.activeInHierarchy){
+            if(enemy.GetComponent<MainGameEnemy>().IsAlive()){
+                enemyAnimator.SetBool("isAttacked", true);
+                enemy.GetComponent<MainGameEnemy>().TakeDamage(1);
             } else {
                 DestroyEnemy();
                 audioManager.PlaySound(audioManager.slimeDeath);
