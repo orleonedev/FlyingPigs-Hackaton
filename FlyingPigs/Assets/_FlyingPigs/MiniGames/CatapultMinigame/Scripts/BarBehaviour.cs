@@ -51,6 +51,7 @@ public class BarBehaviour : MonoBehaviour
             gameOver = true;
             timeElapsed += 10 - timer.GetTime();
             timer.PauseTimer();
+            audioManager.PlaySound(audioManager.endMinigameFail, 1f);
             Invoke("EndMinigame", 2f);
             shouldMove = false;
             if (loopNum != -1) {
@@ -77,6 +78,9 @@ public class BarBehaviour : MonoBehaviour
             if (count > 80) {
                 lastResult = true;
                 imageShow.SwitchShow(lastResult);
+                if (level >= 5) {
+                    audioManager.PlaySound(audioManager.endMinigameSucc, 1f);
+                }
                 level++;
                 animator.SetTrigger("succ");
                 Invoke("CastleSound", 0.5f);
@@ -84,6 +88,7 @@ public class BarBehaviour : MonoBehaviour
             else {
                 lastResult = false;
                 imageShow.SwitchShow(lastResult);
+                audioManager.PlaySound(audioManager.endMinigameFail, 1f);
                 animator.SetTrigger("fail");
                 Invoke("SplatSound", 0.3f);
             }
@@ -102,7 +107,7 @@ public class BarBehaviour : MonoBehaviour
         if (level - 1 != 5 && timer.GetCounting()) {
             imageShow.SwitchShow(false);
         }
-        Debug.Log("Catapult time elapsed "+ timeElapsed);
+        
         SerializableDictionary<GameStatsEnum,float> value = new SerializableDictionary<GameStatsEnum, float>(){
             {GameStatsEnum.TimeElapsed, timeElapsed},
             {GameStatsEnum.GameHealth, (level - 1) * 0.02f},
