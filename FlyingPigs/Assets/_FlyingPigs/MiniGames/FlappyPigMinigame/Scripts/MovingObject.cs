@@ -21,6 +21,6 @@ public class MovingObject : MonoBehaviour
     }
 
     private float GetDifficultySpeed(){
-        return (speed + (PigScript.level - 1) * 0.25f);
+        return (speed + (PigScript.level - 1) * 0.4f);
     }
 }
