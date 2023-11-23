@@ -32,6 +32,7 @@ public class KnightBehaviour : MonoBehaviour
     };
 
     private void Start(){
+        SetCorrectGameView();
         expBarFill.fillAmount = GetFillAmount(FakeGameManager.Instance.expPoints);
         expLabel.text = "Lvl " + FakeGameManager.Instance.knightLevel.ToString();
         if(enemy == null || !enemy.activeInHierarchy){
@@ -187,6 +188,16 @@ public class KnightBehaviour : MonoBehaviour
             gameView = gameViews[1];
         } else {
             gameView = gameViews[0];
+        }
+    }
+
+    public void SetCorrectGameView(){
+        if(GameStats.Instance.Day % 2 == 0){
+            gameViews[1].SetActive(true);
+            gameViews[0].SetActive(false);
+        } else {
+            gameViews[1].SetActive(false);
+            gameViews[0].SetActive(true);
         }
     }
 }
