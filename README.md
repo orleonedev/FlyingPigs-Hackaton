@@ -13,7 +13,7 @@
 <img src="team.jpg" alt="flying pigs team photo" height=256/>
 </p>
 
-[Oreste Leone](https://orleonedev.github.io), [Riccardo Fasano](https://github.com/Ithil777), Fabio Vessillo, [Eugenio Raja](https://github.com/UnbuiltThunder4), Salvatore Luca Vessillo, [Giuseppe Falso](https://github.com/giuseppe-not-true), [Claudio Silvestri](https://github.com/Claudioios)
+[Oreste Leone](https://orleonedev.github.io), [Riccardo Fasano](https://github.com/Ithil777), Fabio Vessillo, [Eugenio Raja](https://github.com/UnbuiltThunder4), Salvatore Luca Vessillo, [Giuseppe Falso](https://giuseppefalso.notion.site/Giuseppe-Falso-s-Portfolio-9f85c8263dfa43499aa1be5b11414e71), [Claudio Silvestri](https://github.com/Claudioios)
 
 ## About the Game
 
