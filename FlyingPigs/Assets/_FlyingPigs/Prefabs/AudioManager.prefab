@@ -68,6 +68,7 @@ MonoBehaviour:
   gameOverClip: {fileID: 8300000, guid: 00b8909eda9c6754aa4c85d889fb2f99, type: 3}
   messageBubbleClip: {fileID: 8300000, guid: 7b47146ccd041a24da6d4b0105e9235b, type: 3}
   messageNotificationClip: {fileID: 8300000, guid: 8763a4bdd3f395643b9d7a04323706e5, type: 3}
+  minigameEventSound: {fileID: 8300000, guid: 9c09bc90155846d41ae765b2ee3a52a7, type: 3}
   typingClip: {fileID: 8300000, guid: 9137f9ad30b1c3746b932c4ad39775a1, type: 3}
   buyGemsClip: {fileID: 8300000, guid: a12a8d98aa0ea0648a325f18670a066d, type: 3}
   startOfDayClip: {fileID: 8300000, guid: 2d3dfb4d3edfca64fa1e6a6a582d6481, type: 3}

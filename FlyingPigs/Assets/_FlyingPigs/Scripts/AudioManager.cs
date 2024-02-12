@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip gameOverClip;
     public AudioClip messageBubbleClip;
     public AudioClip messageNotificationClip;
+    public AudioClip minigameEventSound;
     public AudioClip typingClip;
     public AudioClip buyGemsClip;
     public AudioClip startOfDayClip;

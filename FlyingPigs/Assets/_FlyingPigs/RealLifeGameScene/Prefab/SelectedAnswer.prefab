@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.25, y: 0}
-  m_SizeDelta: {x: -0.5, y: -1}
+  m_SizeDelta: {x: -0.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6298775645621251488
 CanvasRenderer:
@@ -389,7 +389,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -3.0000002}
-  m_SizeDelta: {x: 14, y: 6}
+  m_SizeDelta: {x: 14, y: 7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &3843784189449512953
 MonoBehaviour:
@@ -599,8 +599,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2273452339805060728}
   m_HandleRect: {fileID: 1314971237756469643}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.10351967
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -688,7 +688,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 12, y: 7}
+  m_Size: {x: 12, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

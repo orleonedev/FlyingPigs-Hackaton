@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: GameStats
   m_EditorClassIdentifier: 
   _realHealth: 0.5
-  _gameHealth: 0.75
-  _realMoney: 800
+  _gameHealth: 0.3
+  _realMoney: 840
   _moneyMultiplier: 1
-  _gameCurrency: 67
+  _gameCurrency: 104
   _currencyMultiplier: 1
-  _currentHours: 20
-  _currentMinutes: 52
-  _day: 1
-  _nextPlayTime: 210
+  _currentHours: 22
+  _currentMinutes: 48
+  _day: 2
+  _nextPlayTime: 60
   _modifierPlayTime: 0
-  _timeElapsed: 52.5575
-  _currentDayLenght: 210
+  _timeElapsed: 18.513298
+  _currentDayLenght: 60
   _employer: 0
-  _eventToFire: 1
+  _eventToFire: 0
   _spokeToEvelyn: 0
   _spokeToGreg: 0

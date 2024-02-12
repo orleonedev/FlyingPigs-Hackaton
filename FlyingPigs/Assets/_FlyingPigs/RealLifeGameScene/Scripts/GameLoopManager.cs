@@ -66,8 +66,10 @@ public class GameLoopManager : MonoBehaviour
     void Update() {
         if(alive){ 
             if (loopEnabled) {
-                statsManager.gameStats.TimeElapsed += Time.deltaTime;
-
+                if (gameState.InGameSceneObject.activeInHierarchy) {
+                    statsManager.gameStats.TimeElapsed += (Time.deltaTime*2);
+                }
+                 
                 if (((int)statsManager.gameStats.TimeElapsed) % 2 == 0 && !tickClock) {
                     tickClock = true;
                     // Update the UI

@@ -29,9 +29,9 @@ public class ClickableObject : MonoBehaviour
     private void CheckTouch(Vector3 pos){
         Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
         Vector2 touchPos = new Vector2(wp.x, wp.y);
-        Collider2D hit = Physics2D.OverlapPoint(touchPos);
+        BoxCollider2D hit = (BoxCollider2D)Physics2D.OverlapPoint(touchPos);
      
-        if(hit && hit == pig.GetComponent<Collider2D>())
+        if(hit && hit == pig.GetComponent<BoxCollider2D>())
         {
             animator.SetBool("isDead", true); 
             // after this, in the animator moving pig functions for changing directions are called

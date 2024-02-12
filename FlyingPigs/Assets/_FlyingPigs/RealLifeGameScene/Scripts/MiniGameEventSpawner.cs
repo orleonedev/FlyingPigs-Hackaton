@@ -14,6 +14,12 @@ public class MiniGameEventSpawner : MonoBehaviour
     [SerializeField]
     public GameLoopManager gameLoopManager;
 
+    [SerializeField]
+    public GameStateManager GameState;
+
+    [SerializeField]
+    public AudioManager audioManager;
+
     private float timelapse = 30f;
     private bool updateEnable = false;
     // Start is called before the first frame update
@@ -26,8 +32,8 @@ public class MiniGameEventSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (updateEnable){
-            timelapse -= Time.deltaTime;
+        if (updateEnable && GameState.InGameSceneObject.activeInHierarchy){
+            timelapse -= (Time.deltaTime*2);
 
             if (timelapse <= 0) {
                 updateEnable = false;
@@ -39,6 +45,7 @@ public class MiniGameEventSpawner : MonoBehaviour
     public void OnMinigameEvent() {
         Debug.Log("SetVisible the minigame alert");
         MinigameEventAlert.SetActive(true);
+        audioManager.PlaySound(audioManager.minigameEventSound, 1.0f);
         timelapse = 30f;
         updateEnable = true;
     }

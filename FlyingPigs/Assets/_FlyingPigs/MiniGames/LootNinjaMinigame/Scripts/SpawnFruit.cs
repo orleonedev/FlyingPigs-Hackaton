@@ -12,12 +12,20 @@ public class SpawnFruit : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] Coordinator coordinator;
     [SerializeField] AudioManager audioManager;
+    [SerializeField] Camera gameCamera;
+
     public static float timeElapsed = 0f;
     public static int level = 1;
     public static int spriteIndex;
     private bool levelEnd = false;
+    private float cameraHeight;
+    private float cameraWidth;
 
     void Start() {
+
+        cameraHeight = gameCamera.orthographicSize * 2f;
+        cameraWidth = cameraHeight * gameCamera.aspect;
+
         levelEnd = false;
         InvokeRepeating("spawnObject", this.spawnInterval * (3 / (float) level), this.spawnInterval * (3 / (float) level));
     }
@@ -43,6 +51,7 @@ public class SpawnFruit : MonoBehaviour
     private void spawnObject() {
         GameObject newObject = Instantiate(this.fruitToSpawn);
         newObject.transform.position = new Vector2(Random.Range(this.objectMinX, this.objectMaxX), this.objectY);
+        newObject.transform.localScale = new Vector3(cameraWidth / 20, cameraWidth / 20, cameraWidth / 20);
         spriteIndex = Random.Range(0, this.objectSprites.Length);
         newObject.GetComponent<CutFruit>().spriteIndex = spriteIndex;
         Sprite objectSprite = objectSprites[spriteIndex];

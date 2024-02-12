@@ -49,8 +49,8 @@ public class ChatEventSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (updateEnable && !didAnswer){
-            timelapse -= Time.deltaTime;
+        if (updateEnable && !didAnswer && GameState.InGameSceneObject.activeInHierarchy){
+            timelapse -= (Time.deltaTime*2);
 
             if (timelapse <= 0 && !ghosted) {
                 ghosted = true;
@@ -106,24 +106,28 @@ public class ChatEventSpawner : MonoBehaviour
     public void SetupChat(){
         if(!chatWasSet) {
             FirstMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.StartingMessage);
-        foreach (Answers possibleAnswer in newChatEvent.chatEvent.answers)
-        {
-            GameObject newObject = Instantiate(possibleAnswerPrefab, PossibleAnswersContainer.transform);
-            newObject.GetComponent<PossibleAnswer>().setText(possibleAnswer.answerText);
-            newObject.GetComponent<PossibleAnswer>().setIndex(newChatEvent.chatEvent.answers.IndexOf(possibleAnswer));
-            newObject.GetComponent<PossibleAnswer>().OnSelectedAnswer += OnAnswerSelected;
-        }
+
+            if (!ghosted) {
+                foreach (Answers possibleAnswer in newChatEvent.chatEvent.answers)
+                {
+                    GameObject newObject = Instantiate(possibleAnswerPrefab, PossibleAnswersContainer.transform);
+                    newObject.GetComponent<PossibleAnswer>().setText(possibleAnswer.answerText);
+                    newObject.GetComponent<PossibleAnswer>().setIndex(newChatEvent.chatEvent.answers.IndexOf(possibleAnswer));
+                    newObject.GetComponent<PossibleAnswer>().OnSelectedAnswer += OnAnswerSelected;
+                }
+            }
+        
         chatWasSet = true;
         }
         
     }
 
     private void ResetUI() {
-        FirstMessage.GetComponent<ReceivedMessage>().ResetScrollbar();
+        FirstMessage.GetComponentInChildren<ReceivedMessage>(true).ResetScrollbar();
         SelectedAnswer.SetActive(false);
-        SelectedAnswer.GetComponent<SelectedAnswer>().ResetScrollbar();
+        SelectedAnswer.GetComponentInChildren<SelectedAnswer>(true).ResetScrollbar();
         ResponseMessage.SetActive(false);
-        ResponseMessage.GetComponent<ReceivedMessage>().ResetScrollbar();
+        ResponseMessage.GetComponentInChildren<ReceivedMessage>(true).ResetScrollbar();
         RemoveElementsFromPossibleAnswerContainer();
         chatWasSet = false;
     }
@@ -156,8 +160,8 @@ public class ChatEventSpawner : MonoBehaviour
         RemoveElementsFromPossibleAnswerContainer();
         SelectedAnswer.SetActive(true);
         ResponseMessage.SetActive(true);
-        SelectedAnswer.GetComponent<SelectedAnswer>().setText("...");
-        ResponseMessage.GetComponent<ReceivedMessage>().setText(newChatEvent.chatEvent.ghosting.senderResponse);
+        SelectedAnswer.GetComponentInChildren<SelectedAnswer>(true).setText("...");
+        ResponseMessage.GetComponentInChildren<ReceivedMessage>(true).setText(newChatEvent.chatEvent.ghosting.senderResponse);
         GameStatisticsManager.Instance.updateStatsWith(newChatEvent.chatEvent.ghosting.updates);
     }
 
